@@ -8,3 +8,10 @@ services:
     environment:
       - NODE_ENV=production
     command: npm run start
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+     - "3001:80"
+    
