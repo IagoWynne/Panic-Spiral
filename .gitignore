@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 **/bin
+
+# database
+**/db-data
+**/pgadmin-data
