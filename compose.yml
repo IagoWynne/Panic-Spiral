@@ -2,18 +2,18 @@ services:
   website:
     build:
       context: ./website
-      dockerfile: Dockerfile
+      dockerfile: dev.Dockerfile
     ports:
       - 25880:3000
-    environment:
-      - NODE_ENV=production
-    command: npm run start
+    volumes:
+      - ./website:/app
+    command: npm run dev
   api:
     build:
       context: ./api
       dockerfile: Dockerfile
     ports:
-     - 25881:80
+     - 25881:8080
   database:
     image: "postgres:latest"
     ports:
@@ -24,14 +24,3 @@ services:
       POSTGRES_DB: panic_spiral
     volumes:
       - ${PWD}/db-data/:/var/lib/postgresql/data/
-  pgadmin:
-    image: dpage/pgadmin4
-    ports:
-      - 25883:80
-    env_file:
-      - .env
-    depends_on:
-      - database
-    user: "${UID}:${GID}"
-    volumes:
-      - ${PWD}/pgadmin-data/:/var/lib/pgadmin/

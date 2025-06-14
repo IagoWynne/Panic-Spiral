@@ -1,0 +1,10 @@
+services:
+  website:
+    build:
+      context: ./website
+      dockerfile: prod.Dockerfile
+    ports:
+      - 25880:3000
+    environment:
+      - NODE_ENV=production
+    command: npm run start
