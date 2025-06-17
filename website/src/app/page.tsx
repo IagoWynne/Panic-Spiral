@@ -17,8 +17,7 @@ export default function Home() {
         height={64}
         priority
       />
-      <h1 className="text-red-500 font-bold">Panic Spiral</h1>
-      <div className="col-start-2" ref={gameParentRef}>
+      <div className="row-start-2 col-start-2 max-w-[1200px]" ref={gameParentRef}>
         <PanicSpiralGame parentRef={gameParentRef}/>
       </div>
     </div>

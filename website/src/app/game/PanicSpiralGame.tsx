@@ -1,8 +1,9 @@
 import { Application, extend } from "@pixi/react";
 import { Container, Graphics, Sprite, Text } from "pixi.js";
-import BunnySprite from "./BunnySprite";
-import { RefObject } from "react";
+import { RefObject, useEffect, useState } from "react";
 import { i18n, i18nKeys } from "./utils";
+import { initAssets } from "./utils/assets";
+import { Button } from "./ui";
 
 // extend tells @pixi/react what Pixi.js components are available
 extend({
@@ -17,17 +18,28 @@ interface IGameProps {
 }
 
 const PanicSpiralGame = ({ parentRef }: IGameProps) => {
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
+
+  useEffect(() => {
+    initAssets().then(() => setAssetsLoaded(true));
+  });
+
   return (
     // wrapping in application provides the pixijs app context
-    <Application resizeTo={parentRef}>
-      <pixiText
-        x={0}
-        y={0}
-        text={i18n(i18nKeys.HELLO_WORLD)}
-        style={{ fill: "#ffffff" }}
-      />
-      <BunnySprite />
-    </Application>
+    assetsLoaded && (
+      <Application
+        resizeTo={parentRef}
+        defaultTextStyle={{ fontFamily: "Reconstruct", fill: '#ffffff'}}
+      >
+        <pixiText
+          x={40}
+          y={20}
+          text={i18n(i18nKeys.GAME_NAME)}
+          style={{ fill: "#fc0e1c", fontSize: 36 }}
+        />
+        <Button x={450} y={400} text={i18n(i18nKeys.START_GAME)} />
+      </Application>
+    )
   );
 };
 

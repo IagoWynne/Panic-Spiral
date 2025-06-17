@@ -3,22 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev --turbopack",
     "lint": "next lint",
-    "test": "jest"
+    "prebuild": "assetpack",
+    "start": "next start",
+    "test": "jest",
+    "watch": "npm run watch:assetpack & npm run dev",
+    "watch:assetpack": "assetpack -w"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "@pixi/react": "8.0.2",
     "next": "15.3.3",
     "pixi.js": "8.2.6",
-    "@pixi/react": "8.0.2"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@assetpack/core": "^1.0.0-rc",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -26,12 +33,9 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
     "jest": "^30.0.0",
-    "tailwindcss": "^4",
-    "typescript": "^5.8.3",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
     "jest-environment-jsdom": "^30.0.0",
-    "ts-node": "^10.9.2"
+    "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }

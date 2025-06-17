@@ -2,6 +2,8 @@
 ## Running the App
 - Make duplicate of `example.env` with the filename `.env`
 - In `.env` change `POSTGRES_USER` and `POSTGRES_PASSWORD` to a user/password combination of your choice
+- Navigate to `./website` and run `npm install && npm run prebuild`
+- Return to the root directory
 - Run `docker compose up -d`
 
 This automatically runs:
