@@ -1,3 +1,4 @@
 export const i18nKeys = {
-    HELLO_WORLD: "HELLO_WORLD"
+    GAME_NAME: "GAME_NAME",
+    START_GAME: "START_GAME"
 }

@@ -7,7 +7,7 @@ services:
       - 25880:3000
     volumes:
       - ./website:/app
-    command: npm run dev
+    command: npm run watch
   api:
     build:
       context: ./api

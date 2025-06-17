@@ -28,3 +28,16 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Panic Spiral Game
+### Asset Organisation
+Asset bundling is done with `@assetpack/core` - this is the recommended package by pixi js
+NOTE: this package does have dependencies on vulnerable packages. Since this isn't a professional project, this is overlooked for now. There is an open issue on github to have this fixed.
+
+- Assets are placed in `src/app/game/raw-assets`
+- Assets which are used across multiple scenes should go in `common{m}`
+    - e.g. UI assets, or sprites used in many places
+- Assets specific to a screen should be placed in a folder named after that screen. E.g. assets for a `ship` screen would go in `ship{m}`
+- If in doubt, place the asset in the screen specific folder. If it is required for multiple screens later, it can be moved into common
+- Textures should go in a sub-folder named after the screen with `-tps{tps}` appended. E.g. textures for the ship screen go in `ship{m}/ship-tps{tps}`
+    - This tells assetpack to pack the textures

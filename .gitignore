@@ -44,3 +44,8 @@ next-env.d.ts
 # database
 **/db-data
 **/pgadmin-data
+
+# game asset bundles
+**/website/public/assets
+**/website/.assetpack
+**/manifest.json
