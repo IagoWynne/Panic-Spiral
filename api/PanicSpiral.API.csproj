@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HotChocolate.AspNetCore" Version="15.1.5" />
-    <PackageReference Include="HotChocolate.Data.EntityFramework" Version="15.1.5" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.6" />
   </ItemGroup>
