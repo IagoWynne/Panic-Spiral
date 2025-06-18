@@ -49,3 +49,10 @@ next-env.d.ts
 **/website/public/assets
 **/website/.assetpack
 **/manifest.json
+
+# local cert file
+**/api/localhost.crt
+
+# api debug files
+**/api/obj/*
+**/api/**/project.razor.json
