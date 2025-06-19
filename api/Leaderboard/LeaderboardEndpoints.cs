@@ -20,7 +20,7 @@ public static class LeaderboardEndpoints
         return TypedResults.Ok(Enumerable.Range(1, 10)
             .Select((index) =>
                 new LeaderboardEntryDTO(
-                    DateTime.Now,
+                    DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
                     $"{alphabet[Random.Shared.Next(0, 25)]}{alphabet[Random.Shared.Next(0, 25)]}{alphabet[Random.Shared.Next(0, 25)]}",
                     Random.Shared.Next(200, 500)))
             .OrderByDescending(record => record.Score)

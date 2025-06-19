@@ -1,1 +1,1 @@
-public record LeaderboardEntryDTO(DateTime Date, string Name, int Score);
+public record LeaderboardEntryDTO(long Date, string Name, int Score);
