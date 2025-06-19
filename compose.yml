@@ -5,6 +5,8 @@ services:
       dockerfile: dev.Dockerfile
     ports:
       - 25880:3000
+    environment:
+      API_URL:
     volumes:
       - ./website:/app
     command: npm run watch
@@ -13,7 +15,9 @@ services:
       context: ./api
       dockerfile: Dockerfile
     ports:
-     - 25881:8080
+      - 25881:8080
+    expose:
+      - "25881"
   database:
     image: "postgres:latest"
     ports:
