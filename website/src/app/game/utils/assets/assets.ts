@@ -5,7 +5,7 @@ import manifest from "../../../../manifest.json";
 const initAssets = async () => {
   await Assets.init({ manifest, basePath: "assets" });
 
-  await Assets.loadBundle(["common", "default"]);
+  await Assets.loadBundle(["common", "title", "title/sprites", "default"]);
 
   const allBundles = manifest.bundles.map(
     (bundle: { name: string }) => bundle.name

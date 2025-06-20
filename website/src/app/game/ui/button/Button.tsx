@@ -1,9 +1,7 @@
-import { Assets, Texture } from "pixi.js";
+import { Texture } from "pixi.js";
 import { useEffect, useRef, useState } from "react";
 
-interface Props {
-  x?: number;
-  y?: number;
+interface Props extends CoordinateProps{
   text?: string;
 }
 
@@ -18,6 +16,7 @@ const Button = ({ x, y, text }: Props) => {
   useEffect(() => {
     if (texture === Texture.EMPTY) {
       setTexture(Texture.from("button-background"));
+      console.log(texture);
     }
   }, [texture]);
 
