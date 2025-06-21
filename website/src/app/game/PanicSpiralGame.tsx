@@ -1,9 +1,15 @@
 import { Application, extend } from "@pixi/react";
-import { Container, Graphics, Sprite, Text } from "pixi.js";
+import {
+  AnimatedSprite,
+  Container,
+  Graphics,
+  Sprite,
+  Text,
+  TilingSprite,
+} from "pixi.js";
 import { RefObject, useEffect, useState } from "react";
-import { i18n, i18nKeys } from "./utils";
-import { initAssets } from "./utils/assets";
-import { Button } from "./ui";
+import { initAssets } from "./Utils/assets";
+import TitleScreen from "./Screens/Title";
 
 // extend tells @pixi/react what Pixi.js components are available
 extend({
@@ -11,6 +17,8 @@ extend({
   Graphics,
   Sprite,
   Text,
+  AnimatedSprite,
+  TilingSprite,
 });
 
 interface IGameProps {
@@ -21,7 +29,9 @@ const PanicSpiralGame = ({ parentRef }: IGameProps) => {
   const [assetsLoaded, setAssetsLoaded] = useState(false);
 
   useEffect(() => {
-    initAssets().then(() => setAssetsLoaded(true));
+    if (!assetsLoaded) {
+      initAssets().then(() => setAssetsLoaded(true));
+    }
   });
 
   return (
@@ -29,15 +39,9 @@ const PanicSpiralGame = ({ parentRef }: IGameProps) => {
     assetsLoaded && (
       <Application
         resizeTo={parentRef}
-        defaultTextStyle={{ fontFamily: "Reconstruct", fill: '#ffffff'}}
+        defaultTextStyle={{ fontFamily: "Reconstruct", fill: "#ffffff" }}
       >
-        <pixiText
-          x={40}
-          y={20}
-          text={i18n(i18nKeys.GAME_NAME)}
-          style={{ fill: "#fc0e1c", fontSize: 36 }}
-        />
-        <Button x={450} y={400} text={i18n(i18nKeys.START_GAME)} />
+        <TitleScreen />
       </Application>
     )
   );

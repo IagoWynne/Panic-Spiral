@@ -1,9 +1,7 @@
-import { Assets, Texture } from "pixi.js";
+import { Texture } from "pixi.js";
 import { useEffect, useRef, useState } from "react";
 
-interface Props {
-  x?: number;
-  y?: number;
+interface Props extends CoordinateProps {
   text?: string;
 }
 
@@ -28,17 +26,23 @@ const Button = ({ x, y, text }: Props) => {
     }
   }, [texture]);
 
+  const adjustedX = (x || 0) - ((texture.width || 0) * scale) / 2;
+  const adjustedY = (y || 0) - ((texture.height || 0) * scale) / 2;
+
   return (
-    <pixiContainer x={x} y={y}>
-      <pixiSprite
-        ref={spriteRef}
-        anchor={0}
-        texture={texture}
-        x={0}
-        y={0}
-        scale={scale}
-      >
-        <pixiText text={text} style={{ fontSize: 24 }} x={textX} y={textY-6} anchor={0.5}/>
+    <pixiContainer
+      x={adjustedX}
+      y={adjustedY}
+      anchor={0.5}
+    >
+      <pixiSprite ref={spriteRef} texture={texture} scale={scale}>
+        <pixiText
+          text={text}
+          style={{ fontSize: 24 }}
+          x={textX}
+          y={textY - 6}
+          anchor={0.5}
+        />
       </pixiSprite>
     </pixiContainer>
   );

@@ -13,7 +13,7 @@
     "watch:assetpack": "assetpack -w"
   },
   "dependencies": {
-    "@pixi/react": "8.0.2",
+    "@pixi/react": "^8.0.2",
     "next": "15.3.3",
     "pixi.js": "8.2.6",
     "react": "^19.0.0",
