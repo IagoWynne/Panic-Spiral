@@ -1,8 +1,15 @@
 import { Application, extend } from "@pixi/react";
-import { Container, Graphics, Sprite, Text } from "pixi.js";
+import {
+  AnimatedSprite,
+  Container,
+  Graphics,
+  Sprite,
+  Text,
+  TilingSprite,
+} from "pixi.js";
 import { RefObject, useEffect, useState } from "react";
-import { initAssets } from "./utils/assets";
-import TitleScreen from "./screens/title";
+import { initAssets } from "./Utils/assets";
+import TitleScreen from "./Screens/Title";
 
 // extend tells @pixi/react what Pixi.js components are available
 extend({
@@ -10,6 +17,8 @@ extend({
   Graphics,
   Sprite,
   Text,
+  AnimatedSprite,
+  TilingSprite,
 });
 
 interface IGameProps {
