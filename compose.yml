@@ -13,18 +13,19 @@ services:
   api:
     build:
       context: ./api
-      dockerfile: Dockerfile
+      dockerfile: dev.Dockerfile
     ports:
       - 25881:8080
+      - 25884:5071
     expose:
-      - "25881"
-  database:
-    image: "postgres:latest"
-    ports:
-      - 25882:5432
+      - 25881
+    depends_on:
+      - database
     env_file:
       - .env
-    environment:
-      POSTGRES_DB: panic_spiral
+  database:
+    image: "postgres:latest"
+    env_file:
+      - .env
     volumes:
       - ${PWD}/db-data/:/var/lib/postgresql/data/
