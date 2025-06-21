@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Http.HttpResults;
+using PanicSpiral.API.Leaderboard.DTOs;
 
 namespace PanicSpiral.API.Leaderboard;
 
