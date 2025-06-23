@@ -18,7 +18,7 @@ extend({
   Sprite,
   Text,
   AnimatedSprite,
-  TilingSprite,
+  TilingSprite
 });
 
 interface IGameProps {

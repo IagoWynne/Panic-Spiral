@@ -12,6 +12,7 @@ const Button = ({ x, y, text }: Props) => {
   const [texture, setTexture] = useState(Texture.EMPTY);
   const [textX, setTextX] = useState(0);
   const [textY, setTextY] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     if (texture === Texture.EMPTY) {
@@ -20,9 +21,9 @@ const Button = ({ x, y, text }: Props) => {
   }, [texture]);
 
   useEffect(() => {
-    if (texture) {
+    if (texture !== Texture.EMPTY) {
       setTextX(Math.floor(texture.width / 2));
-      setTextY(Math.floor(texture.height / 2));
+      setTextY(Math.floor(texture.height / 2) - 6);
     }
   }, [texture]);
 
@@ -34,13 +35,27 @@ const Button = ({ x, y, text }: Props) => {
       x={adjustedX}
       y={adjustedY}
       anchor={0.5}
+      eventMode="static"
+      cursor="pointer"
+      onPointerOver={() => setIsHovered(true)}
+      onPointerOut={() => setIsHovered(false)}
     >
       <pixiSprite ref={spriteRef} texture={texture} scale={scale}>
+        {isHovered && (
+          <pixiGraphics
+            draw={(graphics) => {
+              graphics.clear();
+              graphics.setFillStyle({ color: "#ffffff11" });
+              graphics.rect(15, 20, texture.width-30, 50);
+              graphics.fill();
+            }}
+          />
+        )}
         <pixiText
           text={text}
           style={{ fontSize: 24 }}
           x={textX}
-          y={textY - 6}
+          y={textY}
           anchor={0.5}
         />
       </pixiSprite>

@@ -16,7 +16,6 @@ services:
       dockerfile: dev.Dockerfile
     ports:
       - 25881:8080
-      - 25884:5071
     expose:
       - 25881
     depends_on:
