@@ -1,15 +1,16 @@
 import { Texture } from "pixi.js";
 import { useContext, useEffect, useRef, useState } from "react";
-import { AUDIO_FILE_ALIASES, AudioPlayerContext } from "../../Utils/audio";
+import { AUDIO_FILE_ALIASES, SFXPlayerContext } from "../../Utils/audio";
 
 interface Props extends CoordinateProps {
   text?: string;
+  onPressed?: () => void;
 }
 
-const Button = ({ x, y, text }: Props) => {
+const Button = ({ x, y, text, onPressed }: Props) => {
   const scale = 0.75;
   const spriteRef = useRef(null);
-  const SFX = useContext(AudioPlayerContext);
+  const SFX = useContext(SFXPlayerContext);
 
   const [texture, setTexture] = useState(Texture.EMPTY);
   const [textX, setTextX] = useState(0);
@@ -36,6 +37,10 @@ const Button = ({ x, y, text }: Props) => {
 
   const onPointerTap = () => {
     SFX.play(AUDIO_FILE_ALIASES.UI.BUTTON_CLICK);
+
+    if (onPressed) {
+      onPressed();
+    }
   };
 
   const adjustedX = (x || 0) - ((texture.width || 0) * scale) / 2;
