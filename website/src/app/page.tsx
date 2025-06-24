@@ -1,6 +1,5 @@
 "use client";
 
-import { sound } from "@pixi/sound";
 import PanicSpiralGame from "./game";
 import { useRef } from "react";
 
