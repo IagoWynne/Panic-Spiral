@@ -1,6 +1,7 @@
 import { Texture } from "pixi.js";
 import { useContext, useEffect, useRef, useState } from "react";
 import AudioPlayerContext from "../../Utils/audio/AudioPlayerContext";
+import { AUDIO_FILE_ALIASES } from "../../Utils/audio";
 // import { SFX } from "../../Utils/audio";
 
 interface Props extends CoordinateProps {
@@ -32,11 +33,11 @@ const Button = ({ x, y, text }: Props) => {
 
   const onPointerOver = () => {
     setIsHovered(true);
-    SFX.play("button-hover");
+    SFX.play(AUDIO_FILE_ALIASES.UI.BUTTON_HOVER);
   };
 
   const onClick = () => {
-    SFX.play("button-click");
+    SFX.play(AUDIO_FILE_ALIASES.UI.BUTTON_CLICK);
   };
 
   const adjustedX = (x || 0) - ((texture.width || 0) * scale) / 2;
