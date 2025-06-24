@@ -1,8 +1,6 @@
 import { Texture } from "pixi.js";
 import { useContext, useEffect, useRef, useState } from "react";
-import AudioPlayerContext from "../../Utils/audio/AudioPlayerContext";
-import { AUDIO_FILE_ALIASES } from "../../Utils/audio";
-// import { SFX } from "../../Utils/audio";
+import { AUDIO_FILE_ALIASES, AudioPlayerContext } from "../../Utils/audio";
 
 interface Props extends CoordinateProps {
   text?: string;
@@ -36,7 +34,7 @@ const Button = ({ x, y, text }: Props) => {
     SFX.play(AUDIO_FILE_ALIASES.UI.BUTTON_HOVER);
   };
 
-  const onClick = () => {
+  const onPointerTap = () => {
     SFX.play(AUDIO_FILE_ALIASES.UI.BUTTON_CLICK);
   };
 
@@ -52,7 +50,7 @@ const Button = ({ x, y, text }: Props) => {
       cursor="pointer"
       onPointerOver={onPointerOver}
       onPointerOut={() => setIsHovered(false)}
-      onClick={onClick}
+      onPointerTap={onPointerTap}
     >
       <pixiSprite ref={spriteRef} texture={texture} scale={scale}>
         {isHovered && (
