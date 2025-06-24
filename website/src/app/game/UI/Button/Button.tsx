@@ -1,5 +1,6 @@
 import { Texture } from "pixi.js";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { AUDIO_FILE_ALIASES, AudioPlayerContext } from "../../Utils/audio";
 
 interface Props extends CoordinateProps {
   text?: string;
@@ -8,6 +9,7 @@ interface Props extends CoordinateProps {
 const Button = ({ x, y, text }: Props) => {
   const scale = 0.75;
   const spriteRef = useRef(null);
+  const SFX = useContext(AudioPlayerContext);
 
   const [texture, setTexture] = useState(Texture.EMPTY);
   const [textX, setTextX] = useState(0);
@@ -27,6 +29,15 @@ const Button = ({ x, y, text }: Props) => {
     }
   }, [texture]);
 
+  const onPointerOver = () => {
+    setIsHovered(true);
+    SFX.play(AUDIO_FILE_ALIASES.UI.BUTTON_HOVER);
+  };
+
+  const onPointerTap = () => {
+    SFX.play(AUDIO_FILE_ALIASES.UI.BUTTON_CLICK);
+  };
+
   const adjustedX = (x || 0) - ((texture.width || 0) * scale) / 2;
   const adjustedY = (y || 0) - ((texture.height || 0) * scale) / 2;
 
@@ -37,8 +48,9 @@ const Button = ({ x, y, text }: Props) => {
       anchor={0.5}
       eventMode="static"
       cursor="pointer"
-      onPointerOver={() => setIsHovered(true)}
+      onPointerOver={onPointerOver}
       onPointerOut={() => setIsHovered(false)}
+      onPointerTap={onPointerTap}
     >
       <pixiSprite ref={spriteRef} texture={texture} scale={scale}>
         {isHovered && (
@@ -46,7 +58,7 @@ const Button = ({ x, y, text }: Props) => {
             draw={(graphics) => {
               graphics.clear();
               graphics.setFillStyle({ color: "#ffffff11" });
-              graphics.rect(15, 20, texture.width-30, 50);
+              graphics.rect(15, 20, texture.width - 30, 50);
               graphics.fill();
             }}
           />

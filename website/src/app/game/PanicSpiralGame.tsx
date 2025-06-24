@@ -10,6 +10,7 @@ import {
 import { RefObject, useEffect, useState } from "react";
 import { initAssets } from "./Utils/assets";
 import TitleScreen from "./Screens/Title";
+import { SFXPlayer } from "./Utils/audio";
 
 // extend tells @pixi/react what Pixi.js components are available
 extend({
@@ -18,7 +19,7 @@ extend({
   Sprite,
   Text,
   AnimatedSprite,
-  TilingSprite
+  TilingSprite,
 });
 
 interface IGameProps {
@@ -37,12 +38,14 @@ const PanicSpiralGame = ({ parentRef }: IGameProps) => {
   return (
     // wrapping in application provides the pixijs app context
     assetsLoaded && (
-      <Application
-        resizeTo={parentRef}
-        defaultTextStyle={{ fontFamily: "Reconstruct", fill: "#ffffff" }}
-      >
-        <TitleScreen />
-      </Application>
+      <SFXPlayer>
+        <Application
+          resizeTo={parentRef}
+          defaultTextStyle={{ fontFamily: "Reconstruct", fill: "#ffffff" }}
+        >
+          <TitleScreen />
+        </Application>
+      </SFXPlayer>
     )
   );
 };
