@@ -35,7 +35,7 @@ const PanicSpiralGame = ({ parentRef }: IGameProps) => {
         setAssetsLoaded(true);
       });
     }
-  });
+  }, []);
 
   return (
     // wrapping in application provides the pixijs app context

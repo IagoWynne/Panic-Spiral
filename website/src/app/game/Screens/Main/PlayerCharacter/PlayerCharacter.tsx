@@ -17,7 +17,7 @@ const PlayerCharacter = ({ x, y }: Props) => {
 
   return (
     stationaryTexture && (
-      <pixiContainer x={x || 100} y={y || 100}>
+      <pixiContainer x={x ?? 100} y={y ?? 100}>
         <pixiSprite ref={spriteRef} texture={stationaryTexture} />
       </pixiContainer>
     )
