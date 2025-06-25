@@ -11,6 +11,7 @@ import { RefObject, useEffect, useState } from "react";
 import { initAssets } from "./Utils/assets";
 import TitleScreen from "./Screens/Title";
 import { BGMPlayer, SFXPlayer } from "./Utils/audio";
+import { Scene, SceneManager } from "./Utils/sceneManager";
 
 // extend tells @pixi/react what Pixi.js components are available
 extend({
@@ -44,7 +45,7 @@ const PanicSpiralGame = ({ parentRef }: IGameProps) => {
             resizeTo={parentRef}
             defaultTextStyle={{ fontFamily: "Reconstruct", fill: "#ffffff" }}
           >
-            <TitleScreen />
+            <SceneManager scene={Scene.Title} />
           </Application>
         </SFXPlayer>
       </BGMPlayer>
