@@ -1,7 +1,9 @@
+import PlayerCharacter from "./PlayerCharacter";
+
 const MainScreen = () => {
   return (
     <pixiContainer>
-      <pixiText text="hello main screen" />
+      <PlayerCharacter />
     </pixiContainer>
   );
 };

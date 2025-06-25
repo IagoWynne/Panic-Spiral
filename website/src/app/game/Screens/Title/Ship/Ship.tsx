@@ -1,5 +1,5 @@
 import { useTick } from "@pixi/react";
-import { Assets, Texture } from "pixi.js";
+import { Texture } from "pixi.js";
 import { useEffect, useRef, useState } from "react";
 import Exhaust from "./Exhaust";
 
