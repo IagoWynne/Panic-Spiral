@@ -3,6 +3,9 @@ import TitleScreen from "../../Screens/Title";
 import MainScreen from "../../Screens/Main";
 import { Scene } from "./types";
 import { SceneManager, SceneManagerContext } from "./SceneManagerContext";
+import { sceneToBundleMap } from "./sceneToBundleMap";
+import { areBundlesLoaded } from "../assets";
+import { Assets } from "pixi.js";
 
 interface Props {
   scene: Scene;
@@ -12,9 +15,17 @@ const SceneManagerProvider = ({ scene }: Props) => {
   const [currentScene, setCurrentScene] = useState(scene);
 
   const changeScene = useCallback(
-    (newScene: Scene) => {
+    async (newScene: Scene) => {
       if (newScene === currentScene) {
         return;
+      }
+
+      const requiredBundles = sceneToBundleMap.find(
+        (m) => m.scene === newScene
+      )?.bundles;
+
+      if (requiredBundles && !areBundlesLoaded(requiredBundles)) {
+        await Assets.loadBundle(requiredBundles);
       }
 
       setCurrentScene(newScene);

@@ -9,7 +9,6 @@ import {
 } from "pixi.js";
 import { RefObject, useEffect, useState } from "react";
 import { initAssets } from "./Utils/assets";
-import TitleScreen from "./Screens/Title";
 import { BGMPlayer, SFXPlayer } from "./Utils/audio";
 import { Scene, SceneManager } from "./Utils/sceneManager";
 
@@ -32,7 +31,9 @@ const PanicSpiralGame = ({ parentRef }: IGameProps) => {
 
   useEffect(() => {
     if (!assetsLoaded) {
-      initAssets().then(() => setAssetsLoaded(true));
+      initAssets().then(() => {
+        setAssetsLoaded(true);
+      });
     }
   });
 
