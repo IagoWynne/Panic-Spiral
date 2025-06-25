@@ -4,6 +4,7 @@ export interface AudioPlayer {
   play(alias: string, volume?: number): void;
 }
 
-const AudioPlayerContext = createContext<AudioPlayer>({ play: (_, __) => {} });
+const SFXPlayerContext = createContext<AudioPlayer>({ play: (_, __) => {} });
+const BGMPlayerContext = createContext<AudioPlayer>({ play: (_, __) => {} });
 
-export default AudioPlayerContext;
+export { SFXPlayerContext, BGMPlayerContext };

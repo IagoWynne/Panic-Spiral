@@ -1,9 +1,9 @@
 "use client";
 
 import { sound } from "@pixi/sound";
-import { PropsWithChildren, useCallback, useEffect, useMemo } from "react";
-import AudioPlayerContext, { AudioPlayer } from "./AudioPlayerContext";
-import initAudio from "./init";
+import { PropsWithChildren, useEffect, useMemo } from "react";
+import { SFXPlayerContext, AudioPlayer } from "./AudioPlayerContext";
+import { initSfx } from "./init";
 
 const DEFAULT_GLOBAL_VOLUME = 0.5;
 
@@ -11,7 +11,7 @@ const SFXPlayer = ({ children }: PropsWithChildren) => {
   const globalVolume = DEFAULT_GLOBAL_VOLUME;
 
   useEffect(() => {
-    initAudio();
+    initSfx();
   }, []);
 
   const playSound = (alias: string, volume?: number) => {
@@ -24,9 +24,9 @@ const SFXPlayer = ({ children }: PropsWithChildren) => {
   );
 
   return (
-    <AudioPlayerContext.Provider value={sfxPlayer}>
+    <SFXPlayerContext.Provider value={sfxPlayer}>
       {children}
-    </AudioPlayerContext.Provider>
+    </SFXPlayerContext.Provider>
   );
 };
 

@@ -1,8 +1,10 @@
 import { sound } from "@pixi/sound";
 import AUDIO_FILE_ALIASES from "./aliases";
+import ALIAS_FILE_MAP, { AliasFileMap } from "./aliasFileMap";
 
 const baseAudioPath = "audio";
 const uiAudioPath = "ui";
+const bgmAudioPath = "bgm";
 
 const addSound = (alias: string, filePath: string) => {
   if (!sound.exists(alias)) {
@@ -10,22 +12,29 @@ const addSound = (alias: string, filePath: string) => {
   }
 };
 
-const initAudio = () => {
-  initUiAudio();
+export const initSfx = () => {
+  initUiSfx();
+};
+
+export const initBgm = () => {
+  initTitleBgm();
 };
 
 const getFullUiPath = (filename: string) =>
   `/${baseAudioPath}/${uiAudioPath}/${filename}`;
 
-const initUiAudio = () => {
-  addSound(
-    AUDIO_FILE_ALIASES.UI.BUTTON_HOVER,
-    getFullUiPath("button-hover.wav")
-  );
-  addSound(
-    AUDIO_FILE_ALIASES.UI.BUTTON_CLICK,
-    getFullUiPath("button-click.wav")
-  );
+const mapAliasFiles = (
+  maps: AliasFileMap[],
+  pathCombiner: (filename: string) => string
+) => maps.forEach((map) => addSound(map.alias, pathCombiner(map.file)));
+
+const initUiSfx = () => {
+  mapAliasFiles(ALIAS_FILE_MAP.SFX.UI, getFullUiPath);
 };
 
-export default initAudio;
+const getFullBgmPath = (filename: string) =>
+  `/${baseAudioPath}/${bgmAudioPath}/${filename}`;
+
+const initTitleBgm = () => {
+  mapAliasFiles(ALIAS_FILE_MAP.BGM.TITLE, getFullBgmPath);
+};
