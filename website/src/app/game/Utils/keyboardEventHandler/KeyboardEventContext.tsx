@@ -11,13 +11,20 @@ export const KeyboardEventContext = createContext<IKeyboardEventHandler>({
 });
 
 const KeyboardEventContextProvider = ({ children }: PropsWithChildren) => {
-  const [keyboardEventHandler] = useState(() => new KeyboardEventHandler());
+  const [keyboardEventHandler, setKeyboardEventHandler] =
+    useState<KeyboardEventHandler>();
 
   useEffect(() => {
+    if (!keyboardEventHandler) {
+      setKeyboardEventHandler(new KeyboardEventHandler());
+    }
+
     return () => {
-      keyboardEventHandler.release();
+      if (keyboardEventHandler) {
+        keyboardEventHandler.release();
+      }
     };
-  }, []);
+  }, [keyboardEventHandler]);
 
   return (
     keyboardEventHandler && (
