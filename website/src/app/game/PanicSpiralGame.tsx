@@ -11,6 +11,7 @@ import { RefObject, useEffect, useState } from "react";
 import { initAssets } from "./Utils/assets";
 import { BGMPlayer, SFXPlayer } from "./Utils/audio";
 import { Scene, SceneManager } from "./Utils/sceneManager";
+import { KeyboardEventContextProvider } from "./Utils/keyboardEventHandler";
 
 // extend tells @pixi/react what Pixi.js components are available
 extend({
@@ -40,16 +41,18 @@ const PanicSpiralGame = ({ parentRef }: IGameProps) => {
   return (
     // wrapping in application provides the pixijs app context
     assetsLoaded && (
-      <BGMPlayer>
-        <SFXPlayer>
-          <Application
-            resizeTo={parentRef}
-            defaultTextStyle={{ fontFamily: "Reconstruct", fill: "#ffffff" }}
-          >
-            <SceneManager scene={Scene.Title} />
-          </Application>
-        </SFXPlayer>
-      </BGMPlayer>
+      <KeyboardEventContextProvider>
+        <BGMPlayer>
+          <SFXPlayer>
+            <Application
+              resizeTo={parentRef}
+              defaultTextStyle={{ fontFamily: "Reconstruct", fill: "#ffffff" }}
+            >
+              <SceneManager scene={Scene.Title} />
+            </Application>
+          </SFXPlayer>
+        </BGMPlayer>
+      </KeyboardEventContextProvider>
     )
   );
 };

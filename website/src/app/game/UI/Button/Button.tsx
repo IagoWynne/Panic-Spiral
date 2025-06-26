@@ -1,16 +1,20 @@
 import { Texture } from "pixi.js";
 import { useContext, useEffect, useRef, useState } from "react";
 import { AUDIO_FILE_ALIASES, SFXPlayerContext } from "../../Utils/audio";
+import { KeyboardEventContext } from "../../Utils/keyboardEventHandler";
 
 interface Props extends CoordinateProps {
+  id: string;
   text?: string;
   onPressed?: () => void;
+  keyboardShortcut?: string;
 }
 
-const Button = ({ x, y, text, onPressed }: Props) => {
+const Button = ({ id, x, y, text, onPressed, keyboardShortcut }: Props) => {
   const scale = 0.75;
   const spriteRef = useRef(null);
   const SFX = useContext(SFXPlayerContext);
+  const keyboardEventHandler = useContext(KeyboardEventContext);
 
   const [texture, setTexture] = useState(Texture.EMPTY);
   const [textX, setTextX] = useState(0);
@@ -29,6 +33,22 @@ const Button = ({ x, y, text, onPressed }: Props) => {
       setTextY(Math.floor(texture.height / 2) - 6);
     }
   }, [texture]);
+
+  useEffect(() => {
+    if (onPressed && keyboardShortcut) {
+      keyboardEventHandler.addKeyUpHandler({
+        key: keyboardShortcut,
+        action: onPressed,
+        componentId: id,
+      });
+    }
+
+    return () => {
+      if (keyboardShortcut) {
+        keyboardEventHandler.removeKeyUpHandler(id, keyboardShortcut);
+      }
+    };
+  }, [onPressed, keyboardShortcut, id, keyboardEventHandler]);
 
   const onPointerOver = () => {
     setIsHovered(true);
