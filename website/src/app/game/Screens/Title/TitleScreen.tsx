@@ -6,6 +6,7 @@ import Background from "./Background";
 import { useContext, useEffect } from "react";
 import { AUDIO_FILE_ALIASES, BGMPlayerContext } from "../../Utils/audio";
 import { Scene, SceneManagerContext } from "../../Utils/sceneManager";
+import { KEY_BINDINGS } from "../../keyBindings";
 
 const TitleScreen = () => {
   const { app } = useApplication();
@@ -29,10 +30,12 @@ const TitleScreen = () => {
         />
         <Ship x={app.screen.width / 2} y={150} />
         <Button
+          id="start-game-button"
           x={app.screen.width / 2}
           y={app.screen.height - 100}
           text={i18n(i18nKeys.START_GAME)}
           onPressed={() => changeScene(Scene.Main)}
+          keyboardShortcut={KEY_BINDINGS.ACCEPT}
         />
       </pixiContainer>
     )
