@@ -1,3 +1,3 @@
-import PlayerCharacter from "./PlayerCharacter";
+import {PlayerCharacter} from "./PlayerCharacter";
 
 export default PlayerCharacter;

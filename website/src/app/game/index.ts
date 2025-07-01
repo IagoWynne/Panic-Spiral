@@ -1,3 +1,5 @@
-import PanicSpiralGame from "./PanicSpiralGame";
+import dynamic from "next/dynamic";
 
-export default PanicSpiralGame;
+const Game = dynamic(() => import("./GameWrapper"), { ssr: false });
+
+export default Game;

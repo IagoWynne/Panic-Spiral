@@ -1,3 +1,3 @@
-import TitleScreen from "./TitleScreen";
+import { TitleScreen } from "./TitleScreen";
 
 export default TitleScreen;

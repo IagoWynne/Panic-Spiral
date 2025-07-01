@@ -1,9 +1,4 @@
-import dynamic from "next/dynamic";
-import { KeyboardEventContext } from "./KeyboardEventContext";
+import { Inputs } from "./Inputs";
+import KeyboardEventHandler from "./KeyboardEventHandler";
 
-const KeyboardEventContextProvider = dynamic(
-  () => import("./KeyboardEventContext"),
-  { ssr: false }
-);
-
-export { KeyboardEventContext, KeyboardEventContextProvider };
+export { KeyboardEventHandler, Inputs };
