@@ -1,4 +1,3 @@
-import MainScreen from "./MainScreen";
-export { requiredBundles } from "./requiredBundles";
+import { MainScreen } from "./MainScreen";
 
 export default MainScreen;

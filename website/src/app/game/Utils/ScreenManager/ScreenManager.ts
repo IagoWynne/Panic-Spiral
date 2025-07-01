@@ -80,6 +80,8 @@ class ScreenManager {
   private async _removeScreen(screen: GameScreen) {
     await screen.hide?.();
 
+    screen.cleanup();
+
     if (screen.update) {
       this._app.ticker.remove(screen.update);
     }

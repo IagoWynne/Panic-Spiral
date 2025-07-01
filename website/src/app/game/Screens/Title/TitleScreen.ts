@@ -1,10 +1,14 @@
 import { Container, Texture, Ticker, TilingSprite, Text } from "pixi.js";
-import { GameScreen } from "../../Utils/ScreenManager/ScreenManager";
+import {
+  GameScreen,
+  screenManager,
+} from "../../Utils/ScreenManager/ScreenManager";
 import { i18n, i18nKeys } from "../../Utils";
 import { Ship } from "./Ship";
 import { Button } from "../../UI";
 import { AUDIO_FILE_ALIASES, GameAudio } from "../../Utils/audio";
 import { KEY_BINDINGS } from "../../keyBindings";
+import MainScreen from "../Main";
 
 export class TitleScreen extends Container implements GameScreen {
   public static SCREEN_ID = "title";
@@ -40,6 +44,8 @@ export class TitleScreen extends Container implements GameScreen {
       i18n(i18nKeys.START_GAME),
       KEY_BINDINGS.ACCEPT
     );
+    this._startGameButton.onPressed = () =>
+      screenManager.changeScreen(MainScreen);
 
     this.addChild(this._background);
     this.addChild(this._title);
