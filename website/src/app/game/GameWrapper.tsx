@@ -9,9 +9,9 @@ import {
 } from "pixi.js";
 import { RefObject, useEffect, useState } from "react";
 import { initAssets } from "./Utils/assets";
-import { BGMPlayer, SFXPlayer } from "./Utils/audio";
-import { Scene, SceneManager } from "./Utils/sceneManager";
-import { KeyboardEventContextProvider } from "./Utils/keyboardEventHandler";
+import Game from "./Game";
+import { GameAudio, SFXPlayer, BGMPlayer } from "./Utils/audio";
+import { Inputs, KeyboardEventHandler } from "./Utils/keyboardEventHandler";
 
 // extend tells @pixi/react what Pixi.js components are available
 extend({
@@ -27,8 +27,10 @@ interface IGameProps {
   parentRef: HTMLElement | Window | RefObject<HTMLElement | null> | undefined;
 }
 
-const PanicSpiralGame = ({ parentRef }: IGameProps) => {
+const GameWrapper = ({ parentRef }: IGameProps) => {
   const [assetsLoaded, setAssetsLoaded] = useState(false);
+  const [audioInitComplete, setAudioInitComplete] = useState(false);
+  const [inputListenerSetup, setInputListenerSetup] = useState(false);
 
   useEffect(() => {
     if (!assetsLoaded) {
@@ -36,25 +38,30 @@ const PanicSpiralGame = ({ parentRef }: IGameProps) => {
         setAssetsLoaded(true);
       });
     }
+
+    if (!audioInitComplete) {
+      GameAudio.SFX = new SFXPlayer();
+      GameAudio.BGM = new BGMPlayer();
+
+      setAudioInitComplete(true);
+    }
+
+    if (!inputListenerSetup) {
+      Inputs.Keyboard = new KeyboardEventHandler();
+    }
   }, []);
 
   return (
     // wrapping in application provides the pixijs app context
     assetsLoaded && (
-      <KeyboardEventContextProvider>
-        <BGMPlayer>
-          <SFXPlayer>
-            <Application
-              resizeTo={parentRef}
-              defaultTextStyle={{ fontFamily: "Reconstruct", fill: "#ffffff" }}
-            >
-              <SceneManager scene={Scene.Title} />
-            </Application>
-          </SFXPlayer>
-        </BGMPlayer>
-      </KeyboardEventContextProvider>
+      <Application
+        resizeTo={parentRef}
+        defaultTextStyle={{ fontFamily: "Reconstruct", fill: "#ffffff" }}
+      >
+        <Game />
+      </Application>
     )
   );
 };
 
-export default PanicSpiralGame;
+export default GameWrapper;

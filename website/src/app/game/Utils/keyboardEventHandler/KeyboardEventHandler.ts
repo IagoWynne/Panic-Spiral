@@ -27,7 +27,7 @@ export class KeyboardEventHandler implements IKeyboardEventHandler {
     this.addEventListeners();
   }
 
-  release() {
+  public release() {
     this.keyDownHandlers = [];
     this.keyUpHandlers = [];
     this.removeEventListeners();
@@ -43,11 +43,11 @@ export class KeyboardEventHandler implements IKeyboardEventHandler {
     window.removeEventListener("keyup", this.boundOnKeyUp);
   }
 
-  addKeyDownHandler(keyEventHandler: KeyEventHandler) {
+  public addKeyDownHandler(keyEventHandler: KeyEventHandler) {
     this.keyDownHandlers.push(keyEventHandler);
   }
 
-  removeKeyDownHandler(componentId: string, key: string) {
+  public removeKeyDownHandler(componentId: string, key: string) {
     this.removeKeyHandler(componentId, key, this.keyDownHandlers);
   }
 
@@ -65,12 +65,26 @@ export class KeyboardEventHandler implements IKeyboardEventHandler {
     }
   }
 
-  addKeyUpHandler(keyEventHandler: KeyEventHandler) {
+  public addKeyUpHandler(keyEventHandler: KeyEventHandler) {
     this.keyUpHandlers.push(keyEventHandler);
   }
 
-  removeKeyUpHandler(componentId: string, key: string) {
+  public removeKeyUpHandler(componentId: string, key: string) {
     this.removeKeyHandler(componentId, key, this.keyUpHandlers);
+  }
+
+  public removeAllComponentKeyHandlers(componentId: string) {
+    this.keyUpHandlers
+      .filter((handler) => handler.componentId === componentId)
+      .forEach((handler) =>
+        this.removeKeyHandler(componentId, handler.key, this.keyUpHandlers)
+      );
+
+    this.keyDownHandlers
+      .filter((handler) => handler.componentId === componentId)
+      .forEach((handler) =>
+        this.removeKeyHandler(componentId, handler.key, this.keyDownHandlers)
+      );
   }
 
   private onKeyDown(event: KeyboardEvent) {

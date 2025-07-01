@@ -1,5 +1,4 @@
 import { sound } from "@pixi/sound";
-import AUDIO_FILE_ALIASES from "./aliases";
 import ALIAS_FILE_MAP, { AliasFileMap } from "./aliasFileMap";
 
 const baseAudioPath = "audio";

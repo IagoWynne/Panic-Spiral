@@ -1,6 +1,6 @@
 "use client";
 
-import PanicSpiralGame from "./game";
+import Game from "./game";
 import { useRef } from "react";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
       <div ref={gameParentRef}>
-        <PanicSpiralGame parentRef={gameParentRef}/>
+        <Game parentRef={gameParentRef}/>
       </div>
   );
 }

@@ -1,0 +1,4 @@
+export const AUDIO = {
+  BGM_VOLUME_MULTIPLIER: 0.1,
+  SFX_VOLUME_MULTIPLIER: 1,
+};
