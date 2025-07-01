@@ -48,8 +48,10 @@ const GameWrapper = ({ parentRef }: IGameProps) => {
 
     if (!inputListenerSetup) {
       Inputs.Keyboard = new KeyboardEventHandler();
+      setInputListenerSetup(true);
     }
-  }, []);
+    
+  }, [assetsLoaded, audioInitComplete, inputListenerSetup]);
 
   return (
     // wrapping in application provides the pixijs app context
