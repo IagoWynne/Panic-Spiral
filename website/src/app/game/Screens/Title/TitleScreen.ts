@@ -42,7 +42,7 @@ export class TitleScreen extends Container implements GameScreen {
     this._startGameButton = new Button(
       "start-game-button",
       i18n(i18nKeys.START_GAME),
-      KEY_BINDINGS.ACCEPT
+      KEY_BINDINGS.UI.ACCEPT
     );
     this._startGameButton.onPressed = () =>
       screenManager.changeScreen(MainScreen);

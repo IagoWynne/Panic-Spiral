@@ -1,12 +1,29 @@
-import { Container, Sprite, Texture } from "pixi.js";
+import { Inputs } from "@/app/game/Utils/keyboardEventHandler";
+import { Container, Ticker } from "pixi.js";
+import { PlayerMovementController } from "./PlayerMovementController";
 
 export class PlayerCharacter extends Container {
-    constructor() {
-        super();
+  private _componentId: string = "player-character";
+  private _movementController: PlayerMovementController;
 
-        const sprite = new Sprite(Texture.from("player-forward-0"));
-        sprite.anchor = 0.5;
+  constructor() {
+    super();
 
-        this.addChild(sprite);
-    }
+    this._movementController = new PlayerMovementController(
+      this._componentId,
+      this
+    );
+  }
+
+  public update(ticker: Ticker) {
+    this._movementController.update(ticker);
+  }
+
+  public addListeners() {
+    this._movementController.addListeners();
+  }
+
+  public cleanup() {
+    Inputs.Keyboard?.removeAllComponentKeyHandlers(this._componentId);
+  }
 }
