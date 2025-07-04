@@ -1,3 +1,3 @@
-import PSAnimatedSprite from "./PSAnimatedSprite";
+import { Tile } from "./Tile";
 
-export { PSAnimatedSprite };
+export { Tile };
