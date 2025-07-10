@@ -1,9 +1,10 @@
 import { KEY_BINDINGS } from "@/app/game/keyBindings";
 import { Inputs } from "@/app/game/Utils/keyboardEventHandler";
-import { Sprite, AnimatedSprite, Ticker } from "pixi.js";
+import { Sprite, AnimatedSprite, Ticker, Bounds, Graphics } from "pixi.js";
 import { PlayerCharacter } from "./PlayerCharacter";
 import { IdleStates, initIdleStates } from "./state/Idle";
 import { MovingStates, MovingState, initMovingStates } from "./state/Moving";
+import { Tile } from "@/app/game/Components";
 
 export class PlayerMovementController {
   private _moveUpPressed = false;
@@ -12,6 +13,7 @@ export class PlayerMovementController {
   private _moveDownPressed = false;
 
   private _sprite: Sprite | AnimatedSprite;
+  private _collisionBox: Graphics;
 
   private _idleStates: IdleStates;
   private _movingStates: MovingStates;
@@ -20,13 +22,22 @@ export class PlayerMovementController {
 
   constructor(
     private _componentId: string,
-    private _playerCharacter: PlayerCharacter
+    private _playerCharacter: PlayerCharacter,
+    private _walls: Tile[]
   ) {
     this._idleStates = initIdleStates();
     this._movingStates = initMovingStates(this._idleStates);
 
     this._sprite = this._idleStates.right.sprite;
     this._playerCharacter.addChild(this._sprite);
+
+    this._collisionBox = new Graphics();
+
+    // transparent as we don't actually want to see the collision box in game
+    this._collisionBox.strokeStyle = { color: "#ff000000" };
+    this._collisionBox.ellipse(0, 0, 8, 14);
+    this._collisionBox.stroke();
+    this._playerCharacter.addChild(this._collisionBox);
   }
 
   public addListeners() {
@@ -38,13 +49,39 @@ export class PlayerMovementController {
 
   public update(ticker: Ticker) {
     if (this._movingState) {
-      [this._playerCharacter.x, this._playerCharacter.y] =
-        this._movingState?.updatePosition(
-          this._playerCharacter.x,
-          this._playerCharacter.y,
-          ticker.deltaMS
-        );
+      const [newX, newY] = this._movingState?.updatePosition(
+        this._playerCharacter.x,
+        this._playerCharacter.y,
+        ticker.deltaMS
+      );
+
+      if (!this.collides(this.getNewBounds(newX, newY))) {
+        this._playerCharacter.x = newX;
+        this._playerCharacter.y = newY;
+      }
     }
+  }
+
+  private getNewBounds(newX: number, newY: number): Bounds {
+    const [xDiff, yDiff] = [
+      newX - this._playerCharacter.x,
+      newY - this._playerCharacter.y,
+    ];
+    const bounds = this._collisionBox.getBounds();
+    const newBounds = new Bounds(
+      bounds.minX + xDiff,
+      bounds.minY + yDiff,
+      bounds.maxX + xDiff,
+      bounds.maxY + yDiff
+    );
+
+    return newBounds;
+  }
+
+  private collides(newBounds: Bounds): boolean {
+    return this._walls.some((wall) =>
+      wall.collisionZone?.hasCollided(newBounds)
+    );
   }
 
   private updateState(newState?: MovingState) {

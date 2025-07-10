@@ -2,6 +2,7 @@ import { Container, Ticker } from "pixi.js";
 import { GameScreen } from "../../Utils/ScreenManager/ScreenManager";
 import PlayerCharacter from "./PlayerCharacter";
 import Ship from "./Ship";
+import { Tile } from "../../Components";
 
 export class MainScreen extends Container implements GameScreen {
   public static SCREEN_ID = "main";
@@ -15,9 +16,11 @@ export class MainScreen extends Container implements GameScreen {
 
     this._ship = new Ship();
 
-    this._playerCharacter = new PlayerCharacter();
-    this._playerCharacter.x = 100;
-    this._playerCharacter.y = 100;
+    this._playerCharacter = new PlayerCharacter(
+      this._ship.walls.children as Tile[]
+    );
+    this._playerCharacter.x = 20;
+    this._playerCharacter.y = 20;
 
     this.addChild(this._ship);
     this.addChild(this._playerCharacter);

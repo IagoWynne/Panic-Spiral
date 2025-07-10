@@ -1,17 +1,19 @@
-import { Inputs } from "@/app/game/Utils/keyboardEventHandler";
 import { Container, Ticker } from "pixi.js";
 import { PlayerMovementController } from "./PlayerMovementController";
+import { Inputs } from "../../../Utils/keyboardEventHandler";
+import { Tile } from "../../../Components";
 
 export class PlayerCharacter extends Container {
   private _componentId: string = "player-character";
   private _movementController: PlayerMovementController;
 
-  constructor() {
+  constructor(walls: Tile[]) {
     super();
 
     this._movementController = new PlayerMovementController(
       this._componentId,
-      this
+      this,
+      walls
     );
   }
 
