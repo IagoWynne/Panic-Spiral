@@ -51,7 +51,7 @@ export default function RootLayout({
               <Link href="/leaderboard">Leaderboard</Link>
             </div>
           </div>
-          <div className="row-start-2 col-start-2 max-w-[1200px]">
+          <div className="row-start-2 col-start-2 max-w-[1280px] max-h-[800px]">
             {children}
           </div>
         </div>

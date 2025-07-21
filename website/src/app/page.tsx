@@ -7,7 +7,7 @@ export default function Home() {
   const gameParentRef = useRef(null);
 
   return (
-      <div ref={gameParentRef}>
+      <div className="h-[800px]" ref={gameParentRef}>
         <Game parentRef={gameParentRef}/>
       </div>
   );

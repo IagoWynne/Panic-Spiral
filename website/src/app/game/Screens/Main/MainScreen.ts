@@ -1,4 +1,4 @@
-import { Container, Ticker } from "pixi.js";
+import { Container, Texture, Ticker, TilingSprite } from "pixi.js";
 import { GameScreen } from "../../Utils/ScreenManager/ScreenManager";
 import PlayerCharacter from "./PlayerCharacter";
 import Ship from "./Ship";
@@ -10,20 +10,34 @@ export class MainScreen extends Container implements GameScreen {
 
   private _playerCharacter: PlayerCharacter;
   private _ship: Ship;
+  private _background: TilingSprite;
 
   constructor() {
     super();
+
+    this._background = new TilingSprite({
+      texture: Texture.from("pixelart_starfield_corona"),
+    });
 
     this._ship = new Ship();
 
     this._playerCharacter = new PlayerCharacter(
       this._ship.walls.children as Tile[]
     );
-    this._playerCharacter.x = 20;
-    this._playerCharacter.y = 20;
+    this._playerCharacter.x = 900;
+    this._playerCharacter.y = 400;
 
+    this.addChild(this._background);
     this.addChild(this._ship);
     this.addChild(this._playerCharacter);
+  }
+
+  public resize(width: number, height: number) {
+    this._background.width = width;
+    this._background.height = height;
+
+    this._ship.x = width / 2;
+    this._ship.y = height / 2;
   }
 
   public addListeners() {
