@@ -1,26 +1,40 @@
-import { Container } from "pixi.js";
+import { Container, Sprite, Texture } from "pixi.js";
 import { Tile } from "../../../Components";
+import tileMap from "./map.json";
 
 export class Ship extends Container {
-  private _floor = new Container();
   public walls = new Container();
+  private _offsetContainer = new Container();
+  private _floor = new Container();
+  private _background;
 
   constructor() {
     super();
 
-    for (let i = 0; i < 8; i++) {
-      const tile = new Tile(`floor-grey-${i}`, 32 + i * 32, 32);
-      this._floor.addChild(tile);
-    }
+    this._offsetContainer.x = -400;
+    this._offsetContainer.y = -272;
 
-    for (let i = 0; i < 7; i++) {
-      const wall = new Tile(`wall-grey-${i}`, 32 + i * 32, 128, true);
-      this.walls.addChild(wall);
-    }
+    tileMap.rooms.forEach((r) => {
+      r.walls.forEach((tile) => {
+        const wall = new Tile(tile.sprite, tile.x * 32, tile.y * 32, true);
+        this.walls.addChild(wall);
+      });
 
-    this.walls.addChild(new Tile("wall-grey-6", 200, 200, true));
+      r.floors.forEach((tile) => {
+        const floor = new Tile(tile.sprite, tile.x * 32, tile.y * 32, false);
+        this._floor.addChild(floor);
+      });
+    });
 
-    this.addChild(this._floor);
-    this.addChild(this.walls);
+    this._background = new Sprite(Texture.from("title-ship"));
+    this._background.scale.set(3.2);
+    this._background.rotation = 0.5 * Math.PI;
+    this._background.anchor = 0.5;
+
+    this._offsetContainer.addChild(this._floor);
+    this._offsetContainer.addChild(this.walls);
+
+    this.addChild(this._background);
+    this.addChild(this._offsetContainer);
   }
 }

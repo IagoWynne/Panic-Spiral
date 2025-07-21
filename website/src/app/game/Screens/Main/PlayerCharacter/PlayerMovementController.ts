@@ -35,7 +35,7 @@ export class PlayerMovementController {
 
     // transparent as we don't actually want to see the collision box in game
     this._collisionBox.strokeStyle = { color: "#ff000000" };
-    this._collisionBox.ellipse(0, 0, 8, 14);
+    this._collisionBox.ellipse(0, 8, 4, 4);
     this._collisionBox.stroke();
     this._playerCharacter.addChild(this._collisionBox);
   }
