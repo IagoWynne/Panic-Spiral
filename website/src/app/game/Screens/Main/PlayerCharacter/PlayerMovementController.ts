@@ -4,7 +4,7 @@ import { Sprite, AnimatedSprite, Ticker, Bounds, Graphics } from "pixi.js";
 import { PlayerCharacter } from "./PlayerCharacter";
 import { IdleStates, initIdleStates } from "./state/Idle";
 import { MovingStates, MovingState, initMovingStates } from "./state/Moving";
-import { Tile } from "@/app/game/Components";
+import { NavigationService } from "../NavigationService";
 
 export class PlayerMovementController {
   private _moveUpPressed = false;
@@ -23,7 +23,7 @@ export class PlayerMovementController {
   constructor(
     private _componentId: string,
     private _playerCharacter: PlayerCharacter,
-    private _walls: Tile[]
+    private _navigationService: NavigationService
   ) {
     this._idleStates = initIdleStates();
     this._movingStates = initMovingStates(this._idleStates);
@@ -55,7 +55,7 @@ export class PlayerMovementController {
         ticker.deltaMS
       );
 
-      if (!this.collides(this.getNewBounds(newX, newY))) {
+      if (!this._navigationService.collides(this.getNewBounds(newX, newY))) {
         this._playerCharacter.x = newX;
         this._playerCharacter.y = newY;
       }
@@ -76,12 +76,6 @@ export class PlayerMovementController {
     );
 
     return newBounds;
-  }
-
-  private collides(newBounds: Bounds): boolean {
-    return this._walls.some((wall) =>
-      wall.collisionZone?.hasCollided(newBounds)
-    );
   }
 
   private updateState(newState?: MovingState) {

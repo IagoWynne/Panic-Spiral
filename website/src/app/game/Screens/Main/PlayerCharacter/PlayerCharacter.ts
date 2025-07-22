@@ -2,18 +2,19 @@ import { Container, Ticker } from "pixi.js";
 import { PlayerMovementController } from "./PlayerMovementController";
 import { Inputs } from "../../../Utils/keyboardEventHandler";
 import { Tile } from "../../../Components";
+import { NavigationService } from "../NavigationService";
 
 export class PlayerCharacter extends Container {
   private _componentId: string = "player-character";
   private _movementController: PlayerMovementController;
 
-  constructor(walls: Tile[]) {
+  constructor(navigationService: NavigationService) {
     super();
 
     this._movementController = new PlayerMovementController(
       this._componentId,
       this,
-      walls
+      navigationService
     );
   }
 
