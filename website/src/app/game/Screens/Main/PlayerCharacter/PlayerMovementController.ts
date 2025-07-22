@@ -55,9 +55,13 @@ export class PlayerMovementController {
         ticker.deltaMS
       );
 
-      if (!this._navigationService.collides(this.getNewBounds(newX, newY))) {
+      const bounds = this.getNewBounds(newX, newY);
+
+      if (!this._navigationService.collides(bounds)) {
         this._playerCharacter.x = newX;
         this._playerCharacter.y = newY;
+
+        this._navigationService.checkInteractionZones(bounds);
       }
     }
   }

@@ -22,7 +22,7 @@ export class MainScreen extends Container implements GameScreen {
     });
 
     this._ship = new Ship();
-    this._navigationService = new NavigationService(this._ship.walls.children as Tile[]);
+    this._navigationService = new NavigationService([...this._ship.walls.children, ...this._ship.decorations.children] as Tile[]);
 
     this._playerCharacter = new PlayerCharacter(
       this._navigationService
