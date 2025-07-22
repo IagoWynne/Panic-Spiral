@@ -3,6 +3,7 @@ import { GameScreen } from "../../Utils/ScreenManager/ScreenManager";
 import PlayerCharacter from "./PlayerCharacter";
 import Ship from "./Ship";
 import { Tile } from "../../Components";
+import { NavigationService } from "./NavigationService";
 
 export class MainScreen extends Container implements GameScreen {
   public static SCREEN_ID = "main";
@@ -11,6 +12,7 @@ export class MainScreen extends Container implements GameScreen {
   private _playerCharacter: PlayerCharacter;
   private _ship: Ship;
   private _background: TilingSprite;
+  private _navigationService: NavigationService;
 
   constructor() {
     super();
@@ -20,9 +22,10 @@ export class MainScreen extends Container implements GameScreen {
     });
 
     this._ship = new Ship();
+    this._navigationService = new NavigationService(this._ship.walls.children as Tile[]);
 
     this._playerCharacter = new PlayerCharacter(
-      this._ship.walls.children as Tile[]
+      this._navigationService
     );
     this._playerCharacter.x = 900;
     this._playerCharacter.y = 400;
@@ -50,6 +53,7 @@ export class MainScreen extends Container implements GameScreen {
 
   public cleanup() {
     this._playerCharacter.cleanup();
+    this._navigationService.cleanup();
     this.destroy({ children: true });
   }
 }
