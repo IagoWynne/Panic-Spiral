@@ -1,4 +1,5 @@
 import { Tile } from "./Tile";
-import { CollisionZone } from "./CollisionZone";
+import { Zone } from "./Zone";
+import { InteractionZone } from "./InteractionZone";
 
-export { Tile, CollisionZone };
+export { Tile, Zone, InteractionZone };

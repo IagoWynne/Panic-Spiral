@@ -4,6 +4,7 @@ import tileMap from "./map.json";
 
 export class Ship extends Container {
   public walls = new Container();
+  public decorations = new Container();
   private _offsetContainer = new Container();
   private _floor = new Container();
   private _background;
@@ -24,6 +25,17 @@ export class Ship extends Container {
         const floor = new Tile(tile.sprite, tile.x * 32, tile.y * 32, false);
         this._floor.addChild(floor);
       });
+
+      r.system?.forEach((tile) => {
+        const system = new Tile(
+          tile.sprite,
+          tile.x * 32,
+          tile.y * 32,
+          false,
+          true
+        );
+        this.decorations.addChild(system);
+      });
     });
 
     this._background = new Sprite(Texture.from("title-ship"));
@@ -32,6 +44,7 @@ export class Ship extends Container {
     this._background.anchor = 0.5;
 
     this._offsetContainer.addChild(this._floor);
+    this._offsetContainer.addChild(this.decorations);
     this._offsetContainer.addChild(this.walls);
 
     this.addChild(this._background);

@@ -1,17 +1,20 @@
 import { Bounds } from "pixi.js";
-import { Tile, CollisionZone } from "../../Components";
+import { InteractionZone, Tile, Zone } from "../../Components";
 
 export class NavigationService {
-  private _collisionObjects: CollisionZone[];
+  private _collisionObjects: Zone[] = [];
+  private _interactableObjects: InteractionZone[] = [];
 
   constructor(map: Tile[]) {
-    this._collisionObjects = map.reduce((acc: CollisionZone[], t: Tile) => {
+    map.forEach((t: Tile) => {
       if (t.collisionZone) {
-        acc.push(t.collisionZone);
+        this._collisionObjects.push(t.collisionZone);
       }
 
-      return acc;
-    }, []);
+      if (t.interactionZone) {
+        this._interactableObjects.push(t.interactionZone);
+      }
+    });
   }
 
   public collides(bounds: Bounds): boolean {
@@ -27,6 +30,20 @@ export class NavigationService {
       boundsA.y < boundsB.y + boundsB.height &&
       boundsA.y + boundsA.height > boundsB.y
     );
+  }
+
+  public checkInteractionZones(bounds: Bounds) {
+    this._interactableObjects
+      .filter((obj) => obj.enabled)
+      .forEach((obj) => {
+        const isOverlapping = this.isOverlapping(bounds, obj.getBounds());
+
+        if (obj.playerInZone && !isOverlapping) {
+          obj.onExit();
+        } else if (!obj.playerInZone && isOverlapping) {
+          obj.onEnter();
+        }
+      });
   }
 
   public cleanup() {

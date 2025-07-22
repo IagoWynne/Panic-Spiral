@@ -165,6 +165,23 @@
           "y": 11,
           "sprite": "floor-grey-3"
         }
+      ],
+      "system": [
+        {
+          "x": 2,
+          "y": 7,
+          "sprite": "floor-grey-decoration-grate-2"
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "sprite": "floor-grey-decoration-grate-2"
+        },
+        {
+          "x": 2,
+          "y": 9,
+          "sprite": "floor-grey-decoration-grate-2"
+        }
       ]
     },
     {
