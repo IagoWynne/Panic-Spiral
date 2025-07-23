@@ -4,7 +4,6 @@ import { InteractionZone } from "./InteractionZone";
 
 export class Tile extends Container {
   public collisionZone?: Zone;
-  public interactionZone?: InteractionZone;
   private _sprite: Sprite;
 
   constructor(
@@ -12,7 +11,6 @@ export class Tile extends Container {
     x: number,
     y: number,
     collidable = false,
-    interactable = false
   ) {
     super();
     this._sprite = new Sprite(Texture.from(alias));
@@ -25,10 +23,6 @@ export class Tile extends Container {
 
     if (collidable) {
       this.collisionZone = new Zone(collidable, this);
-    }
-
-    if (interactable) {
-      this.interactionZone = new InteractionZone(true, this);
     }
   }
 

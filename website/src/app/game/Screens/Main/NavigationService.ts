@@ -1,20 +1,21 @@
 import { Bounds } from "pixi.js";
 import { InteractionZone, Tile, Zone } from "../../Components";
+import { System } from "./Ship";
 
 export class NavigationService {
   private _collisionObjects: Zone[] = [];
   private _interactableObjects: InteractionZone[] = [];
 
-  constructor(map: Tile[]) {
-    map.forEach((t: Tile) => {
+  constructor(map: { tiles: Tile[]; systems: System[] }) {
+    map.tiles.forEach((t: Tile) => {
       if (t.collisionZone) {
         this._collisionObjects.push(t.collisionZone);
       }
-
-      if (t.interactionZone) {
-        this._interactableObjects.push(t.interactionZone);
-      }
     });
+
+    map.systems.forEach((s: System) =>
+      this._interactableObjects.push(s.interactionZone)
+    );
   }
 
   public collides(bounds: Bounds): boolean {

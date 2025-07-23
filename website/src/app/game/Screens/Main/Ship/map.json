@@ -166,21 +166,17 @@
           "sprite": "floor-grey-3"
         }
       ],
-      "system": [
+      "systems": [
         {
-          "x": 2,
-          "y": 7,
-          "sprite": "floor-grey-decoration-grate-2"
-        },
-        {
-          "x": 2,
-          "y": 8,
-          "sprite": "floor-grey-decoration-grate-2"
-        },
-        {
-          "x": 2,
-          "y": 9,
-          "sprite": "floor-grey-decoration-grate-2"
+          "name": "Engine",
+          "position": {
+            "x": 2,
+            "y": 7
+          },
+          "interactionZone": {
+            "x": 1.5,
+            "y": 3
+          }
         }
       ]
     },

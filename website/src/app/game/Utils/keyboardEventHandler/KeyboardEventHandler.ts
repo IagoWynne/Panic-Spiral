@@ -92,8 +92,10 @@ export class KeyboardEventHandler implements IKeyboardEventHandler {
   }
 
   private onKeyEvent(event: KeyboardEvent, handlers: KeyEventHandler[]) {
+    const key = event.key.toLowerCase();
+
     handlers
-      .filter((handler) => handler.key === event.key)
+      .filter((handler) => handler.key === key)
       .forEach((handler) => handler.action());
   }
 
