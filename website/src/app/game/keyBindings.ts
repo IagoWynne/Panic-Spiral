@@ -7,5 +7,6 @@ export const KEY_BINDINGS = {
     MOVE_LEFT: "a",
     MOVE_DOWN: "s",
     MOVE_RIGHT: "d",
+    INTERACT: "e"
   },
 };

@@ -1,7 +1,7 @@
 import { Container, Texture, Ticker, TilingSprite } from "pixi.js";
 import { GameScreen } from "../../Utils/ScreenManager/ScreenManager";
 import PlayerCharacter from "./PlayerCharacter";
-import Ship from "./Ship";
+import Ship, { System } from "./Ship";
 import { Tile } from "../../Components";
 import { NavigationService } from "./NavigationService";
 
@@ -22,11 +22,12 @@ export class MainScreen extends Container implements GameScreen {
     });
 
     this._ship = new Ship();
-    this._navigationService = new NavigationService([...this._ship.walls.children, ...this._ship.decorations.children] as Tile[]);
+    this._navigationService = new NavigationService({
+      tiles: this._ship.walls.children as Tile[],
+      systems: this._ship.systems.children as System[],
+    });
 
-    this._playerCharacter = new PlayerCharacter(
-      this._navigationService
-    );
+    this._playerCharacter = new PlayerCharacter(this._navigationService);
     this._playerCharacter.x = 900;
     this._playerCharacter.y = 400;
 

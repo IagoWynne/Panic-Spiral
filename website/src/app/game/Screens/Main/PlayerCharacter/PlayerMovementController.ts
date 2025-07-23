@@ -13,7 +13,6 @@ export class PlayerMovementController {
   private _moveDownPressed = false;
 
   private _sprite: Sprite | AnimatedSprite;
-  private _collisionBox: Graphics;
 
   private _idleStates: IdleStates;
   private _movingStates: MovingStates;
@@ -30,14 +29,6 @@ export class PlayerMovementController {
 
     this._sprite = this._idleStates.right.sprite;
     this._playerCharacter.addChild(this._sprite);
-
-    this._collisionBox = new Graphics();
-
-    // transparent as we don't actually want to see the collision box in game
-    this._collisionBox.strokeStyle = { color: "#ff000000" };
-    this._collisionBox.ellipse(0, 8, 4, 4);
-    this._collisionBox.stroke();
-    this._playerCharacter.addChild(this._collisionBox);
   }
 
   public addListeners() {
@@ -71,7 +62,7 @@ export class PlayerMovementController {
       newX - this._playerCharacter.x,
       newY - this._playerCharacter.y,
     ];
-    const bounds = this._collisionBox.getBounds();
+    const bounds = this._playerCharacter.collisionBox.getBounds();
     const newBounds = new Bounds(
       bounds.minX + xDiff,
       bounds.minY + yDiff,
