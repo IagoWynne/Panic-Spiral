@@ -1,7 +1,7 @@
 {
   "rooms": [
     {
-      "name": "Engine Room",
+      "name": "Engine",
       "walls": [
         {
           "x": 1,
@@ -166,6 +166,48 @@
           "sprite": "floor-grey-3"
         }
       ],
+      "decorations": [
+        {
+          "x": 2,
+          "y": 7,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Engine",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Engine",
+              "sprite": null
+            }
+          ]
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "sprite": "decoration-screen-0",
+          "changes": []
+        },
+        {
+          "x": 2,
+          "y": 9,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Engine",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Engine",
+              "sprite": null
+            }
+          ]
+        }
+      ],
       "systems": [
         {
           "name": "Engine",
@@ -176,7 +218,9 @@
           "interactionZone": {
             "x": 1.5,
             "y": 3
-          }
+          },
+          "cooldown": 2000,
+          "breakdownRate": 0.0005
         }
       ]
     },

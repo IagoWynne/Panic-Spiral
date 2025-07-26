@@ -1,6 +1,6 @@
 import { Bounds } from "pixi.js";
 import { InteractionZone, Tile, Zone } from "../../Components";
-import { System } from "./Ship";
+import { System } from "./Systems";
 
 export class NavigationService {
   private _collisionObjects: Zone[] = [];
@@ -35,7 +35,6 @@ export class NavigationService {
 
   public checkInteractionZones(bounds: Bounds) {
     this._interactableObjects
-      .filter((obj) => obj.enabled)
       .forEach((obj) => {
         const isOverlapping = this.isOverlapping(bounds, obj.getBounds());
 
