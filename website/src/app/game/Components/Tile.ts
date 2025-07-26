@@ -4,7 +4,7 @@ import { InteractionZone } from "./InteractionZone";
 
 export class Tile extends Container {
   public collisionZone?: Zone;
-  private _sprite: Sprite;
+  protected _sprite: Sprite;
 
   constructor(
     alias: string,
