@@ -20,7 +20,7 @@ export class Decoration extends Tile {
     y: number,
     changes: DecorationChangeEvent[]
   ) {
-    super(alias, x, y);
+    super(alias);
     this._currentSprite = this._sprite;
 
     this._id = `${alias}_${x}_${y}`;
