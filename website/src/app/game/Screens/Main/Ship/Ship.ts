@@ -1,5 +1,5 @@
 import { Container, Graphics, Sprite, Texture } from "pixi.js";
-import { Tile } from "../../../Components";
+import { Tile, TileGrid } from "../../../Components";
 import tileMap from "./map.json";
 import { System } from "../Systems/System";
 import { buildSystem, Engine, SystemEvents } from "../Systems";
@@ -8,12 +8,12 @@ import { Decoration, DecorationChangeEvent } from "./Decoration";
 const TILE_SIZE = 32;
 
 export class Ship extends Container {
-  public walls = new Container();
+  public walls = new TileGrid(TILE_SIZE);
   public systems = new Container();
 
   private _offsetContainer = new Container();
-  private _floor = new Container();
-  private _decorations = new Container();
+  private _floor = new TileGrid(TILE_SIZE);
+  private _decorations = new TileGrid(TILE_SIZE);
   private _background;
   private _componentId = "main-screen-ship";
 
@@ -44,24 +44,19 @@ export class Ship extends Container {
       r.walls.forEach((tile) => {
         const wall = new Tile(
           tile.sprite,
-          tile.x * TILE_SIZE,
-          tile.y * TILE_SIZE,
           true
         );
 
-        this.walls.addChild(wall);
+        this.walls.addTile(wall, tile.x, tile.y);
       });
 
       r.floors.forEach((tile) => {
-        const x = tile.x * TILE_SIZE;
-        const y = tile.y * TILE_SIZE;
+        const floor = new Tile(tile.sprite, false);
 
-        const floor = new Tile(tile.sprite, x, y, false);
-
-        this._floor.addChild(floor);
+        this._floor.addTile(floor, tile.x, tile.y);
 
         const lighting = new Graphics();
-        lighting.rect(x, y, TILE_SIZE, TILE_SIZE);
+        lighting.rect(floor.x, floor.y, TILE_SIZE, TILE_SIZE);
         lighting.fill({ color: "#ff000022" });
         floorLighting.addChild(lighting);
       });
@@ -71,12 +66,12 @@ export class Ship extends Container {
       r.decorations?.forEach((decoration) => {
         const dec = new Decoration(
           decoration.sprite,
-          decoration.x * TILE_SIZE,
-          decoration.y * TILE_SIZE,
+          decoration.x,
+          decoration.y,
           decoration.changes as DecorationChangeEvent[]
         );
 
-        this._decorations.addChild(dec);
+        this._decorations.addTile(dec, decoration.x, decoration.y);
       });
 
       r.systems?.forEach((s) => {

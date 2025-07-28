@@ -8,16 +8,11 @@ export class Tile extends Container {
 
   constructor(
     alias: string,
-    x: number,
-    y: number,
     collidable = false,
   ) {
     super();
     this._sprite = new Sprite(Texture.from(alias));
     this._sprite.scale.set(0.5);
-
-    this.x = x;
-    this.y = y;
 
     this.addChild(this._sprite);
 
