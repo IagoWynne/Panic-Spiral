@@ -8,6 +8,7 @@ const AUDIO_FILE_ALIASES = {
   },
   MAIN: {
     SYSTEM_BREAK: "system-break",
+    SYSTEM_REPAIR: "system-repair"
   },
 };
 
