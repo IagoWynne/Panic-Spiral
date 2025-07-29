@@ -6,6 +6,9 @@ const AUDIO_FILE_ALIASES = {
   TITLE: {
     BGM: "title-bgm-01",
   },
+  MAIN: {
+    SYSTEM_BREAK: "system-break",
+  },
 };
 
 export default AUDIO_FILE_ALIASES;

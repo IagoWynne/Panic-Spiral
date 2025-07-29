@@ -7,6 +7,7 @@ import {
   SYSTEM_TOOLTIP_OFFSET,
 } from "../../../constants/Systems";
 import { UIEvents } from "../UI";
+import { AUDIO_FILE_ALIASES, GameAudio } from "@/app/game/Utils/audio";
 
 export abstract class System extends Container {
   public interactionZone: InteractionZone;
@@ -102,6 +103,7 @@ export abstract class System extends Container {
     }
 
     SystemEvents.onSystemBreakdown(this.id);
+    GameAudio.SFX?.play(AUDIO_FILE_ALIASES.MAIN.SYSTEM_BREAK);
   }
 
   protected onRepair() {
