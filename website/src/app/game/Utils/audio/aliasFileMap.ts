@@ -1,8 +1,8 @@
 import AUDIO_FILE_ALIASES from "./aliases";
 
 export interface AliasFileMap {
-    alias: string;
-    file: string;
+  alias: string;
+  file: string;
 }
 
 const ALIAS_FILE_MAP = {
@@ -10,6 +10,9 @@ const ALIAS_FILE_MAP = {
     UI: [
       { alias: AUDIO_FILE_ALIASES.UI.BUTTON_CLICK, file: "button-click.wav" },
       { alias: AUDIO_FILE_ALIASES.UI.BUTTON_HOVER, file: "button-hover.wav" },
+    ],
+    MAIN: [
+      { alias: AUDIO_FILE_ALIASES.MAIN.SYSTEM_BREAK, file: "system-break.wav" },
     ],
   },
   BGM: {
