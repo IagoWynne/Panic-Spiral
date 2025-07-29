@@ -4,6 +4,7 @@ import tileMap from "./map.json";
 import { System } from "../Systems/System";
 import { buildSystem, Engine, SystemEvents } from "../Systems";
 import { Decoration, DecorationChangeEvent } from "./Decoration";
+import { GRID_OFFSET } from "@/app/game/constants/Map";
 
 const TILE_SIZE = 32;
 
@@ -20,8 +21,8 @@ export class Ship extends Container {
   constructor() {
     super();
 
-    this._offsetContainer.x = -400;
-    this._offsetContainer.y = -272;
+    this._offsetContainer.x = GRID_OFFSET.X;
+    this._offsetContainer.y = GRID_OFFSET.Y;
 
     tileMap.rooms.forEach((r) => {
       const floorLighting = new Container();
@@ -92,9 +93,9 @@ export class Ship extends Container {
     this._background.anchor = 0.5;
 
     this._offsetContainer.addChild(this._floor);
-    this._offsetContainer.addChild(this.systems);
     this._offsetContainer.addChild(this.walls);
     this._offsetContainer.addChild(this._decorations);
+    this._offsetContainer.addChild(this.systems);
 
     this.addChild(this._background);
     this.addChild(this._offsetContainer);

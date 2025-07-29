@@ -1,3 +1,4 @@
 import Button from "./Button";
+import Tooltip from "./Tooltip";
 
-export { Button };
+export { Button, Tooltip };

@@ -10,14 +10,20 @@ export class InteractionZone extends Zone {
     private id: string,
     enabled: boolean,
     zone: Container,
-    private onInteract: () => void
+    private onInteract: () => void,
+    private _onEnter?: () => void,
+    private _onExit?: () => void
   ) {
     super(enabled, zone);
   }
 
   public onEnter() {
     this.playerInZone = true;
-    console.log(`Player entered ${this.id}`);
+
+    if (this._onEnter) {
+      this._onEnter();
+    }
+
     Inputs.Keyboard?.addKeyUpHandler({
       key: KEY_BINDINGS.PLAYER_CONTROLS.INTERACT,
       action: this.onInteract,
@@ -27,7 +33,11 @@ export class InteractionZone extends Zone {
 
   public onExit() {
     this.playerInZone = false;
-    console.log(`Player exited ${this.id}`);
+
+    if (this._onExit) {
+      this._onExit();
+    }
+
     Inputs.Keyboard?.removeKeyUpHandler(
       this.id,
       KEY_BINDINGS.PLAYER_CONTROLS.INTERACT

@@ -1,4 +1,5 @@
 {
   "GAME_NAME": "Panic Spiral",
-  "START_GAME": "Start Game"
+  "START_GAME": "Start Game",
+  "REPAIR_INSTRUCTIONS": "Press '%s' to repair broken system."
 }
