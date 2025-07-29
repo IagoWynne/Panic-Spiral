@@ -13,6 +13,10 @@ const ALIAS_FILE_MAP = {
     ],
     MAIN: [
       { alias: AUDIO_FILE_ALIASES.MAIN.SYSTEM_BREAK, file: "system-break.wav" },
+      {
+        alias: AUDIO_FILE_ALIASES.MAIN.SYSTEM_REPAIR,
+        file: "system-repair.wav",
+      },
     ],
   },
   BGM: {

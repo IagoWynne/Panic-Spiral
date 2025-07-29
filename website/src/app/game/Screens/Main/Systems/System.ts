@@ -112,5 +112,6 @@ export abstract class System extends Container {
     this.broken = false;
     this.closeInteractionTooltip();
     SystemEvents.onSystemRepaired(this.id);
+    GameAudio.SFX?.play(AUDIO_FILE_ALIASES.MAIN.SYSTEM_REPAIR);
   }
 }
