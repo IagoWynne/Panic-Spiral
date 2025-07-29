@@ -1,20 +1,27 @@
+import { Container, Graphics } from "pixi.js";
 import { InteractionZone } from "../../../Components";
 import { Inputs } from "../../../Utils/keyboardEventHandler";
-import { Container, Graphics } from "pixi.js";
 import SystemEvents from "./SystemEvents";
+import {
+  DEFAULT_INTERACTION_TEXT,
+  SYSTEM_TOOLTIP_OFFSET,
+} from "../../../constants/Systems";
+import { UIEvents } from "../UI";
 
 export abstract class System extends Container {
   public interactionZone: InteractionZone;
   public broken: boolean = false;
   private _collisionBox: Graphics;
   private _currentCooldown: number = 0;
+  private _tooltipId?: string;
 
   constructor(
     private id: string,
     tileSize: number,
     interactionZoneWidth: number,
     interactionZoneHeight: number,
-    private cooldown: number
+    private cooldown: number,
+    private tooltipText: string = DEFAULT_INTERACTION_TEXT
   ) {
     super();
 
@@ -25,7 +32,7 @@ export abstract class System extends Container {
         interactionZoneWidth * tileSize,
         interactionZoneHeight * tileSize
       )
-      .stroke({ color: "#0000ffff" });
+      .stroke({ color: "#00000000" });
 
     this.addChild(this._collisionBox);
 
@@ -33,12 +40,43 @@ export abstract class System extends Container {
       this.id,
       false,
       this._collisionBox,
-      this.onInteract.bind(this)
+      this.onInteract.bind(this),
+      this.onEnter.bind(this),
+      this.onExit.bind(this)
     );
   }
 
   public cleanup() {
     Inputs.Keyboard?.removeAllComponentKeyHandlers(this.id);
+  }
+
+  private onEnter() {
+    if (this.broken) {
+      this.openInteractionTooltip();
+    }
+  }
+
+  private openInteractionTooltip() {
+    this._tooltipId = UIEvents.openTooltip({
+      text: this.tooltipText,
+      position: {
+        x: this.x + SYSTEM_TOOLTIP_OFFSET.X,
+        y: this.y + SYSTEM_TOOLTIP_OFFSET.Y + SYSTEM_TOOLTIP_OFFSET.Y_MODIFIER,
+      },
+    });
+  }
+
+  private onExit() {
+    if (this.broken) {
+      this.closeInteractionTooltip();
+    }
+  }
+
+  private closeInteractionTooltip() {
+    if (this._tooltipId) {
+      UIEvents.closeTooltip(this._tooltipId);
+      this._tooltipId = undefined;
+    }
   }
 
   private onInteract() {
@@ -58,6 +96,11 @@ export abstract class System extends Container {
   protected onBreakdown() {
     this.interactionZone.enabled = true;
     this.broken = true;
+
+    if (this.interactionZone.playerInZone) {
+      this.openInteractionTooltip();
+    }
+
     SystemEvents.onSystemBreakdown(this.id);
   }
 
@@ -65,6 +108,7 @@ export abstract class System extends Container {
     this._currentCooldown = this.cooldown;
     this.interactionZone.enabled = false;
     this.broken = false;
+    this.closeInteractionTooltip();
     SystemEvents.onSystemRepaired(this.id);
   }
 }

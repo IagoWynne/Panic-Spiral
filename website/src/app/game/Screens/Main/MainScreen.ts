@@ -6,6 +6,7 @@ import { Tile } from "../../Components";
 import { NavigationService } from "./NavigationService";
 import { System, SystemEvents, SystemsManager } from "./Systems";
 import { SYSTEM_IDS } from "../../constants/Systems";
+import { GameUI } from "./UI";
 
 export class MainScreen extends Container implements GameScreen {
   public static SCREEN_ID = "main";
@@ -16,6 +17,7 @@ export class MainScreen extends Container implements GameScreen {
   private _background: TilingSprite;
   private _navigationService: NavigationService;
   private _systemsManager: SystemsManager;
+  private _ui: GameUI;
 
   constructor() {
     super();
@@ -37,9 +39,12 @@ export class MainScreen extends Container implements GameScreen {
     this._playerCharacter.x = 900;
     this._playerCharacter.y = 400;
 
+    this._ui = new GameUI();
+
     this.addChild(this._background);
     this.addChild(this._ship);
     this.addChild(this._playerCharacter);
+    this.addChild(this._ui);
   }
 
   public resize(width: number, height: number) {
