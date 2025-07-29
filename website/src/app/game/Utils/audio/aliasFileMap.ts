@@ -21,6 +21,7 @@ const ALIAS_FILE_MAP = {
   },
   BGM: {
     TITLE: [{ alias: AUDIO_FILE_ALIASES.TITLE.BGM, file: "title-bgm-01.wav" }],
+    MAIN: [{ alias: AUDIO_FILE_ALIASES.MAIN.BGM, file: "main-bgm-01.wav" }],
   },
 };
 
