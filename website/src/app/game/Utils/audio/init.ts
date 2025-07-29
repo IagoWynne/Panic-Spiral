@@ -19,6 +19,7 @@ export const initSfx = () => {
 
 export const initBgm = () => {
   initTitleBgm();
+  initMainBgm();
 };
 
 const getFullUiPath = (filename: string) =>
@@ -45,4 +46,8 @@ const getFullBgmPath = (filename: string) =>
 
 const initTitleBgm = () => {
   mapAliasFiles(ALIAS_FILE_MAP.BGM.TITLE, getFullBgmPath);
+};
+
+const initMainBgm = () => {
+  mapAliasFiles(ALIAS_FILE_MAP.BGM.MAIN, getFullBgmPath);
 };

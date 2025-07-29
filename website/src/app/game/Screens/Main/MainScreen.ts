@@ -7,6 +7,7 @@ import { NavigationService } from "./NavigationService";
 import { System, SystemEvents, SystemsManager } from "./Systems";
 import { SYSTEM_IDS } from "../../constants/Systems";
 import { GameUI } from "./UI";
+import { AUDIO_FILE_ALIASES, GameAudio } from "../../Utils/audio";
 
 export class MainScreen extends Container implements GameScreen {
   public static SCREEN_ID = "main";
@@ -45,6 +46,8 @@ export class MainScreen extends Container implements GameScreen {
     this.addChild(this._ship);
     this.addChild(this._playerCharacter);
     this.addChild(this._ui);
+
+    GameAudio.BGM?.play(AUDIO_FILE_ALIASES.MAIN.BGM);
   }
 
   public resize(width: number, height: number) {

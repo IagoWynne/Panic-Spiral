@@ -7,8 +7,9 @@ const AUDIO_FILE_ALIASES = {
     BGM: "title-bgm-01",
   },
   MAIN: {
+    BGM: "main-bgm-01",
     SYSTEM_BREAK: "system-break",
-    SYSTEM_REPAIR: "system-repair"
+    SYSTEM_REPAIR: "system-repair",
   },
 };
 
