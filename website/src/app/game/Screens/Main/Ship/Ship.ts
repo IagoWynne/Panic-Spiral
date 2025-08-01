@@ -1,21 +1,20 @@
 import { Container, Graphics, Sprite, Texture } from "pixi.js";
-import { Tile, TileGrid } from "../../../Components";
+import { ShipExhaust, Tile, TileGrid } from "../../../Components";
 import tileMap from "./map.json";
-import { System } from "../Systems/System";
-import { buildSystem, Engine, SystemEvents } from "../Systems";
+import { buildSystem, SystemEvents } from "../Systems";
 import { Decoration, DecorationChangeEvent } from "./Decoration";
-import { GRID_OFFSET } from "@/app/game/constants/Map";
-
-const TILE_SIZE = 32;
+import { GRID_OFFSET } from "../../../constants/Map";
+import { MAIN } from "../../../constants";
 
 export class Ship extends Container {
-  public walls = new TileGrid(TILE_SIZE);
+  public walls = new TileGrid(MAIN.SHIP.TILE_SIZE);
   public systems = new Container();
 
   private _offsetContainer = new Container();
-  private _floor = new TileGrid(TILE_SIZE);
-  private _decorations = new TileGrid(TILE_SIZE);
-  private _background;
+  private _floor = new TileGrid(MAIN.SHIP.TILE_SIZE);
+  private _decorations = new TileGrid(MAIN.SHIP.TILE_SIZE);
+  private _background: Sprite;
+  private _exhaust: ShipExhaust;
   private _componentId = "main-screen-ship";
 
   constructor() {
@@ -43,10 +42,7 @@ export class Ship extends Container {
       });
 
       r.walls.forEach((tile) => {
-        const wall = new Tile(
-          tile.sprite,
-          true
-        );
+        const wall = new Tile(tile.sprite, true);
 
         this.walls.addTile(wall, tile.x, tile.y);
       });
@@ -57,8 +53,13 @@ export class Ship extends Container {
         this._floor.addTile(floor, tile.x, tile.y);
 
         const lighting = new Graphics();
-        lighting.rect(floor.x, floor.y, TILE_SIZE, TILE_SIZE);
-        lighting.fill({ color: "#ff000022" });
+        lighting.rect(
+          floor.x,
+          floor.y,
+          MAIN.SHIP.TILE_SIZE,
+          MAIN.SHIP.TILE_SIZE
+        );
+        lighting.fill({ color: MAIN.SHIP.EMERGENCY_LIGHTING_COLOUR });
         floorLighting.addChild(lighting);
       });
 
@@ -76,11 +77,11 @@ export class Ship extends Container {
       });
 
       r.systems?.forEach((s) => {
-        const system = buildSystem(s, TILE_SIZE);
+        const system = buildSystem(s, MAIN.SHIP.TILE_SIZE);
 
         if (system) {
-          system.x = s.position.x * TILE_SIZE;
-          system.y = s.position.y * TILE_SIZE;
+          system.x = s.position.x * MAIN.SHIP.TILE_SIZE;
+          system.y = s.position.y * MAIN.SHIP.TILE_SIZE;
 
           this.systems.addChild(system);
         }
@@ -88,15 +89,20 @@ export class Ship extends Container {
     });
 
     this._background = new Sprite(Texture.from("title-ship"));
-    this._background.scale.set(3.2);
+    this._background.scale.set(MAIN.SHIP.SCALE);
     this._background.rotation = 0.5 * Math.PI;
     this._background.anchor = 0.5;
+
+    this._exhaust = new ShipExhaust(MAIN.SHIP.EXHAUST_SCALE);
+    this._exhaust.x = MAIN.SHIP.EXHAUST_POSITION.X;
+    this._exhaust.y = MAIN.SHIP.EXHAUST_POSITION.Y;
 
     this._offsetContainer.addChild(this._floor);
     this._offsetContainer.addChild(this.walls);
     this._offsetContainer.addChild(this._decorations);
     this._offsetContainer.addChild(this.systems);
 
+    this.addChild(this._exhaust);
     this.addChild(this._background);
     this.addChild(this._offsetContainer);
   }
