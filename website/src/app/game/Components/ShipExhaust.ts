@@ -1,7 +1,7 @@
 import { AnimatedSprite, Container, Texture } from "pixi.js";
 
 export class ShipExhaust extends Container {
-  constructor() {
+  constructor(scale: number = 2) {
     super();
 
     const frames = Array.from({ length: 14 }, (_, i) =>
@@ -12,7 +12,7 @@ export class ShipExhaust extends Container {
     animatedSprite.animationSpeed = 0.5;
     animatedSprite.anchor.set(0.5);
     animatedSprite.loop = true;
-    animatedSprite.scale = 2;
+    animatedSprite.scale = scale;
     animatedSprite.rotation = -0.5 * Math.PI;
     animatedSprite.play();
 

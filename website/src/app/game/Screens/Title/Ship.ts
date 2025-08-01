@@ -1,5 +1,5 @@
 import { Container, Sprite, Texture, Ticker } from "pixi.js";
-import { ShipExhaust } from "./ShipExhaust";
+import { ShipExhaust } from "../../Components";
 
 export class Ship {
   public view = new Container();
