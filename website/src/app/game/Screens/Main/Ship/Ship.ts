@@ -5,6 +5,7 @@ import { buildSystem, SystemEvents } from "../Systems";
 import { Decoration, DecorationChangeEvent } from "./Decoration";
 import { GRID_OFFSET } from "../../../constants/Map";
 import { MAIN } from "../../../constants";
+import { SYSTEM_IDS } from "@/app/game/constants/Systems";
 
 export class Ship extends Container {
   public walls = new TileGrid(MAIN.SHIP.TILE_SIZE);
@@ -105,5 +106,31 @@ export class Ship extends Container {
     this.addChild(this._exhaust);
     this.addChild(this._background);
     this.addChild(this._offsetContainer);
+
+    this.addListeners();
+  }
+
+  private addListeners() {
+    SystemEvents.addSystemListener({
+      componentId: this._componentId,
+      system: SYSTEM_IDS.ENGINE,
+      systemEventType: "BREAKDOWN",
+      action: () => {
+        this._exhaust.visible = false;
+      },
+    });
+
+    SystemEvents.addSystemListener({
+      componentId: this._componentId,
+      system: SYSTEM_IDS.ENGINE,
+      systemEventType: "REPAIRED",
+      action: () => {
+        this._exhaust.visible = true;
+      },
+    });
+  }
+
+  cleanup() {
+    SystemEvents.removeSystemListener(this._componentId, SYSTEM_IDS.ENGINE);
   }
 }

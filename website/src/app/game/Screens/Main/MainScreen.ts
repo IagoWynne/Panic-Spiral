@@ -62,18 +62,6 @@ export class MainScreen extends Container implements GameScreen {
 
   public addListeners() {
     this._playerCharacter.addListeners();
-    SystemEvents.addSystemListener({
-      system: SYSTEM_IDS.ENGINE,
-      componentId: "mainScreen",
-      action: () => console.log("Engine breakdown"),
-      systemEventType: "BREAKDOWN",
-    });
-    SystemEvents.addSystemListener({
-      system: SYSTEM_IDS.ENGINE,
-      componentId: "mainScreen",
-      action: () => console.log("Engine repaired"),
-      systemEventType: "REPAIRED",
-    });
   }
 
   public update(ticker: Ticker) {
@@ -84,6 +72,7 @@ export class MainScreen extends Container implements GameScreen {
   public cleanup() {
     this._playerCharacter.cleanup();
     this._navigationService.cleanup();
+    this._ship.cleanup();
     SystemEvents.release();
     this.destroy({ children: true });
   }
