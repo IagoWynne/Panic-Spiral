@@ -5,6 +5,10 @@ import { GRID_OFFSET } from "./Map";
 
 export const SYSTEM_IDS = {
   ENGINE: "Engine",
+  MEDBAY: "Medbay",
+  OXYGEN: "O2",
+  REACTOR: "Reactor",
+  SHIELDS: "Shields",
 };
 
 export const SYSTEM_BREAKDOWN_CHECK = 5000;
