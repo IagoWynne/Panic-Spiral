@@ -56,6 +56,8 @@ export class MainScreen extends Container implements GameScreen {
 
     this._ship.x = width / 2;
     this._ship.y = height / 2;
+
+    this._ui.resize(width, height);
   }
 
   public addListeners() {
