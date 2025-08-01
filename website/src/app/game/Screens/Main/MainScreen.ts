@@ -5,9 +5,9 @@ import Ship from "./Ship";
 import { Tile } from "../../Components";
 import { NavigationService } from "./NavigationService";
 import { System, SystemEvents, SystemsManager } from "./Systems";
-import { SYSTEM_IDS } from "../../constants/Systems";
 import { GameUI } from "./UI";
 import { AUDIO_FILE_ALIASES, GameAudio } from "../../Utils/audio";
+import { Background } from "./Background";
 
 export class MainScreen extends Container implements GameScreen {
   public static SCREEN_ID = "main";
@@ -15,7 +15,7 @@ export class MainScreen extends Container implements GameScreen {
 
   private _playerCharacter: PlayerCharacter;
   private _ship: Ship;
-  private _background: TilingSprite;
+  private _background: Background;
   private _navigationService: NavigationService;
   private _systemsManager: SystemsManager;
   private _ui: GameUI;
@@ -23,9 +23,7 @@ export class MainScreen extends Container implements GameScreen {
   constructor() {
     super();
 
-    this._background = new TilingSprite({
-      texture: Texture.from("pixelart_starfield_corona"),
-    });
+    this._background = new Background();
 
     this._ship = new Ship();
     const systems = this._ship.systems.children as System[];
@@ -51,8 +49,7 @@ export class MainScreen extends Container implements GameScreen {
   }
 
   public resize(width: number, height: number) {
-    this._background.width = width;
-    this._background.height = height;
+    this._background.resize(width, height);
 
     this._ship.x = width / 2;
     this._ship.y = height / 2;
@@ -67,12 +64,14 @@ export class MainScreen extends Container implements GameScreen {
   public update(ticker: Ticker) {
     this._playerCharacter.update(ticker);
     this._systemsManager.onUpdate(ticker.deltaMS);
+    this._background.update();
   }
 
   public cleanup() {
     this._playerCharacter.cleanup();
     this._navigationService.cleanup();
     this._ship.cleanup();
+    this._background.cleanup();
     SystemEvents.release();
     this.destroy({ children: true });
   }
