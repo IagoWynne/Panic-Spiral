@@ -1,4 +1,4 @@
-import { SYSTEM_BREAKDOWN_CHECK } from "../../../constants/Systems";
+import { MAIN } from "../../../constants";
 import { System } from "./System";
 
 export class SystemsManager {
@@ -9,7 +9,7 @@ export class SystemsManager {
   public onUpdate(deltaMs: number) {
     this._counter += deltaMs;
 
-    if (this._counter > SYSTEM_BREAKDOWN_CHECK) {
+    if (this._counter > MAIN.SYSTEMS.SYSTEM_BREAKDOWN_CHECK) {
       this.checkForBreakdowns(deltaMs);
     }
   }

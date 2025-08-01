@@ -1,10 +1,10 @@
 import { sound, Sound } from "@pixi/sound";
 import { initBgm } from "./init";
 import gsap from "gsap";
-import { AUDIO } from "../../constants/Audio";
+import { COMMON } from "../../constants";
 
 export class BGMPlayer {
-  private _globalVolume = 0.5;
+  private _globalVolume = COMMON.AUDIO.DEFAULT_BGM_VOLUME;
 
   private _currentAlias?: string;
   private _current?: Sound | null;
@@ -39,7 +39,8 @@ export class BGMPlayer {
     newTrack.play({ loop: true });
 
     await gsap.to(newTrack, {
-      volume: (volume || 1) * this._globalVolume * AUDIO.BGM_VOLUME_MULTIPLIER,
+      volume:
+        (volume || 1) * this._globalVolume * COMMON.AUDIO.BGM_VOLUME_MULTIPLIER,
       duration: 1,
       ease: "linear",
     });

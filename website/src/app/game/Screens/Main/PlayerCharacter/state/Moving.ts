@@ -1,6 +1,6 @@
 import { AnimatedSprite, Texture } from "pixi.js";
 import { IdleState, IdleStates } from "./Idle";
-import { PLAYER_MOVEMENT } from "../../../../constants/PlayerMovement";
+import { MAIN } from "../../../../constants";
 
 export interface MovingState {
   sprite: AnimatedSprite;
@@ -20,28 +20,28 @@ const initMovingStates = (idleStates: IdleStates): MovingStates => {
     up: {
       sprite: getMovementSprite("back"),
       updatePosition: (x: number, y: number, delta: number) => {
-        return [x, y - PLAYER_MOVEMENT.MOVEMENT_SPEED_MODIFIER * delta];
+        return [x, y - MAIN.PLAYER_MOVEMENT.MOVEMENT_SPEED_MODIFIER * delta];
       },
       idle: idleStates.up,
     },
     left: {
       sprite: getMovementSprite("left"),
       updatePosition: (x: number, y: number, delta: number) => {
-        return [x - PLAYER_MOVEMENT.MOVEMENT_SPEED_MODIFIER * delta, y];
+        return [x - MAIN.PLAYER_MOVEMENT.MOVEMENT_SPEED_MODIFIER * delta, y];
       },
       idle: idleStates.left,
     },
     down: {
       sprite: getMovementSprite("forward"),
       updatePosition: (x: number, y: number, delta: number) => {
-        return [x, y + PLAYER_MOVEMENT.MOVEMENT_SPEED_MODIFIER * delta];
+        return [x, y + MAIN.PLAYER_MOVEMENT.MOVEMENT_SPEED_MODIFIER * delta];
       },
       idle: idleStates.down,
     },
     right: {
       sprite: getMovementSprite("right"),
       updatePosition: (x: number, y: number, delta: number) => {
-        return [x + PLAYER_MOVEMENT.MOVEMENT_SPEED_MODIFIER * delta, y];
+        return [x + MAIN.PLAYER_MOVEMENT.MOVEMENT_SPEED_MODIFIER * delta, y];
       },
       idle: idleStates.right,
     },
@@ -54,7 +54,7 @@ const getMovementSprite = (direction: string): AnimatedSprite => {
       Texture.from(`player-${direction}-${i}`)
     )
   );
-  sprite.animationSpeed = PLAYER_MOVEMENT.ANIMATION_SPEED;
+  sprite.animationSpeed = MAIN.PLAYER_MOVEMENT.ANIMATION_SPEED;
   sprite.anchor = 0.5;
 
   return sprite;

@@ -1,4 +1,4 @@
-import { SYSTEM_IDS } from "../../../constants/Systems";
+import { MAIN } from "../../../constants";
 import { System } from "./System";
 import { Engine } from "./Engine";
 
@@ -14,7 +14,7 @@ interface SystemData {
 
 const buildSystem = (data: SystemData, tileSize: number): System | null => {
   switch (data.name) {
-    case SYSTEM_IDS.ENGINE: {
+    case MAIN.SYSTEMS.SYSTEM_IDS.ENGINE: {
       return new Engine(
         data.name,
         tileSize,
