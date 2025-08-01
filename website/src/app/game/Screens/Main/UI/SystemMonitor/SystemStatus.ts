@@ -1,6 +1,6 @@
 import { Container, Graphics, Point, Text } from "pixi.js";
 import { SystemEvents } from "../../Systems";
-import { SYSTEM_MONITOR_DEFAULTS } from "../../../../constants/UI";
+import { MAIN } from "../../../../constants";
 
 export class SystemStatus extends Container {
   private _id: string;
@@ -16,39 +16,40 @@ export class SystemStatus extends Container {
       text: systemName,
       style: {
         stroke: {
-          color: SYSTEM_MONITOR_DEFAULTS.STATUS_FONT_STROKE,
+          color: MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_FONT_STROKE,
           width: 2,
         },
-        fontSize: SYSTEM_MONITOR_DEFAULTS.STATUS_FONT_SIZE,
+        fontSize: MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_FONT_SIZE,
       },
     });
 
     const polygonPoints = [
       new Point(0, 0),
-      new Point(SYSTEM_MONITOR_DEFAULTS.STATUS_POLYGON_WIDTH, 0),
+      new Point(MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_POLYGON_WIDTH, 0),
       new Point(
-        SYSTEM_MONITOR_DEFAULTS.STATUS_POLYGON_WIDTH - SYSTEM_MONITOR_DEFAULTS.STATUS_POLYGON_INDENT,
-        this._text.height + 2 * SYSTEM_MONITOR_DEFAULTS.STATUS_PADDING
+        MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_POLYGON_WIDTH -
+          MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_POLYGON_INDENT,
+        this._text.height + 2 * MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_PADDING
       ),
       new Point(
         0,
-        this._text.height + 2 * SYSTEM_MONITOR_DEFAULTS.STATUS_PADDING
+        this._text.height + 2 * MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_PADDING
       ),
     ];
 
     this._fineBackground = this.buildBackgroundPolygon(
-      SYSTEM_MONITOR_DEFAULTS.STATUS_FINE_BACKGROUND_FILL,
+      MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_FINE_BACKGROUND_FILL,
       polygonPoints
     );
 
     this._brokenBackground = this.buildBackgroundPolygon(
-      SYSTEM_MONITOR_DEFAULTS.STATUS_BROKEN_BACKGROUND_FILL,
+      MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_BROKEN_BACKGROUND_FILL,
       polygonPoints
     );
     this._brokenBackground.visible = false;
 
-    this._text.x = SYSTEM_MONITOR_DEFAULTS.STATUS_PADDING;
-    this._text.y = SYSTEM_MONITOR_DEFAULTS.STATUS_PADDING;
+    this._text.x = MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_PADDING;
+    this._text.y = MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_PADDING;
 
     this.addChild(this._brokenBackground);
     this.addChild(this._fineBackground);
@@ -64,7 +65,7 @@ export class SystemStatus extends Container {
     return new Graphics()
       .poly(polygonPoints)
       .fill(colour)
-      .stroke(SYSTEM_MONITOR_DEFAULTS.STATUS_BACKGROUND_STROKE);
+      .stroke(MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_BACKGROUND_STROKE);
   }
 
   private addListeners() {
