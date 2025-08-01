@@ -1,10 +1,7 @@
 import { Container, Graphics, Text } from "pixi.js";
 import { SystemStatus } from "./SystemStatus";
 import { SYSTEM_IDS } from "../../../../constants/Systems";
-import {
-  SYSTEM_MONITOR_DEFAULTS,
-  TOOLTIP_DEFAULTS,
-} from "../../../../constants/UI";
+import { COMMON, MAIN } from "../../../../constants";
 
 export class SystemMonitor extends Container {
   private _systemStatuses: SystemStatus[] = [];
@@ -14,9 +11,9 @@ export class SystemMonitor extends Container {
 
     const header = new Text({
       text: "Systems",
-      style: { stroke: SYSTEM_MONITOR_DEFAULTS.STATUS_FONT_STROKE },
+      style: { stroke: MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_FONT_STROKE },
     });
-    header.x = SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING;
+    header.x = MAIN.UI.SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING;
     this.addChild(header);
 
     const engineMonitor = this.addStatusMonitor(SYSTEM_IDS.ENGINE, header);
@@ -38,12 +35,12 @@ export class SystemMonitor extends Container {
       .roundRect(
         0,
         0,
-        this.width + 2 * SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING,
-        this.height + SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING,
-        TOOLTIP_DEFAULTS.BACKGROUND_CORNER_RADIUS
+        this.width + 2 * MAIN.UI.SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING,
+        this.height + MAIN.UI.SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING,
+        COMMON.UI.TOOLTIP_DEFAULTS.BACKGROUND_CORNER_RADIUS
       )
-      .fill(TOOLTIP_DEFAULTS.BACKGROUND_FILL)
-      .stroke(TOOLTIP_DEFAULTS.BORDER_STROKE);
+      .fill(COMMON.UI.TOOLTIP_DEFAULTS.BACKGROUND_FILL)
+      .stroke(COMMON.UI.TOOLTIP_DEFAULTS.BORDER_STROKE);
 
     this.addChildAt(background, 0);
   }
@@ -53,11 +50,11 @@ export class SystemMonitor extends Container {
     previousComponent: Container
   ): SystemStatus {
     const newMonitor = new SystemStatus(systemName);
-    newMonitor.x = SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING;
+    newMonitor.x = MAIN.UI.SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING;
     newMonitor.y =
       previousComponent.y +
       previousComponent.height +
-      SYSTEM_MONITOR_DEFAULTS.STATUS_SPACING;
+      MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_SPACING;
 
     this._systemStatuses.push(newMonitor);
     this.addChild(newMonitor);

@@ -2,7 +2,7 @@ import { Container } from "pixi.js";
 import UIEvents from "./UIEvents";
 import { TooltipManager } from "./TooltipManager";
 import SystemMonitor from "./SystemMonitor";
-import { SYSTEM_MONITOR_DEFAULTS } from "../../../constants/UI";
+import { MAIN } from "../../../constants";
 
 export class GameUI extends Container {
   private _tooltipManager = new TooltipManager();
@@ -11,7 +11,7 @@ export class GameUI extends Container {
   constructor() {
     super();
 
-    this._systemMonitor.x = SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING;
+    this._systemMonitor.x = MAIN.UI.SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING;
 
     this.addChild(this._systemMonitor);
     this.addChild(this._tooltipManager);
@@ -22,7 +22,7 @@ export class GameUI extends Container {
     this._systemMonitor.y =
       height -
       this._systemMonitor.height -
-      SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING;
+      MAIN.UI.SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING;
   }
 
   public cleanup() {

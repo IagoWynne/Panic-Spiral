@@ -1,3 +1,4 @@
+import * as COMMON from "./Common";
 import * as MAIN from "./Main";
 
-export { MAIN };
+export { COMMON, MAIN };
