@@ -6,3 +6,7 @@ export const EXHAUST_POSITION = {
 };
 export const EMERGENCY_LIGHTING_COLOUR = "#FF000022";
 export const TILE_SIZE = 32;
+export const GRID_OFFSET = {
+  X: -400,
+  Y: -272,
+};

@@ -1,7 +1,7 @@
 import { sprintf } from "sprintf-js";
-import { KEY_BINDINGS } from "../keyBindings";
-import { i18n, i18nKeys } from "../Utils";
-import { GRID_OFFSET } from "./Map";
+import { KEY_BINDINGS } from "../../keyBindings";
+import { i18n, i18nKeys } from "../../Utils";
+import { GRID_OFFSET } from "./Ship";
 
 export const SYSTEM_IDS = {
   ENGINE: "Engine",

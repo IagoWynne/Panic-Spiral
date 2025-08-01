@@ -1,6 +1,5 @@
 import { Container, Graphics, Text } from "pixi.js";
 import { SystemStatus } from "./SystemStatus";
-import { SYSTEM_IDS } from "../../../../constants/Systems";
 import { COMMON, MAIN } from "../../../../constants";
 
 export class SystemMonitor extends Container {
@@ -16,20 +15,23 @@ export class SystemMonitor extends Container {
     header.x = MAIN.UI.SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING;
     this.addChild(header);
 
-    const engineMonitor = this.addStatusMonitor(SYSTEM_IDS.ENGINE, header);
+    const engineMonitor = this.addStatusMonitor(
+      MAIN.SYSTEMS.SYSTEM_IDS.ENGINE,
+      header
+    );
     const medbayMonitor = this.addStatusMonitor(
-      SYSTEM_IDS.MEDBAY,
+      MAIN.SYSTEMS.SYSTEM_IDS.MEDBAY,
       engineMonitor
     );
     const oxygenMonitor = this.addStatusMonitor(
-      SYSTEM_IDS.OXYGEN,
+      MAIN.SYSTEMS.SYSTEM_IDS.OXYGEN,
       medbayMonitor
     );
     const reactorMonitor = this.addStatusMonitor(
-      SYSTEM_IDS.REACTOR,
+      MAIN.SYSTEMS.SYSTEM_IDS.REACTOR,
       oxygenMonitor
     );
-    this.addStatusMonitor(SYSTEM_IDS.SHIELDS, reactorMonitor);
+    this.addStatusMonitor(MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS, reactorMonitor);
 
     const background = new Graphics()
       .roundRect(

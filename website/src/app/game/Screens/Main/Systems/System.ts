@@ -2,12 +2,9 @@ import { Container, Graphics } from "pixi.js";
 import { InteractionZone } from "../../../Components";
 import { Inputs } from "../../../Utils/keyboardEventHandler";
 import SystemEvents from "./SystemEvents";
-import {
-  DEFAULT_INTERACTION_TEXT,
-  SYSTEM_TOOLTIP_OFFSET,
-} from "../../../constants/Systems";
+import { MAIN } from "../../../constants";
 import { UIEvents } from "../UI";
-import { AUDIO_FILE_ALIASES, GameAudio } from "@/app/game/Utils/audio";
+import { AUDIO_FILE_ALIASES, GameAudio } from "../../../Utils/audio";
 
 export abstract class System extends Container {
   public interactionZone: InteractionZone;
@@ -22,7 +19,7 @@ export abstract class System extends Container {
     interactionZoneWidth: number,
     interactionZoneHeight: number,
     private cooldown: number,
-    private tooltipText: string = DEFAULT_INTERACTION_TEXT
+    private tooltipText: string = MAIN.SYSTEMS.DEFAULT_INTERACTION_TEXT
   ) {
     super();
 
@@ -61,8 +58,11 @@ export abstract class System extends Container {
     this._tooltipId = UIEvents.openTooltip({
       text: this.tooltipText,
       position: {
-        x: this.x + SYSTEM_TOOLTIP_OFFSET.X,
-        y: this.y + SYSTEM_TOOLTIP_OFFSET.Y + SYSTEM_TOOLTIP_OFFSET.Y_MODIFIER,
+        x: this.x + MAIN.SYSTEMS.SYSTEM_TOOLTIP_OFFSET.X,
+        y:
+          this.y +
+          MAIN.SYSTEMS.SYSTEM_TOOLTIP_OFFSET.Y +
+          MAIN.SYSTEMS.SYSTEM_TOOLTIP_OFFSET.Y_MODIFIER,
       },
     });
   }

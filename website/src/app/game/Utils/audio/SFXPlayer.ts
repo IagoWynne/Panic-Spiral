@@ -1,9 +1,9 @@
 import { sound } from "@pixi/sound";
 import { initSfx } from "./init";
-import { AUDIO } from "../../constants/Audio";
+import { COMMON } from "../../constants";
 
 export class SFXPlayer {
-  private _globalVolume = 0.5;
+  private _globalVolume = COMMON.AUDIO.DEFAULT_SFX_VOLUME;
 
   constructor() {
     initSfx();
@@ -19,7 +19,8 @@ export class SFXPlayer {
 
   public play(alias: string, volume?: number) {
     sound.play(alias, {
-      volume: (volume || 1) * this._globalVolume * AUDIO.SFX_VOLUME_MULTIPLIER,
+      volume:
+        (volume || 1) * this._globalVolume * COMMON.AUDIO.SFX_VOLUME_MULTIPLIER,
     });
   }
 }

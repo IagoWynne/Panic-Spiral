@@ -3,9 +3,7 @@ import { ShipExhaust, Tile, TileGrid } from "../../../Components";
 import tileMap from "./map.json";
 import { buildSystem, SystemEvents } from "../Systems";
 import { Decoration, DecorationChangeEvent } from "./Decoration";
-import { GRID_OFFSET } from "../../../constants/Map";
 import { MAIN } from "../../../constants";
-import { SYSTEM_IDS } from "@/app/game/constants/Systems";
 
 export class Ship extends Container {
   public walls = new TileGrid(MAIN.SHIP.TILE_SIZE);
@@ -21,8 +19,8 @@ export class Ship extends Container {
   constructor() {
     super();
 
-    this._offsetContainer.x = GRID_OFFSET.X;
-    this._offsetContainer.y = GRID_OFFSET.Y;
+    this._offsetContainer.x = MAIN.SHIP.GRID_OFFSET.X;
+    this._offsetContainer.y = MAIN.SHIP.GRID_OFFSET.Y;
 
     tileMap.rooms.forEach((r) => {
       const floorLighting = new Container();
@@ -113,7 +111,7 @@ export class Ship extends Container {
   private addListeners() {
     SystemEvents.addSystemListener({
       componentId: this._componentId,
-      system: SYSTEM_IDS.ENGINE,
+      system: MAIN.SYSTEMS.SYSTEM_IDS.ENGINE,
       systemEventType: "BREAKDOWN",
       action: () => {
         this._exhaust.visible = false;
@@ -122,7 +120,7 @@ export class Ship extends Container {
 
     SystemEvents.addSystemListener({
       componentId: this._componentId,
-      system: SYSTEM_IDS.ENGINE,
+      system: MAIN.SYSTEMS.SYSTEM_IDS.ENGINE,
       systemEventType: "REPAIRED",
       action: () => {
         this._exhaust.visible = true;
@@ -131,6 +129,9 @@ export class Ship extends Container {
   }
 
   cleanup() {
-    SystemEvents.removeSystemListener(this._componentId, SYSTEM_IDS.ENGINE);
+    SystemEvents.removeSystemListener(
+      this._componentId,
+      MAIN.SYSTEMS.SYSTEM_IDS.ENGINE
+    );
   }
 }

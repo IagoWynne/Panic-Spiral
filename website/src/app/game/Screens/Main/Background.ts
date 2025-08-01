@@ -1,6 +1,5 @@
 import { TilingSprite, Texture } from "pixi.js";
 import { SystemEvents } from "./Systems";
-import { SYSTEM_IDS } from "../../constants/Systems";
 import { MAIN } from "../../constants";
 
 export class Background extends TilingSprite {
@@ -16,7 +15,7 @@ export class Background extends TilingSprite {
   private addListeners() {
     SystemEvents.addSystemListener({
       componentId: this._componentId,
-      system: SYSTEM_IDS.ENGINE,
+      system: MAIN.SYSTEMS.SYSTEM_IDS.ENGINE,
       systemEventType: "BREAKDOWN",
       action: () => {
         this._moving = false;
@@ -25,7 +24,7 @@ export class Background extends TilingSprite {
 
     SystemEvents.addSystemListener({
       componentId: this._componentId,
-      system: SYSTEM_IDS.ENGINE,
+      system: MAIN.SYSTEMS.SYSTEM_IDS.ENGINE,
       systemEventType: "REPAIRED",
       action: () => {
         this._moving = true;
@@ -45,6 +44,9 @@ export class Background extends TilingSprite {
   }
 
   public cleanup() {
-    SystemEvents.removeSystemListener(this._componentId, SYSTEM_IDS.ENGINE);
+    SystemEvents.removeSystemListener(
+      this._componentId,
+      MAIN.SYSTEMS.SYSTEM_IDS.ENGINE
+    );
   }
 }
