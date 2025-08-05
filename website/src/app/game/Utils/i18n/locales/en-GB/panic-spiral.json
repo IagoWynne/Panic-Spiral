@@ -1,5 +1,10 @@
 {
   "GAME_NAME": "Panic Spiral",
   "START_GAME": "Start Game",
-  "REPAIR_INSTRUCTIONS": "Press '%s' to repair broken system."
+  "REPAIR_INSTRUCTIONS": "Press '%s' to repair broken system.",
+  "ENGINE": "Engine",
+  "MEDBAY": "Medbay",
+  "OXYGEN": "Oxygen",
+  "REACTOR": "Reactor",
+  "SHIELDS": "Shields"
 }

@@ -11,6 +11,14 @@ export const SYSTEM_IDS = {
   SHIELDS: "Shields",
 };
 
+export const SYSTEM_TRANSLATION_KEYS = {
+  [SYSTEM_IDS.ENGINE]: i18nKeys.ENGINE,
+  [SYSTEM_IDS.MEDBAY]: i18nKeys.MEDBAY,
+  [SYSTEM_IDS.OXYGEN]: i18nKeys.OXYGEN,
+  [SYSTEM_IDS.REACTOR]: i18nKeys.REACTOR,
+  [SYSTEM_IDS.SHIELDS]: i18nKeys.SHIELDS,
+};
+
 export const SYSTEM_BREAKDOWN_CHECK = 5000;
 
 export const DEFAULT_INTERACTION_TEXT = sprintf(
