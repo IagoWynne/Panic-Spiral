@@ -8,6 +8,7 @@ import { System, SystemEvents, SystemsManager } from "./Systems";
 import { GameUI } from "./UI";
 import { AUDIO_FILE_ALIASES, GameAudio } from "../../Utils/audio";
 import { Background } from "./Background";
+import { ScoreEvents, ScoreTracker } from "./Score";
 
 export class MainScreen extends Container implements GameScreen {
   public static SCREEN_ID = "main";
@@ -18,10 +19,13 @@ export class MainScreen extends Container implements GameScreen {
   private _background: Background;
   private _navigationService: NavigationService;
   private _systemsManager: SystemsManager;
+  private _scoreTracker: ScoreTracker;
   private _ui: GameUI;
 
   constructor() {
     super();
+
+    this._scoreTracker = new ScoreTracker();
 
     this._background = new Background();
 
@@ -72,7 +76,9 @@ export class MainScreen extends Container implements GameScreen {
     this._ship.cleanup();
     this._background.cleanup();
     this._systemsManager.cleanup();
+    this._scoreTracker.cleanup();
     SystemEvents.release();
+    ScoreEvents.release();
     this.destroy({ children: true });
   }
 }
