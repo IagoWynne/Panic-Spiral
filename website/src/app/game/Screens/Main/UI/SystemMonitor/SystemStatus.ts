@@ -1,6 +1,7 @@
 import { Container, Graphics, Point, Text } from "pixi.js";
 import { SystemEvents } from "../../Systems";
 import { MAIN } from "../../../../constants";
+import { i18n } from "../../../../Utils";
 
 export class SystemStatus extends Container {
   private _id: string;
@@ -13,7 +14,7 @@ export class SystemStatus extends Container {
     this._id = `monitor-${this.systemName}`;
 
     this._text = new Text({
-      text: systemName,
+      text: i18n(MAIN.SYSTEMS.SYSTEM_TRANSLATION_KEYS[systemName]),
       style: {
         stroke: {
           color: MAIN.UI.SYSTEM_MONITOR_DEFAULTS.STATUS_FONT_STROKE,
