@@ -2,31 +2,46 @@ import { MAIN } from "../../../constants";
 import { System } from "./System";
 
 export class SystemsManager {
-  private _counter: number = 0;
+  private _startupCooldownTimer?: NodeJS.Timeout;
+  private _breakdownsAllowed = false;
+  private _breakdownCheckTimer?: NodeJS.Timeout;
 
-  constructor(private _systems: System[]) {}
-
-  public onUpdate(deltaMs: number) {
-    this._counter += deltaMs;
-
-    if (this._counter > MAIN.SYSTEMS.SYSTEM_BREAKDOWN_CHECK) {
-      this.checkForBreakdowns(deltaMs);
-    }
+  constructor(private _systems: System[]) {
+    this._startupCooldownTimer = setTimeout(
+      () => this.onStartupCooldownElapsed(),
+      MAIN.SYSTEMS.SYSTEM_BREAKDOWN_CHECK_START
+    );
   }
 
-  private checkForBreakdowns(deltaMs: number) {
+  private onStartupCooldownElapsed() {
+    this._breakdownsAllowed = true;
+    this._startupCooldownTimer = undefined;
+
+    this._breakdownCheckTimer = setInterval(
+      () => this.checkForBreakdowns(),
+      MAIN.SYSTEMS.SYSTEM_BREAKDOWN_CHECK_INTERVAL
+    );
+  }
+
+  private checkForBreakdowns() {
+    if (!this._breakdownsAllowed) {
+      return;
+    }
+
     const breakdownOccurred = this._systems.reduce(
       (occurred: boolean, system: System) => {
         if (!occurred && !system.broken) {
-          occurred = system.checkForBreakdown(deltaMs);
+          occurred = system.checkForBreakdown();
         }
         return occurred;
       },
       false
     );
+  }
 
-    if (breakdownOccurred) {
-      this._counter = 0;
-    }
+  public cleanup() {
+    this._startupCooldownTimer?.close();
+    this._breakdownCheckTimer?.close();
+    this._breakdownCheckTimer = undefined;
   }
 }

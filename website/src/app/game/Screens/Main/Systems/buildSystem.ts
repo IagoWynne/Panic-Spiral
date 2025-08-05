@@ -8,8 +8,6 @@ interface SystemData {
     x: number;
     y: number;
   };
-  cooldown: number;
-  breakdownRate: number;
 }
 
 const buildSystem = (data: SystemData, tileSize: number): System | null => {
@@ -20,8 +18,8 @@ const buildSystem = (data: SystemData, tileSize: number): System | null => {
         tileSize,
         data.interactionZone.x,
         data.interactionZone.y,
-        data.cooldown,
-        data.breakdownRate
+        MAIN.SYSTEMS.SYSTEM_REPAIR_COOLDOWNS[data.name],
+        MAIN.SYSTEMS.SYSTEM_BREAKDOWN_RATE[data.name]
       );
     }
   }

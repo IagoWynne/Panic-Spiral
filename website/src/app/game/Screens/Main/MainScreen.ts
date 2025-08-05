@@ -63,7 +63,6 @@ export class MainScreen extends Container implements GameScreen {
 
   public update(ticker: Ticker) {
     this._playerCharacter.update(ticker);
-    this._systemsManager.onUpdate(ticker.deltaMS);
     this._background.update();
   }
 
@@ -72,6 +71,7 @@ export class MainScreen extends Container implements GameScreen {
     this._navigationService.cleanup();
     this._ship.cleanup();
     this._background.cleanup();
+    this._systemsManager.cleanup();
     SystemEvents.release();
     this.destroy({ children: true });
   }

@@ -218,9 +218,7 @@
           "interactionZone": {
             "x": 1.5,
             "y": 3
-          },
-          "cooldown": 2000,
-          "breakdownRate": 0.0005
+          }
         }
       ]
     },

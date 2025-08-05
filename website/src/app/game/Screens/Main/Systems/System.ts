@@ -10,8 +10,9 @@ export abstract class System extends Container {
   public interactionZone: InteractionZone;
   public broken: boolean = false;
   private _collisionBox: Graphics;
-  private _currentCooldown: number = 0;
   private _tooltipId?: string;
+  private _canBreak = true;
+  private _cooldownTimer?: NodeJS.Timeout;
 
   constructor(
     private id: string,
@@ -46,6 +47,8 @@ export abstract class System extends Container {
 
   public cleanup() {
     Inputs.Keyboard?.removeAllComponentKeyHandlers(this.id);
+    this._cooldownTimer?.close();
+    this._cooldownTimer = undefined;
   }
 
   private onEnter() {
@@ -86,10 +89,12 @@ export abstract class System extends Container {
 
   protected abstract doInteraction: () => void;
 
-  public checkForBreakdown(deltaMs: number): boolean {
-    this._currentCooldown -= deltaMs;
+  public checkForBreakdown(): boolean {
+    if (!this._canBreak) {
+      return false;
+    }
 
-    return this._currentCooldown <= 0 && this.doCheckForBreakdown();
+    return this.doCheckForBreakdown();
   }
 
   protected abstract doCheckForBreakdown: () => boolean;
@@ -97,6 +102,7 @@ export abstract class System extends Container {
   protected onBreakdown() {
     this.interactionZone.enabled = true;
     this.broken = true;
+    this._canBreak = false;
 
     if (this.interactionZone.playerInZone) {
       this.openInteractionTooltip();
@@ -107,7 +113,11 @@ export abstract class System extends Container {
   }
 
   protected onRepair() {
-    this._currentCooldown = this.cooldown;
+    this._cooldownTimer = setTimeout(() => {
+      this._canBreak = true;
+      this._cooldownTimer = undefined;
+    }, this.cooldown);
+
     this.interactionZone.enabled = false;
     this.broken = false;
     this.closeInteractionTooltip();
