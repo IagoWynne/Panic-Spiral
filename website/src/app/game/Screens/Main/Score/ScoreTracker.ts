@@ -50,7 +50,7 @@ export class ScoreTracker {
   }
 
   public cleanup() {
-    this._scoreIncreaseTimer.close();
+    clearInterval(this._scoreIncreaseTimer);
     SystemEvents.removeSystemListener(
       this._componentId,
       MAIN.SYSTEMS.SYSTEM_IDS.ENGINE

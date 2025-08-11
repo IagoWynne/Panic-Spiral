@@ -39,9 +39,17 @@ export class SystemsManager {
     );
   }
 
+  private stopTimer(timer?: NodeJS.Timeout) {
+    if (timer) {
+      clearInterval(timer);
+    }
+  }
+
   public cleanup() {
-    this._startupCooldownTimer?.close();
-    this._breakdownCheckTimer?.close();
+    this.stopTimer(this._startupCooldownTimer);
+    this._startupCooldownTimer = undefined;
+
+    this.stopTimer(this._breakdownCheckTimer);
     this._breakdownCheckTimer = undefined;
   }
 }

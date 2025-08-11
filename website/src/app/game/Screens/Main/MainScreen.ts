@@ -9,6 +9,7 @@ import { GameUI } from "./UI";
 import { AUDIO_FILE_ALIASES, GameAudio } from "../../Utils/audio";
 import { Background } from "./Background";
 import { ScoreEvents, ScoreTracker } from "./Score";
+import { RoundEvents, RoundTracker } from "./Rounds";
 
 export class MainScreen extends Container implements GameScreen {
   public static SCREEN_ID = "main";
@@ -20,12 +21,14 @@ export class MainScreen extends Container implements GameScreen {
   private _navigationService: NavigationService;
   private _systemsManager: SystemsManager;
   private _scoreTracker: ScoreTracker;
+  private _roundTracker: RoundTracker;
   private _ui: GameUI;
 
   constructor() {
     super();
 
     this._scoreTracker = new ScoreTracker();
+    this._roundTracker = new RoundTracker();
 
     this._background = new Background();
 
@@ -50,6 +53,7 @@ export class MainScreen extends Container implements GameScreen {
     this.addChild(this._ui);
 
     GameAudio.BGM?.play(AUDIO_FILE_ALIASES.MAIN.BGM);
+    this._roundTracker.startRound();
   }
 
   public resize(width: number, height: number) {
@@ -77,8 +81,10 @@ export class MainScreen extends Container implements GameScreen {
     this._background.cleanup();
     this._systemsManager.cleanup();
     this._scoreTracker.cleanup();
+    this._roundTracker.cleanup();
     SystemEvents.release();
     ScoreEvents.release();
+    RoundEvents.release();
     this.destroy({ children: true });
   }
 }
