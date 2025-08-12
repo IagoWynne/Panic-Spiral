@@ -10,6 +10,7 @@ import { AUDIO_FILE_ALIASES, GameAudio } from "../../Utils/audio";
 import { Background } from "./Background";
 import { ScoreEvents, ScoreTracker } from "./Score";
 import { RoundEvents, RoundTracker } from "./Rounds";
+import { MAIN } from "../../constants";
 
 export class MainScreen extends Container implements GameScreen {
   public static SCREEN_ID = "main";
@@ -23,6 +24,7 @@ export class MainScreen extends Container implements GameScreen {
   private _scoreTracker: ScoreTracker;
   private _roundTracker: RoundTracker;
   private _ui: GameUI;
+  private _paused = false;
 
   constructor() {
     super();
@@ -42,8 +44,6 @@ export class MainScreen extends Container implements GameScreen {
     this._systemsManager = new SystemsManager(systems);
 
     this._playerCharacter = new PlayerCharacter(this._navigationService);
-    this._playerCharacter.x = 900;
-    this._playerCharacter.y = 400;
 
     this._ui = new GameUI();
 
@@ -52,8 +52,12 @@ export class MainScreen extends Container implements GameScreen {
     this.addChild(this._playerCharacter);
     this.addChild(this._ui);
 
-    GameAudio.BGM?.play(AUDIO_FILE_ALIASES.MAIN.BGM);
-    this._roundTracker.startRound();
+    RoundEvents.addRoundEndListener({
+      componentId: MainScreen.SCREEN_ID,
+      action: () => this.onRoundEnd(),
+    });
+
+    this.startRound();
   }
 
   public resize(width: number, height: number) {
@@ -69,7 +73,35 @@ export class MainScreen extends Container implements GameScreen {
     this._playerCharacter.addListeners();
   }
 
+  private startRound() {
+    this._roundTracker.startRound(this._scoreTracker.currentScore);
+    this._ui.updateRoundNumber(this._roundTracker.currentRound);
+    GameAudio.BGM?.play(AUDIO_FILE_ALIASES.MAIN.BGM);
+    this._systemsManager.onRoundStart();
+    this._scoreTracker.onRoundStart();
+    this._playerCharacter.x = MAIN.PLAYER_MOVEMENT.PLAYER_START_POSITION.X;
+    this._playerCharacter.y = MAIN.PLAYER_MOVEMENT.PLAYER_START_POSITION.Y;
+  }
+
+  private onRoundEnd() {
+    this._paused = true;
+    this._systemsManager.onRoundEnd();
+    this._scoreTracker.onRoundEnd();
+    this._ui.displayRoundEnd(
+      this._roundTracker.roundStats[this._roundTracker.roundStats.length - 1],
+      () => {
+        this._paused = false;
+        this.startRound();
+      }
+    );
+    GameAudio.BGM?.stop();
+  }
+
   public update(ticker: Ticker) {
+    if (this._paused) {
+      return;
+    }
+
     this._playerCharacter.update(ticker);
     this._background.update();
   }

@@ -5,12 +5,15 @@ import SystemMonitor from "./SystemMonitor";
 import { MAIN } from "../../../constants";
 import { Score } from "./Score";
 import { RoundInfo } from "./RoundInfo";
+import { RoundEndOverlay } from "./RoundEndOverlay";
+import { RoundStats } from "../Rounds";
 
 export class GameUI extends Container {
   private _tooltipManager = new TooltipManager();
   private _systemMonitor = new SystemMonitor();
   private _scoreDisplay = new Score();
   private _roundInfo = new RoundInfo();
+  private _roundEndOverlay?: RoundEndOverlay;
 
   constructor() {
     super();
@@ -36,6 +39,23 @@ export class GameUI extends Container {
       width - this._scoreDisplay.width - MAIN.UI.SCORE_DEFAULTS.SCORE_PADDING;
 
     this._roundInfo.x = width / 2;
+  }
+
+  public updateRoundNumber(roundNumber: number) {
+    this._roundInfo.updateRoundNumber(roundNumber);
+  }
+
+  public displayRoundEnd(stats: RoundStats, onNextRoundPressed: () => void) {
+    this._roundEndOverlay = new RoundEndOverlay(stats, () => {
+      if (this._roundEndOverlay) {
+        this.removeChild(this._roundEndOverlay);
+        this._roundEndOverlay.destroy();
+      }
+
+      onNextRoundPressed();
+    });
+
+    this.addChild(this._roundEndOverlay);
   }
 
   public cleanup() {

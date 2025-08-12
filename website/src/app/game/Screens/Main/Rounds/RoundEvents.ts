@@ -3,8 +3,14 @@ interface TimerUpdateEventHandler {
   action: (remainingTime: number) => void;
 }
 
+interface RoundEndEventHandler {
+  componentId: string;
+  action: () => void;
+}
+
 class RoundEvents {
   private _timerUpdateEventHandlers: TimerUpdateEventHandler[] = [];
+  private _roundEndEventHandlers: RoundEndEventHandler[] = [];
 
   public addTimerUpdateListener(eventHandler: TimerUpdateEventHandler) {
     this._timerUpdateEventHandlers.push(eventHandler);
@@ -27,6 +33,14 @@ class RoundEvents {
     }
   }
 
+  public addRoundEndListener(eventHandler: RoundEndEventHandler) {
+    this._roundEndEventHandlers.push(eventHandler);
+  }
+
+  public removeRoundEndListener(componentId: string) {
+    this.removeListener(componentId, this._roundEndEventHandlers);
+  }
+
   public onTimerUpdate(remainingTime: number) {
     this._timerUpdateEventHandlers.forEach((handler) =>
       handler.action(remainingTime)
@@ -34,11 +48,12 @@ class RoundEvents {
   }
 
   public onRoundEnd() {
-    console.log("Round over");
+    this._roundEndEventHandlers.forEach((handler) => handler.action());
   }
 
   public release() {
     this._timerUpdateEventHandlers = [];
+    this._roundEndEventHandlers = [];
   }
 }
 
