@@ -10,8 +10,6 @@ import { AUDIO_FILE_ALIASES, GameAudio } from "../../Utils/audio";
 import { Inputs } from "../../Utils/keyboardEventHandler";
 
 export class Button extends Container {
-  public onPressed?: () => void;
-
   private _sprite: Sprite;
   private _hoverGraphic: Graphics;
   private _text: Text;
@@ -21,7 +19,8 @@ export class Button extends Container {
   constructor(
     private _id: string,
     text: string,
-    private _keyboardShortcut?: string
+    private _keyboardShortcut?: string,
+    public onPressed?: () => void
   ) {
     super();
 

@@ -6,12 +6,7 @@ export class SystemsManager {
   private _breakdownsAllowed = false;
   private _breakdownCheckTimer?: NodeJS.Timeout;
 
-  constructor(private _systems: System[]) {
-    this._startupCooldownTimer = setTimeout(
-      () => this.onStartupCooldownElapsed(),
-      MAIN.SYSTEMS.SYSTEM_BREAKDOWN_CHECK_START
-    );
-  }
+  constructor(private _systems: System[]) {}
 
   private onStartupCooldownElapsed() {
     this._breakdownsAllowed = true;
@@ -21,6 +16,17 @@ export class SystemsManager {
       () => this.checkForBreakdowns(),
       MAIN.SYSTEMS.SYSTEM_BREAKDOWN_CHECK_INTERVAL
     );
+  }
+
+  public onRoundStart() {
+    this._startupCooldownTimer = setTimeout(
+      () => this.onStartupCooldownElapsed(),
+      MAIN.SYSTEMS.SYSTEM_BREAKDOWN_CHECK_START
+    );
+  }
+
+  public onRoundEnd() {
+    this.stopTimer(this._breakdownCheckTimer);
   }
 
   private checkForBreakdowns() {

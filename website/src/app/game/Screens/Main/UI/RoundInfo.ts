@@ -1,6 +1,8 @@
 import { Container, Text } from "pixi.js";
 import { MAIN } from "../../../constants";
 import { RoundEvents } from "../Rounds";
+import { i18n, i18nKeys } from "@/app/game/Utils";
+import { sprintf } from "sprintf-js";
 
 export class RoundInfo extends Container {
   private _componentId = "ui_round_info";
@@ -11,7 +13,6 @@ export class RoundInfo extends Container {
     super();
 
     this._header = new Text({
-      text: "Round 1",
       style: { fontSize: MAIN.UI.ROUND_DEFAULTS.HEADER_FONT_SIZE },
       y: MAIN.UI.ROUND_DEFAULTS.ROUND_PADDING,
       anchor: 0.5,
@@ -30,6 +31,10 @@ export class RoundInfo extends Container {
     this.addChild(this._remaining);
 
     this.addListeners();
+  }
+
+  public updateRoundNumber(roundNumber: number) {
+    this._header.text = sprintf(i18n(i18nKeys.ROUND_INDICATOR), roundNumber);
   }
 
   private addListeners() {

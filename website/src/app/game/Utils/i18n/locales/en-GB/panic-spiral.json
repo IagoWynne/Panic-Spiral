@@ -6,5 +6,9 @@
   "MEDBAY": "Medbay",
   "OXYGEN": "Oxygen",
   "REACTOR": "Reactor",
-  "SHIELDS": "Shields"
+  "SHIELDS": "Shields",
+  "ROUND_COMPLETE": "Round %s complete",
+  "NEXT_ROUND": "Next Round",
+  "CURRENT_SCORE": "Score: %s",
+  "ROUND_INDICATOR": "Round %s"
 }

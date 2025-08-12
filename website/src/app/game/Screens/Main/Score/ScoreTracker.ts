@@ -4,17 +4,30 @@ import ScoreEvents from "./ScoreEvents";
 
 export class ScoreTracker {
   private _componentId = "score_tracker";
-  private _scoreIncreaseTimer: NodeJS.Timeout;
+  private _scoreIncreaseTimer?: NodeJS.Timeout;
   private _canAutoIncrementScore = true;
-  private _score = 0;
+
+  public currentScore = 0;
 
   constructor() {
+    this.addListeners();
+  }
+
+  public onRoundStart() {
     this._scoreIncreaseTimer = setInterval(
       () => this.onScoreIncreaseTimeout(),
       MAIN.SCORE.SCORE_INCREMENT_INTERVAL
     );
+  }
 
-    this.addListeners();
+  public onRoundEnd() {
+    this.addScore(MAIN.SCORE.BASE_SCORE_INCREMENT);
+    clearInterval(this._scoreIncreaseTimer);
+  }
+
+  private addScore(score: number) {
+    this.currentScore += score;
+    ScoreEvents.onScoreUpdate(this.currentScore);
   }
 
   private addListeners() {
@@ -44,9 +57,7 @@ export class ScoreTracker {
       return;
     }
 
-    this._score += MAIN.SCORE.BASE_SCORE_INCREMENT;
-
-    ScoreEvents.onScoreUpdate(this._score);
+    this.addScore(MAIN.SCORE.BASE_SCORE_INCREMENT);
   }
 
   public cleanup() {

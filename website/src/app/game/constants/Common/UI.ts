@@ -7,3 +7,5 @@ export const TOOLTIP_DEFAULTS = {
   BORDER_STROKE: "#ffffff99",
   BACKGROUND_CORNER_RADIUS: 5,
 };
+
+export const OVERLAY_BACKGROUND_FADE = "#000000AA";
