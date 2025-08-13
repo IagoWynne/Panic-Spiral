@@ -1,2 +1,3 @@
 export const SCORE_INCREMENT_INTERVAL = 1000;
 export const BASE_SCORE_INCREMENT = 1;
+export const ROUND_COMPLETION_BONUS = 50;

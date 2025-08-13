@@ -9,6 +9,12 @@
   "SHIELDS": "Shields",
   "ROUND_COMPLETE": "Round %s complete",
   "NEXT_ROUND": "Next Round",
-  "CURRENT_SCORE": "Score: %s",
-  "ROUND_INDICATOR": "Round %s"
+  "SCORE_HEADER": "Score",
+  "START": "Start",
+  "DISTANCE": "Distance",
+  "Total": "Total",
+  "ROUND_COMPLETE_BONUS": "Bonus",
+  "ROUND_INDICATOR": "Round %s",
+  "BREAKDOWNS": "Breakdowns",
+  "REPAIRS": "Repairs"
 }
