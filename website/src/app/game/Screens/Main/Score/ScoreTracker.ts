@@ -22,6 +22,7 @@ export class ScoreTracker {
 
   public onRoundEnd() {
     this.addScore(MAIN.SCORE.BASE_SCORE_INCREMENT);
+    this.addScore(MAIN.SCORE.ROUND_COMPLETION_BONUS);
     clearInterval(this._scoreIncreaseTimer);
   }
 

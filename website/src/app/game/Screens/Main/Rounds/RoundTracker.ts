@@ -1,7 +1,8 @@
 import { MAIN } from "../../../constants";
 import { ScoreEvents } from "../Score";
+import { SystemEvents } from "../Systems";
 import RoundEvents from "./RoundEvents";
-import { RoundStats } from "./RoundStats";
+import { RoundStats, SystemStats } from "./RoundStats";
 
 export class RoundTracker {
   private _id = "round-tracker";
@@ -24,15 +25,66 @@ export class RoundTracker {
         this._currentRoundStats.endScore = newScore;
       },
     });
+
+    this.addSystemListeners(MAIN.SYSTEMS.SYSTEM_IDS.ENGINE);
+    this.addSystemListeners(MAIN.SYSTEMS.SYSTEM_IDS.MEDBAY);
+    this.addSystemListeners(MAIN.SYSTEMS.SYSTEM_IDS.OXYGEN);
+    this.addSystemListeners(MAIN.SYSTEMS.SYSTEM_IDS.REACTOR);
+    this.addSystemListeners(MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS);
+  }
+
+  private addSystemListeners(systemName: string) {
+    SystemEvents.addSystemListener({
+      componentId: this._id,
+      systemEventType: "BREAKDOWN",
+      system: systemName,
+      action: () => this.onSystemBreakdown(systemName),
+    });
+
+    SystemEvents.addSystemListener({
+      componentId: this._id,
+      systemEventType: "REPAIRED",
+      system: systemName,
+      action: () => this.onSystemRepaired(systemName),
+    });
+  }
+
+  private onSystemBreakdown(systemName: string) {
+    this.systemStatIncrease(systemName, this._currentRoundStats.breakdowns);
+  }
+
+  private onSystemRepaired(systemName: string) {
+    this.systemStatIncrease(systemName, this._currentRoundStats.repairs);
+  }
+
+  private systemStatIncrease(systemName: string, stats: SystemStats) {
+    switch (systemName) {
+      case MAIN.SYSTEMS.SYSTEM_IDS.ENGINE: {
+        stats.engine++;
+        break;
+      }
+      case MAIN.SYSTEMS.SYSTEM_IDS.MEDBAY: {
+        stats.medbay++;
+        break;
+      }
+      case MAIN.SYSTEMS.SYSTEM_IDS.OXYGEN: {
+        stats.oxygen++;
+        break;
+      }
+      case MAIN.SYSTEMS.SYSTEM_IDS.REACTOR: {
+        stats.reactor++;
+        break;
+      }
+      case MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS: {
+        stats.shields++;
+        break;
+      }
+    }
   }
 
   public startRound(currentScore: number) {
     this.currentRound += 1;
-    this._currentRoundStats = {
-      num: this.currentRound,
-      startingScore: currentScore,
-      endScore: currentScore,
-    };
+    this._currentRoundStats = this.getNewRoundStats(currentScore);
 
     this.roundStats.push(this._currentRoundStats);
 
@@ -43,6 +95,28 @@ export class RoundTracker {
       () => this.onRoundTimerInterval(),
       MAIN.ROUND.ROUND_TIMER_DECREMENT_INTERVAL
     );
+  }
+
+  private getNewRoundStats(startingScore: number): RoundStats {
+    return {
+      num: this.currentRound,
+      startingScore: startingScore,
+      endScore: startingScore,
+      breakdowns: {
+        engine: 0,
+        medbay: 0,
+        oxygen: 0,
+        shields: 0,
+        reactor: 0,
+      },
+      repairs: {
+        engine: 0,
+        medbay: 0,
+        oxygen: 0,
+        shields: 0,
+        reactor: 0,
+      },
+    };
   }
 
   private onRoundTimerInterval() {
@@ -65,5 +139,16 @@ export class RoundTracker {
   public cleanup() {
     this.stopTimer();
     ScoreEvents.removeScoreListener(this._id);
+    SystemEvents.removeSystemListener(this._id, MAIN.SYSTEMS.SYSTEM_IDS.ENGINE);
+    SystemEvents.removeSystemListener(this._id, MAIN.SYSTEMS.SYSTEM_IDS.MEDBAY);
+    SystemEvents.removeSystemListener(this._id, MAIN.SYSTEMS.SYSTEM_IDS.OXYGEN);
+    SystemEvents.removeSystemListener(
+      this._id,
+      MAIN.SYSTEMS.SYSTEM_IDS.REACTOR
+    );
+    SystemEvents.removeSystemListener(
+      this._id,
+      MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS
+    );
   }
 }

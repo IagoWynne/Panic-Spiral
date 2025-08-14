@@ -1,6 +1,6 @@
 import { RoundTracker } from "./RoundTracker";
 import RoundEvents from "./RoundEvents";
-import { RoundStats } from "./RoundStats";
+import { RoundStats, SystemStats } from "./RoundStats";
 
 export { RoundTracker, RoundEvents };
-export type { RoundStats };
+export type { RoundStats, SystemStats };
