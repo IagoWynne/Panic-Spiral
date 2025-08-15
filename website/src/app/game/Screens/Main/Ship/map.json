@@ -223,7 +223,7 @@
       ]
     },
     {
-      "name": "Shields",
+      "name": "Reactor",
       "walls": [
         {
           "x": 5,
@@ -527,10 +527,99 @@
           "y": 4,
           "sprite": "floor-grey-1"
         }
+      ],
+      "decorations": [
+        {
+          "x": 6,
+          "y": 1,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Reactor",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Reactor",
+              "sprite": null
+            }
+          ]
+        },
+        {
+          "x": 6,
+          "y": 3,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Reactor",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Reactor",
+              "sprite": null
+            }
+          ]
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "sprite": "decoration-screen-0",
+          "changes": []
+        },
+        {
+          "x": 8,
+          "y": 1,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Reactor",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Reactor",
+              "sprite": null
+            }
+          ]
+        },
+        {
+          "x": 8,
+          "y": 3,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Reactor",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Reactor",
+              "sprite": null
+            }
+          ]
+        }
+      ],
+      "systems": [
+        {
+          "name": "Reactor",
+          "position": {
+            "x": 6,
+            "y": 1
+          },
+          "interactionZone": {
+            "x": 3,
+            "y": 3
+          }
+        }
       ]
     },
     {
-      "name": "Reactor",
+      "name": "Shields",
       "walls": [
         {
           "x": 5,
@@ -758,95 +847,6 @@
           "x": 9,
           "y": 15,
           "sprite": "floor-grey-3"
-        }
-      ],
-      "decorations": [
-        {
-          "x": 6,
-          "y": 13,
-          "sprite": "decoration-light-green",
-          "changes": [
-            {
-              "event": "BREAKDOWN",
-              "system": "Reactor",
-              "sprite": "decoration-light-red"
-            },
-            {
-              "event": "REPAIRED",
-              "system": "Reactor",
-              "sprite": null
-            }
-          ]
-        },
-        {
-          "x": 6,
-          "y": 15,
-          "sprite": "decoration-light-green",
-          "changes": [
-            {
-              "event": "BREAKDOWN",
-              "system": "Reactor",
-              "sprite": "decoration-light-red"
-            },
-            {
-              "event": "REPAIRED",
-              "system": "Reactor",
-              "sprite": null
-            }
-          ]
-        },
-        {
-          "x": 7,
-          "y": 14,
-          "sprite": "decoration-screen-0",
-          "changes": []
-        },
-        {
-          "x": 8,
-          "y": 13,
-          "sprite": "decoration-light-green",
-          "changes": [
-            {
-              "event": "BREAKDOWN",
-              "system": "Reactor",
-              "sprite": "decoration-light-red"
-            },
-            {
-              "event": "REPAIRED",
-              "system": "Reactor",
-              "sprite": null
-            }
-          ]
-        },
-        {
-          "x": 8,
-          "y": 15,
-          "sprite": "decoration-light-green",
-          "changes": [
-            {
-              "event": "BREAKDOWN",
-              "system": "Reactor",
-              "sprite": "decoration-light-red"
-            },
-            {
-              "event": "REPAIRED",
-              "system": "Reactor",
-              "sprite": null
-            }
-          ]
-        }
-      ],
-      "systems": [
-        {
-          "name": "Reactor",
-          "position": {
-            "x": 6,
-            "y": 13
-          },
-          "interactionZone": {
-            "x": 3,
-            "y": 3
-          }
         }
       ]
     },

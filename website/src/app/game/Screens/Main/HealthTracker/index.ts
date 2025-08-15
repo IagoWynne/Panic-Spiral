@@ -1,5 +1,6 @@
-import { HealthTracker, HealthEntity } from "./HealthTracker";
+import { HealthEntity } from "./HealthTracker";
+import { ShipHealthTracker } from "./ShipHealthTracker";
 import HealthEvents from "./HealthEvents";
 
 export type { HealthEntity };
-export { HealthTracker, HealthEvents };
+export { ShipHealthTracker, HealthEvents };

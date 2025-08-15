@@ -11,6 +11,7 @@ import { Background } from "./Background";
 import { ScoreEvents, ScoreTracker } from "./Score";
 import { RoundEvents, RoundTracker } from "./Rounds";
 import { MAIN } from "../../constants";
+import { HealthEvents, ShipHealthTracker } from "./HealthTracker";
 
 export class MainScreen extends Container implements GameScreen {
   public static SCREEN_ID = "main";
@@ -23,6 +24,8 @@ export class MainScreen extends Container implements GameScreen {
   private _systemsManager: SystemsManager;
   private _scoreTracker: ScoreTracker;
   private _roundTracker: RoundTracker;
+  private _shipHealthTracker = new ShipHealthTracker();
+  private _systems: System[];
   private _ui: GameUI;
   private _paused = false;
 
@@ -35,13 +38,13 @@ export class MainScreen extends Container implements GameScreen {
     this._background = new Background();
 
     this._ship = new Ship();
-    const systems = this._ship.systems.children as System[];
+    this._systems = this._ship.systems.children as System[];
     this._navigationService = new NavigationService({
       tiles: this._ship.walls.children as Tile[],
-      systems,
+      systems: this._systems,
     });
 
-    this._systemsManager = new SystemsManager(systems);
+    this._systemsManager = new SystemsManager(this._systems);
 
     this._playerCharacter = new PlayerCharacter(this._navigationService);
 
@@ -87,6 +90,8 @@ export class MainScreen extends Container implements GameScreen {
     this._paused = true;
     this._systemsManager.onRoundEnd();
     this._scoreTracker.onRoundEnd();
+    this._shipHealthTracker.onRoundEnd();
+    this._systems.forEach((system) => system.onRoundEnd());
     this._ui.displayRoundEnd(
       this._roundTracker.roundStats[this._roundTracker.roundStats.length - 1],
       () => {
@@ -114,9 +119,11 @@ export class MainScreen extends Container implements GameScreen {
     this._systemsManager.cleanup();
     this._scoreTracker.cleanup();
     this._roundTracker.cleanup();
+    this._shipHealthTracker.cleanup();
     SystemEvents.release();
     ScoreEvents.release();
     RoundEvents.release();
+    HealthEvents.release();
     this.destroy({ children: true });
   }
 }

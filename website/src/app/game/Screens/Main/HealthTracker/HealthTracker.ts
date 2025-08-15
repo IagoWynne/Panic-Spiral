@@ -2,7 +2,7 @@ import HealthEvents from "./HealthEvents";
 
 export type HealthEntity = "SHIP";
 
-export class HealthTracker {
+export abstract class HealthTracker {
   private _currentHealth: number;
 
   constructor(maxHealth: number, private entityId: HealthEntity) {
@@ -15,7 +15,10 @@ export class HealthTracker {
     }
 
     this._currentHealth = Math.max(0, this._currentHealth - healthToRemove);
+    this.onRemoveHealth();
 
     HealthEvents.onHealthChange(this._currentHealth, this.entityId);
   }
+
+  protected abstract onRemoveHealth(): void;
 }

@@ -1,13 +1,16 @@
 import { Container, Graphics, Text } from "pixi.js";
-import { HealthEntity } from "../../HealthTracker";
+import { HealthEntity, HealthEvents } from "../../HealthTracker";
 import { MAIN } from "../../../../constants";
 import { i18n } from "../../../../Utils";
 
 export class HealthBar extends Container {
+  private _componentId: string;
   private _healthBlocks: Graphics[] = [];
 
-  constructor(maxHealth: number, healthEntity: HealthEntity) {
+  constructor(private maxHealth: number, private healthEntity: HealthEntity) {
     super();
+
+    this._componentId = `health-bar-${healthEntity}`;
 
     const label = new Text({
       text: i18n(healthEntity),
@@ -46,6 +49,8 @@ export class HealthBar extends Container {
     this.addChild(background);
     this.addChild(healthBlockContainer);
     this.addChild(label);
+
+    this.addListeners();
   }
 
   private buildHealthBlocks(maxHealth: number): Container {
@@ -77,6 +82,28 @@ export class HealthBar extends Container {
       (MAIN.UI.HEALTH_BAR.WIDTH -
         (maxHealth + 1) * MAIN.UI.HEALTH_BAR.BLOCK_PADDING) /
       maxHealth
+    );
+  }
+
+  private addListeners() {
+    HealthEvents.addHealthChangedListener({
+      componentId: this._componentId,
+      healthEntity: this.healthEntity,
+      action: (remainingHealth: number) =>
+        this.onHealthChanged(remainingHealth),
+    });
+  }
+
+  private onHealthChanged(remainingHealth: number) {
+    for (let i = remainingHealth; i < this.maxHealth; i++) {
+      this._healthBlocks[i].visible = false;
+    }
+  }
+
+  public cleanup() {
+    HealthEvents.removeHealthChangedListeners(
+      this._componentId,
+      this.healthEntity
     );
   }
 }
