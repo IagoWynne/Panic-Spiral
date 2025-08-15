@@ -16,35 +16,35 @@ export class HealthBar extends Container {
       text: i18n(healthEntity),
       style: {
         stroke: {
-          color: MAIN.UI.HEALTH_BAR.LABEL_STROKE.COLOUR,
-          width: MAIN.UI.HEALTH_BAR.LABEL_STROKE.WIDTH,
+          color: MAIN.UI.SHIP_HEALTH_BAR.LABEL_STROKE.COLOUR,
+          width: MAIN.UI.SHIP_HEALTH_BAR.LABEL_STROKE.WIDTH,
         },
       },
-      x: MAIN.UI.HEALTH_BAR.LABEL_PADDING.LEFT,
-      y: MAIN.UI.HEALTH_BAR.LABEL_PADDING.TOP,
+      x: MAIN.UI.SHIP_HEALTH_BAR.LABEL_PADDING.LEFT,
+      y: MAIN.UI.SHIP_HEALTH_BAR.LABEL_PADDING.TOP,
     });
 
     const background = new Graphics()
       .roundRect(
         0,
         0,
-        MAIN.UI.HEALTH_BAR.WIDTH +
-          MAIN.UI.HEALTH_BAR.LABEL_PADDING.LEFT +
+        MAIN.UI.SHIP_HEALTH_BAR.WIDTH +
+          MAIN.UI.SHIP_HEALTH_BAR.LABEL_PADDING.LEFT +
           label.width,
-        MAIN.UI.HEALTH_BAR.HEIGHT +
-          MAIN.UI.HEALTH_BAR.PADDING.TOP +
-          MAIN.UI.HEALTH_BAR.PADDING.BOTTOM,
-        MAIN.UI.HEALTH_BAR.CORNER_RADIUS
+        MAIN.UI.SHIP_HEALTH_BAR.HEIGHT +
+          MAIN.UI.SHIP_HEALTH_BAR.PADDING.TOP +
+          MAIN.UI.SHIP_HEALTH_BAR.PADDING.BOTTOM,
+        MAIN.UI.SHIP_HEALTH_BAR.CORNER_RADIUS
       )
-      .fill(MAIN.UI.HEALTH_BAR.BACKGROUND_FILL)
+      .fill(MAIN.UI.SHIP_HEALTH_BAR.BACKGROUND_FILL)
       .stroke({
-        color: MAIN.UI.HEALTH_BAR.STROKE_COLOUR,
-        width: MAIN.UI.HEALTH_BAR.STROKE_WIDTH,
+        color: MAIN.UI.SHIP_HEALTH_BAR.STROKE_COLOUR,
+        width: MAIN.UI.SHIP_HEALTH_BAR.STROKE_WIDTH,
       });
 
     const healthBlockContainer = this.buildHealthBlocks(maxHealth);
     healthBlockContainer.x =
-      MAIN.UI.HEALTH_BAR.LABEL_PADDING.LEFT + label.width;
+      MAIN.UI.SHIP_HEALTH_BAR.LABEL_PADDING.LEFT + label.width;
 
     this.addChild(background);
     this.addChild(healthBlockContainer);
@@ -55,7 +55,7 @@ export class HealthBar extends Container {
 
   private buildHealthBlocks(maxHealth: number): Container {
     const healthBlockContainer = new Container({
-      y: MAIN.UI.HEALTH_BAR.PADDING.TOP,
+      y: MAIN.UI.SHIP_HEALTH_BAR.PADDING.TOP,
     });
 
     const healthBlockWidth = this.getHealthBlockWidth(maxHealth);
@@ -63,12 +63,12 @@ export class HealthBar extends Container {
     for (let i = 0; i < maxHealth; i++) {
       const healthBlock = new Graphics()
         .rect(
-          i * (MAIN.UI.HEALTH_BAR.BLOCK_PADDING + healthBlockWidth),
+          i * (MAIN.UI.SHIP_HEALTH_BAR.BLOCK_PADDING + healthBlockWidth),
           0,
           healthBlockWidth,
-          MAIN.UI.HEALTH_BAR.HEIGHT
+          MAIN.UI.SHIP_HEALTH_BAR.HEIGHT
         )
-        .fill(MAIN.UI.HEALTH_BAR.FILL.SHIP);
+        .fill(MAIN.UI.SHIP_HEALTH_BAR.FILL.SHIP);
 
       this._healthBlocks.push(healthBlock);
       healthBlockContainer.addChild(healthBlock);
@@ -79,8 +79,8 @@ export class HealthBar extends Container {
 
   private getHealthBlockWidth(maxHealth: number) {
     return (
-      (MAIN.UI.HEALTH_BAR.WIDTH -
-        (maxHealth + 1) * MAIN.UI.HEALTH_BAR.BLOCK_PADDING) /
+      (MAIN.UI.SHIP_HEALTH_BAR.WIDTH -
+        (maxHealth + 1) * MAIN.UI.SHIP_HEALTH_BAR.BLOCK_PADDING) /
       maxHealth
     );
   }

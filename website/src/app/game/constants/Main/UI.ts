@@ -79,7 +79,7 @@ export const ROUND_END = {
   },
 };
 
-export const HEALTH_BAR = {
+export const SHIP_HEALTH_BAR = {
   HEIGHT: 30,
   WIDTH: 300,
   CORNER_RADIUS: 3,
@@ -107,5 +107,16 @@ export const HEALTH_BAR = {
   BLOCK_PADDING: 3,
   FILL: {
     SHIP: "#44AD4D",
+  },
+};
+
+export const PLAYER_HEALTH_BAR = {
+  HEIGHT: 5,
+  WIDTH: 24,
+  BACKGROUND_FILL_COLOUR: "#000000",
+  HEALTHY_FILL_COLOUR: "#00ff00",
+  POSITION: {
+    X: -12,
+    Y: -24,
   },
 };

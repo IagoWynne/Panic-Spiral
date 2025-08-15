@@ -1,11 +1,16 @@
 import HealthEvents from "./HealthEvents";
 
-export type HealthEntity = "SHIP";
+export type HealthEntity = "SHIP" | "PLAYER";
 
 export abstract class HealthTracker {
+  protected _damageTimer?: NodeJS.Timeout;
   private _currentHealth: number;
 
-  constructor(maxHealth: number, private entityId: HealthEntity) {
+  constructor(
+    maxHealth: number,
+    private entityId: HealthEntity,
+    protected _componentId: string
+  ) {
     this._currentHealth = maxHealth;
   }
 
@@ -20,5 +25,16 @@ export abstract class HealthTracker {
     HealthEvents.onHealthChange(this._currentHealth, this.entityId);
   }
 
+  public onRoundEnd() {
+    this.clearDamageTimer();
+  }
+
   protected abstract onRemoveHealth(): void;
+
+  protected clearDamageTimer() {
+    if (this._damageTimer) {
+      clearInterval(this._damageTimer);
+      this._damageTimer = undefined;
+    }
+  }
 }
