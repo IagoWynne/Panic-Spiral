@@ -1,6 +1,7 @@
 import { MAIN } from "../../../constants";
 import { System } from "./System";
 import { Engine } from "./Engine";
+import { Reactor } from "./Reactor";
 
 interface SystemData {
   name: string;
@@ -14,6 +15,16 @@ const buildSystem = (data: SystemData, tileSize: number): System | null => {
   switch (data.name) {
     case MAIN.SYSTEMS.SYSTEM_IDS.ENGINE: {
       return new Engine(
+        data.name,
+        tileSize,
+        data.interactionZone.x,
+        data.interactionZone.y,
+        MAIN.SYSTEMS.SYSTEM_REPAIR_COOLDOWNS[data.name],
+        MAIN.SYSTEMS.SYSTEM_BREAKDOWN_RATE[data.name]
+      );
+    }
+    case MAIN.SYSTEMS.SYSTEM_IDS.REACTOR: {
+      return new Reactor(
         data.name,
         tileSize,
         data.interactionZone.x,

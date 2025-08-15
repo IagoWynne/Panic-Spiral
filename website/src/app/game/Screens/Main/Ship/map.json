@@ -759,6 +759,95 @@
           "y": 15,
           "sprite": "floor-grey-3"
         }
+      ],
+      "decorations": [
+        {
+          "x": 6,
+          "y": 13,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Reactor",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Reactor",
+              "sprite": null
+            }
+          ]
+        },
+        {
+          "x": 6,
+          "y": 15,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Reactor",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Reactor",
+              "sprite": null
+            }
+          ]
+        },
+        {
+          "x": 7,
+          "y": 14,
+          "sprite": "decoration-screen-0",
+          "changes": []
+        },
+        {
+          "x": 8,
+          "y": 13,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Reactor",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Reactor",
+              "sprite": null
+            }
+          ]
+        },
+        {
+          "x": 8,
+          "y": 15,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Reactor",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Reactor",
+              "sprite": null
+            }
+          ]
+        }
+      ],
+      "systems": [
+        {
+          "name": "Reactor",
+          "position": {
+            "x": 6,
+            "y": 13
+          },
+          "interactionZone": {
+            "x": 3,
+            "y": 3
+          }
+        }
       ]
     },
     {
