@@ -6,7 +6,7 @@ import { MAIN } from "../../../constants";
 import { UIEvents } from "../UI";
 import { AUDIO_FILE_ALIASES, GameAudio } from "../../../Utils/audio";
 
-export abstract class System extends Container {
+export class System extends Container {
   public interactionZone: InteractionZone;
   public broken: boolean = false;
   private _collisionBox: Graphics;
@@ -20,6 +20,7 @@ export abstract class System extends Container {
     interactionZoneWidth: number,
     interactionZoneHeight: number,
     private cooldown: number,
+    private breakdownRate: number,
     private tooltipText: string = MAIN.SYSTEMS.DEFAULT_INTERACTION_TEXT
   ) {
     super();
@@ -87,7 +88,11 @@ export abstract class System extends Container {
     this.doInteraction();
   }
 
-  protected abstract doInteraction: () => void;
+  private doInteraction = () => {
+    if (this.broken) {
+      this.onRepair();
+    }
+  };
 
   public checkForBreakdown(): boolean {
     if (!this._canBreak) {
@@ -101,9 +106,18 @@ export abstract class System extends Container {
     this.onRepair(false);
   }
 
-  protected abstract doCheckForBreakdown: () => boolean;
+  private doCheckForBreakdown = () => {
+    const breakdownChance = Math.random();
 
-  protected onBreakdown() {
+    if (breakdownChance <= this.breakdownRate) {
+      this.onBreakdown();
+      return true;
+    }
+
+    return false;
+  };
+
+  private onBreakdown() {
     this.interactionZone.enabled = true;
     this.broken = true;
     this._canBreak = false;
@@ -116,7 +130,7 @@ export abstract class System extends Container {
     GameAudio.SFX?.play(AUDIO_FILE_ALIASES.MAIN.SYSTEM_BREAK);
   }
 
-  protected onRepair(playSound: boolean = true) {
+  private onRepair(playSound: boolean = true) {
     this._cooldownTimer = setTimeout(() => {
       this._canBreak = true;
       this._cooldownTimer = undefined;

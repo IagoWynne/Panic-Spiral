@@ -978,7 +978,7 @@
       ]
     },
     {
-      "name": "O2",
+      "name": "Empty - BM",
       "walls": [
         {
           "x": 10,
@@ -1342,7 +1342,7 @@
       ]
     },
     {
-      "name": "Empty - BR",
+      "name": "O2",
       "walls": [
         {
           "x": 14,
@@ -1590,6 +1590,61 @@
           "x": 18,
           "y": 15,
           "sprite": "floor-grey-0"
+        }
+      ],
+      "decorations": [
+        {
+          "x": 15,
+          "y": 15,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "O2",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "O2",
+              "sprite": null
+            }
+          ]
+        },
+        {
+          "x": 16,
+          "y": 15,
+          "sprite": "decoration-screen-0",
+          "changes": []
+        },
+        {
+          "x": 17,
+          "y": 15,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "O2",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "O2",
+              "sprite": null
+            }
+          ]
+        }
+      ],
+      "systems": [
+        {
+          "name": "O2",
+          "position": {
+            "x": 15,
+            "y": 15
+          },
+          "interactionZone": {
+            "x": 3,
+            "y": 1.5
+          }
         }
       ]
     },
