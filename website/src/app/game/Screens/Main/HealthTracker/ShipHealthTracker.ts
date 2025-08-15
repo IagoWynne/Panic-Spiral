@@ -4,11 +4,8 @@ import { SystemEvents } from "../Systems";
 import { HealthTracker } from "./HealthTracker";
 
 export class ShipHealthTracker extends HealthTracker {
-  private _componentId = "ship-health-tracker";
-  private _damageTimer?: NodeJS.Timeout;
-
   constructor() {
-    super(MAIN.SHIP.MAX_HEALTH, "SHIP");
+    super(MAIN.SHIP.MAX_HEALTH, "SHIP", "ship-health-tracker");
     this.addListeners();
   }
 
@@ -40,17 +37,6 @@ export class ShipHealthTracker extends HealthTracker {
   }
 
   private onReactorRepaired() {
-    this.clearDamageTimer();
-  }
-
-  private clearDamageTimer() {
-    if (this._damageTimer) {
-      clearInterval(this._damageTimer);
-      this._damageTimer = undefined;
-    }
-  }
-
-  public onRoundEnd() {
     this.clearDamageTimer();
   }
 

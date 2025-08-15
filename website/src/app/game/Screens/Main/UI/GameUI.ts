@@ -26,8 +26,8 @@ export class GameUI extends Container {
     this._roundInfo.y = MAIN.UI.ROUND_DEFAULTS.ROUND_PADDING * 2;
 
     this._healthBarsContainer = new Container({
-      x: MAIN.UI.HEALTH_BAR.MARGIN.LEFT,
-      y: MAIN.UI.HEALTH_BAR.MARGIN.TOP,
+      x: MAIN.UI.SHIP_HEALTH_BAR.MARGIN.LEFT,
+      y: MAIN.UI.SHIP_HEALTH_BAR.MARGIN.TOP,
     });
 
     this._healthBarsContainer.addChild(this._shipHealthBar);

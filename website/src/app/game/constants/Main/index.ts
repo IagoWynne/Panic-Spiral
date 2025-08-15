@@ -5,5 +5,6 @@ import * as PLAYER_MOVEMENT from "./PlayerMovement";
 import * as SYSTEMS from "./Systems";
 import * as SCORE from "./Score";
 import * as ROUND from "./Round";
+import * as PLAYER from "./Player";
 
-export { SHIP, BACKGROUND, UI, PLAYER_MOVEMENT, SYSTEMS, SCORE, ROUND };
+export { SHIP, BACKGROUND, UI, PLAYER_MOVEMENT, SYSTEMS, SCORE, ROUND, PLAYER };
