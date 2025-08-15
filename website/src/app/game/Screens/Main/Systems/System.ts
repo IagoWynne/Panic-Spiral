@@ -97,6 +97,10 @@ export abstract class System extends Container {
     return this.doCheckForBreakdown();
   }
 
+  public onRoundEnd() {
+    this.onRepair(false);
+  }
+
   protected abstract doCheckForBreakdown: () => boolean;
 
   protected onBreakdown() {
@@ -112,7 +116,7 @@ export abstract class System extends Container {
     GameAudio.SFX?.play(AUDIO_FILE_ALIASES.MAIN.SYSTEM_BREAK);
   }
 
-  protected onRepair() {
+  protected onRepair(playSound: boolean = true) {
     this._cooldownTimer = setTimeout(() => {
       this._canBreak = true;
       this._cooldownTimer = undefined;
@@ -122,6 +126,9 @@ export abstract class System extends Container {
     this.broken = false;
     this.closeInteractionTooltip();
     SystemEvents.onSystemRepaired(this.id);
-    GameAudio.SFX?.play(AUDIO_FILE_ALIASES.MAIN.SYSTEM_REPAIR);
+
+    if (playSound) {
+      GameAudio.SFX?.play(AUDIO_FILE_ALIASES.MAIN.SYSTEM_REPAIR);
+    }
   }
 }

@@ -74,6 +74,7 @@ export class GameUI extends Container {
     this._scoreDisplay.cleanup();
     this._systemMonitor.cleanup();
     this._roundInfo.cleanUp();
+    this._shipHealthBar.cleanup();
     this.destroy();
   }
 }

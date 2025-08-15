@@ -10,6 +10,7 @@ const AUDIO_FILE_ALIASES = {
     BGM: "main-bgm-01",
     SYSTEM_BREAK: "system-break",
     SYSTEM_REPAIR: "system-repair",
+    SHIP_DAMAGE: "ship-damage",
   },
 };
 

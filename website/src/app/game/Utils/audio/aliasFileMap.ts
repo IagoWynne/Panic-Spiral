@@ -17,6 +17,10 @@ const ALIAS_FILE_MAP = {
         alias: AUDIO_FILE_ALIASES.MAIN.SYSTEM_REPAIR,
         file: "system-repair.wav",
       },
+      {
+        alias: AUDIO_FILE_ALIASES.MAIN.SHIP_DAMAGE,
+        file: "ship-damage.wav",
+      },
     ],
   },
   BGM: {
