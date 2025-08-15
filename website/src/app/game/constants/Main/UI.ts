@@ -78,3 +78,34 @@ export const ROUND_END = {
     RIGHT: 100,
   },
 };
+
+export const HEALTH_BAR = {
+  HEIGHT: 30,
+  WIDTH: 300,
+  CORNER_RADIUS: 3,
+  BACKGROUND_FILL: "#000000EE",
+  STROKE_COLOUR: "#FFFFFF",
+  STROKE_WIDTH: 2,
+  MARGIN: {
+    TOP: 10,
+    LEFT: 10,
+  },
+  PADDING: {
+    TOP: 5,
+    BOTTOM: 5,
+  },
+  LABEL_STROKE: {
+    COLOUR: "#000000",
+    WIDTH: 2,
+  },
+  LABEL_PADDING: {
+    LEFT: 10,
+    TOP: 3,
+    BOTTOM: 5,
+    RIGHT: 5,
+  },
+  BLOCK_PADDING: 3,
+  FILL: {
+    SHIP: "#44AD4D",
+  },
+};
