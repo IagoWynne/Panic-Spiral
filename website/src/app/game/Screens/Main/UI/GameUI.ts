@@ -7,6 +7,7 @@ import { Score } from "./Score";
 import { RoundInfo } from "./RoundInfo";
 import { RoundEndOverlay } from "./RoundEndOverlay";
 import { RoundStats } from "../Rounds";
+import HealthBar from "./HealthBar";
 
 export class GameUI extends Container {
   private _tooltipManager = new TooltipManager();
@@ -14,6 +15,8 @@ export class GameUI extends Container {
   private _scoreDisplay = new Score();
   private _roundInfo = new RoundInfo();
   private _roundEndOverlay?: RoundEndOverlay;
+  private _healthBarsContainer = new Container();
+  private _shipHealthBar = new HealthBar(MAIN.SHIP.MAX_HEALTH, "SHIP");
 
   constructor() {
     super();
@@ -22,9 +25,17 @@ export class GameUI extends Container {
     this._scoreDisplay.y = MAIN.UI.SCORE_DEFAULTS.SCORE_PADDING;
     this._roundInfo.y = MAIN.UI.ROUND_DEFAULTS.ROUND_PADDING * 2;
 
+    this._healthBarsContainer = new Container({
+      x: MAIN.UI.HEALTH_BAR.MARGIN.LEFT,
+      y: MAIN.UI.HEALTH_BAR.MARGIN.TOP,
+    });
+
+    this._healthBarsContainer.addChild(this._shipHealthBar);
+
     this.addChild(this._systemMonitor);
     this.addChild(this._scoreDisplay);
     this.addChild(this._roundInfo);
+    this.addChild(this._healthBarsContainer);
     this.addChild(this._tooltipManager);
     UIEvents.setTooltipManager(this._tooltipManager);
   }

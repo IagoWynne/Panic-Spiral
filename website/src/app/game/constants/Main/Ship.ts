@@ -10,3 +10,4 @@ export const GRID_OFFSET = {
   X: -400,
   Y: -272,
 };
+export const MAX_HEALTH = 20;
