@@ -23,7 +23,7 @@ export class PlayerCharacter extends Container {
     );
 
     this._healthBar.x = MAIN.UI.PLAYER_HEALTH_BAR.POSITION.X;
-    this._healthBar.y = -MAIN.UI.PLAYER_HEALTH_BAR.POSITION.Y;
+    this._healthBar.y = MAIN.UI.PLAYER_HEALTH_BAR.POSITION.Y;
 
     this.addChild(this._healthBar);
   }
