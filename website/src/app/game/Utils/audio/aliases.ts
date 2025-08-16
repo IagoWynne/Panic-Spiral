@@ -11,6 +11,7 @@ const AUDIO_FILE_ALIASES = {
     SYSTEM_BREAK: "system-break",
     SYSTEM_REPAIR: "system-repair",
     SHIP_DAMAGE: "ship-damage",
+    PLAYER_DAMAGE: "player-damage",
   },
 };
 

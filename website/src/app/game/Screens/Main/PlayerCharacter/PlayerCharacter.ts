@@ -3,7 +3,7 @@ import { PlayerMovementController } from "./PlayerMovementController";
 import { Inputs } from "../../../Utils/keyboardEventHandler";
 import { NavigationService } from "../NavigationService";
 import { HealthBar } from "./HealthBar";
-import { MAIN } from "@/app/game/constants";
+import { MAIN } from "../../../constants";
 
 export class PlayerCharacter extends Container {
   public collisionBox!: Graphics;
@@ -48,6 +48,7 @@ export class PlayerCharacter extends Container {
   }
 
   public cleanup() {
+    this._healthBar.cleanup();
     Inputs.Keyboard?.removeAllComponentKeyHandlers(this._componentId);
   }
 }
