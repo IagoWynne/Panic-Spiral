@@ -12,6 +12,7 @@ import { ScoreEvents, ScoreTracker } from "./Score";
 import { RoundEvents, RoundTracker } from "./Rounds";
 import { MAIN } from "../../constants";
 import { HealthEvents, ShipHealthTracker } from "./HealthTracker";
+import { PlayerHealthTracker } from "./HealthTracker/PlayerHealthTracker";
 
 export class MainScreen extends Container implements GameScreen {
   public static SCREEN_ID = "main";
@@ -25,6 +26,7 @@ export class MainScreen extends Container implements GameScreen {
   private _scoreTracker: ScoreTracker;
   private _roundTracker: RoundTracker;
   private _shipHealthTracker = new ShipHealthTracker();
+  private _playerHealthTracker = new PlayerHealthTracker();
   private _systems: System[];
   private _ui: GameUI;
   private _paused = false;
@@ -120,6 +122,7 @@ export class MainScreen extends Container implements GameScreen {
     this._scoreTracker.cleanup();
     this._roundTracker.cleanup();
     this._shipHealthTracker.cleanup();
+    this._playerHealthTracker.cleanup();
     SystemEvents.release();
     ScoreEvents.release();
     RoundEvents.release();

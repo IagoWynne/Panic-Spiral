@@ -21,6 +21,10 @@ const ALIAS_FILE_MAP = {
         alias: AUDIO_FILE_ALIASES.MAIN.SHIP_DAMAGE,
         file: "ship-damage.wav",
       },
+      {
+        alias: AUDIO_FILE_ALIASES.MAIN.PLAYER_DAMAGE,
+        file: "player-damage.wav",
+      },
     ],
   },
   BGM: {
