@@ -46,10 +46,6 @@ export default function RootLayout({
             />
           </Link>
           <div className={reconstruct.className}>
-            <div className="flex gap-4 justify-start items-center text-xl">
-              <Link href="/">Home</Link>
-              <Link href="/leaderboard">Leaderboard</Link>
-            </div>
           </div>
           <div className="row-start-2 col-start-2 w-[1280px] h-[800px]">
             {children}
