@@ -86,6 +86,7 @@ export const SHIP_HEALTH_BAR = {
   BACKGROUND_FILL: "#000000EE",
   STROKE_COLOUR: "#FFFFFF",
   STROKE_WIDTH: 2,
+  BASE_FILL: "#FFFFFF",
   MARGIN: {
     TOP: 10,
     LEFT: 10,
@@ -105,8 +106,14 @@ export const SHIP_HEALTH_BAR = {
     RIGHT: 5,
   },
   BLOCK_PADDING: 3,
-  FILL: {
-    SHIP: "#44AD4D",
+  TINT: {
+    HEALTHY: "#44AD4D",
+    WARNING: "#FFDD00",
+    DANGER: "#FF0000",
+  },
+  THRESHOLDS: {
+    WARNING: 0.66,
+    DANGER: 0.33,
   },
 };
 
@@ -114,11 +121,20 @@ export const PLAYER_HEALTH_BAR = {
   HEIGHT: 5,
   WIDTH: 24,
   BACKGROUND_FILL_COLOUR: "#000000",
-  HEALTHY_FILL_COLOUR: "#00ff00",
+  BASE_FILL: "#FFFFFF",
+  TINT: {
+    HEALTHY: "#00FF00",
+    WARNING: "#FFDD00",
+    DANGER: "#FF0000",
+  },
   DAMAGE_TAKEN_FILL_COLOR: "#ffffff",
   DAMAGE_TAKEN_VISIBLE_MS: 250,
   POSITION: {
     X: -12,
     Y: -24,
+  },
+  THRESHOLDS: {
+    WARNING: 0.66,
+    DANGER: 0.33,
   },
 };

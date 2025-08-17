@@ -68,7 +68,9 @@ export class HealthBar extends Container {
           healthBlockWidth,
           MAIN.UI.SHIP_HEALTH_BAR.HEIGHT
         )
-        .fill(MAIN.UI.SHIP_HEALTH_BAR.FILL.SHIP);
+        .fill(MAIN.UI.SHIP_HEALTH_BAR.BASE_FILL);
+
+      healthBlock.tint = MAIN.UI.SHIP_HEALTH_BAR.TINT.HEALTHY;
 
       this._healthBlocks.push(healthBlock);
       healthBlockContainer.addChild(healthBlock);
@@ -95,9 +97,25 @@ export class HealthBar extends Container {
   }
 
   private onHealthChanged(remainingHealth: number) {
-    for (let i = remainingHealth; i < this.maxHealth; i++) {
-      this._healthBlocks[i].visible = false;
+    let colour = MAIN.UI.SHIP_HEALTH_BAR.TINT.HEALTHY;
+
+    const remainingPercentage = remainingHealth / this.maxHealth;
+
+    if (remainingPercentage <= MAIN.UI.SHIP_HEALTH_BAR.THRESHOLDS.DANGER) {
+      colour = MAIN.UI.SHIP_HEALTH_BAR.TINT.DANGER;
+    } else if (
+      remainingPercentage <= MAIN.UI.SHIP_HEALTH_BAR.THRESHOLDS.WARNING
+    ) {
+      colour = MAIN.UI.SHIP_HEALTH_BAR.TINT.WARNING;
     }
+
+    this._healthBlocks.forEach((block: Graphics, idx: number) => {
+      if (idx >= remainingHealth) {
+        block.visible = false;
+      } else {
+        block.tint = colour;
+      }
+    });
   }
 
   public cleanup() {

@@ -28,7 +28,9 @@ export class HealthBar extends Container {
         MAIN.UI.PLAYER_HEALTH_BAR.WIDTH,
         MAIN.UI.PLAYER_HEALTH_BAR.HEIGHT
       )
-      .fill(MAIN.UI.PLAYER_HEALTH_BAR.HEALTHY_FILL_COLOUR);
+      .fill(MAIN.UI.PLAYER_HEALTH_BAR.BASE_FILL);
+
+    this._healthRect.tint = MAIN.UI.PLAYER_HEALTH_BAR.TINT.HEALTHY;
 
     this._damageRect = new Graphics()
       .rect(
@@ -58,12 +60,25 @@ export class HealthBar extends Container {
   }
 
   private onHealthChanged(remainingHealth: number) {
+    let colour = MAIN.UI.PLAYER_HEALTH_BAR.TINT.HEALTHY;
+
+    const remainingPercentage = remainingHealth / MAIN.PLAYER.MAX_HEALTH;
+
+    if (remainingPercentage <= MAIN.UI.PLAYER_HEALTH_BAR.THRESHOLDS.DANGER) {
+      colour = MAIN.UI.PLAYER_HEALTH_BAR.TINT.DANGER;
+    } else if (
+      remainingPercentage <= MAIN.UI.PLAYER_HEALTH_BAR.THRESHOLDS.WARNING
+    ) {
+      colour = MAIN.UI.PLAYER_HEALTH_BAR.TINT.WARNING;
+    }
+
     const newWidth = Math.round(
       (remainingHealth / MAIN.PLAYER.MAX_HEALTH) *
         MAIN.UI.PLAYER_HEALTH_BAR.WIDTH
     );
 
     this._healthRect.width = newWidth;
+    this._healthRect.tint = colour;
     this._damageRect.visible = true;
 
     this._damageRectVisibleTimer = setTimeout(() => {
