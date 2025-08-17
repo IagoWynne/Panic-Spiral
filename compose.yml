@@ -1,30 +1,10 @@
 services:
   website:
     build:
-      context: ./website
+      context: ./
       dockerfile: dev.Dockerfile
     ports:
       - 25880:3000
-    environment:
-      API_URL:
     volumes:
-      - ./website:/app
+      - ./:/app
     command: npm run watch
-  api:
-    build:
-      context: ./api
-      dockerfile: dev.Dockerfile
-    ports:
-      - 25881:8080
-    expose:
-      - 25881
-    depends_on:
-      - database
-    env_file:
-      - .env
-  database:
-    image: "postgres:latest"
-    env_file:
-      - .env
-    volumes:
-      - ${PWD}/db-data/:/var/lib/postgresql/data/

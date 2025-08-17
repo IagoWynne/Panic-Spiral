@@ -1,0 +1,3060 @@
+{
+    "assets": {
+        "/app/src/app/game/raw-assets": {
+            "isFolder": true,
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1753522520333,
+                "duration": 22.66318799999999,
+                "success": true
+            }
+        },
+        "/app/src/app/game/raw-assets/common{m}": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets",
+            "metaData": {
+                "m": true
+            },
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1753522520334,
+                "duration": 22.490768000000003,
+                "success": true
+            }
+        },
+        "/app/src/app/game/raw-assets/common{m}/fonts": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/common{m}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {},
+            "stats": {
+                "date": 1753522520334,
+                "duration": 22.46884399999999,
+                "success": true
+            }
+        },
+        "/app/src/app/game/raw-assets/common{m}/fonts/Reconstruct{wf}.ttf": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/common{m}/fonts",
+            "metaData": {
+                "wf": true,
+                "family": "Reconstruct"
+            },
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {},
+            "stats": {
+                "date": 1753522520334,
+                "duration": 26.103334000000018,
+                "success": true
+            },
+            "hash": "LOOqXw"
+        },
+        ".assetpack/webfont/common{m}/fonts/Reconstruct{wf}.woff2": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/common{m}/fonts/Reconstruct{wf}.ttf",
+            "metaData": {
+                "wf": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "wf": true,
+                "family": "Reconstruct"
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/common{m}/fonts/Reconstruct-yGVbaQ{wf}.woff2": {
+            "isFolder": false,
+            "transformParent": ".assetpack/webfont/common{m}/fonts/Reconstruct{wf}.woff2",
+            "metaData": {
+                "wf": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "wf": true,
+                "family": "Reconstruct"
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/common/fonts/Reconstruct-yGVbaQ.woff2": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/common{m}/fonts/Reconstruct-yGVbaQ{wf}.woff2",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "wf": true,
+                "family": "Reconstruct"
+            },
+            "transformData": {}
+        },
+        "/app/src/app/game/raw-assets/common{m}/ui": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/common{m}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {},
+            "stats": {
+                "date": 1753522520356,
+                "duration": 0.4043130000000019,
+                "success": true
+            }
+        },
+        "/app/src/app/game/raw-assets/common{m}/ui/sprites{tps}": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/common{m}/ui",
+            "metaData": {
+                "tps": true
+            },
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {},
+            "stats": {
+                "date": 1753522520356,
+                "duration": 828.105939,
+                "success": true
+            }
+        },
+        "/app/src/app/game/raw-assets/common{m}/ui/sprites{tps}/button-background.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/common{m}/ui/sprites{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "3B371w"
+        },
+        ".assetpack/texture-packer/common{m}/ui/sprites.png": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/common{m}/ui/sprites{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/common{m}/ui/sprites.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/common{m}/ui/sprites.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/common{m}/ui/sprites-SWCINg.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/common{m}/ui/sprites.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/common/ui/sprites-SWCINg.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/common{m}/ui/sprites-SWCINg.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/common{m}/ui/sprites.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/common{m}/ui/sprites.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/common{m}/ui/sprites-30xmug.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/common{m}/ui/sprites.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/common/ui/sprites-30xmug.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/common{m}/ui/sprites-30xmug.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/common{m}/ui/sprites.json": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/common{m}/ui/sprites{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/common{m}/ui/sprites.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/common{m}/ui/sprites.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/common{m}/ui/sprites.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/common{m}/ui/sprites.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/common{m}/ui/sprites-iUj1lA.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/common{m}/ui/sprites.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/common/ui/sprites-oaHVAQ.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/common{m}/ui/sprites-iUj1lA.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/common{m}/ui/sprites.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/common{m}/ui/sprites.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/common{m}/ui/sprites.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/common{m}/ui/sprites.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/common{m}/ui/sprites-yN276Q.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/common{m}/ui/sprites.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/common/ui/sprites-XStKAg.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/common{m}/ui/sprites-yN276Q.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer/common{m}/ui/sprites@0.5x.png": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/common{m}/ui/sprites{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/common{m}/ui/sprites@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/common{m}/ui/sprites@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/common{m}/ui/sprites-_lyGhw@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/common{m}/ui/sprites@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/common/ui/sprites-_lyGhw@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/common{m}/ui/sprites-_lyGhw@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/common{m}/ui/sprites@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/common{m}/ui/sprites@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/common{m}/ui/sprites-EbomxQ@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/common{m}/ui/sprites@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/common/ui/sprites-EbomxQ@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/common{m}/ui/sprites-EbomxQ@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/common{m}/ui/sprites@0.5x.json": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/common{m}/ui/sprites{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/common{m}/ui/sprites@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/common{m}/ui/sprites@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/common{m}/ui/sprites@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/common{m}/ui/sprites@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/common{m}/ui/sprites-s3DGBQ@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/common{m}/ui/sprites@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/common/ui/sprites-1L7l3A@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/common{m}/ui/sprites-s3DGBQ@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/common{m}/ui/sprites@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/common{m}/ui/sprites@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/common{m}/ui/sprites@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/common{m}/ui/sprites@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/common{m}/ui/sprites-R8tzOA@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/common{m}/ui/sprites@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/common/ui/sprites-ouUqeg@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/common{m}/ui/sprites-R8tzOA@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/src/app/game/raw-assets/screens": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1753522520359,
+                "duration": 0.5606249999999591,
+                "success": true
+            }
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/screens",
+            "metaData": {
+                "m": true
+            },
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1753522520359,
+                "duration": 0.47903900000005706,
+                "success": true
+            }
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}",
+            "metaData": {
+                "tps": true
+            },
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {},
+            "stats": {
+                "date": 1753522520359,
+                "duration": 972.044914,
+                "success": true
+            }
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-back-0.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "V6E17w"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-back-1.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "FAPU8g"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-back-2.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "kRU_-w"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-back-3.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "FAPU8g"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-back-4.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "V6E17w"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-back-5.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "8MiUqA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-back-6.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "OIVBSw"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-back-7.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "8MiUqA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-forward-0.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "6gWUAg"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-forward-1.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "Kf9Usg"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-forward-2.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "uCjzxQ"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-forward-3.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "Kf9Usg"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-forward-4.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "6gWUAg"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-forward-5.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "XVXHSg"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-forward-6.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "nqVaUA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-forward-7.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "XVXHSg"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-left-0.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "zYWo6A"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-left-1.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "dxNWkw"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-left-2.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "wmj7JQ"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-left-3.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "dxNWkw"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-left-4.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "zYWo6A"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-left-5.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "zZ0Xqg"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-left-6.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "kkaP2w"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-left-7.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "zZ0Xqg"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-right-0.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "MKIAnA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-right-1.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "UTRzfw"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-right-2.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "uhRTvQ"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-right-3.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "UTRzfw"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-right-4.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "MKIAnA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-right-5.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "W4WmOg"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-right-6.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "s7FfPA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}/player-right-7.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "W4WmOg"
+        },
+        ".assetpack/texture-packer/screens/main{m}/player-character.png": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/main{m}/player-character.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/player-character.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/main{m}/player-character-6qK4sQ.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/main{m}/player-character.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/main/player-character-6qK4sQ.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/player-character-6qK4sQ.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/main{m}/player-character.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/player-character.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/main{m}/player-character-00fkDw.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/main{m}/player-character.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/main/player-character-00fkDw.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/player-character-00fkDw.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/screens/main{m}/player-character.json": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/main{m}/player-character.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/player-character.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/main{m}/player-character.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/main{m}/player-character.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/main{m}/player-character-YrNtSg.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/main{m}/player-character.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/main/player-character-6P1tlg.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/player-character-YrNtSg.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/main{m}/player-character.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/player-character.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/main{m}/player-character.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/main{m}/player-character.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/main{m}/player-character-7RcQFw.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/main{m}/player-character.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/main/player-character-Zavodw.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/player-character-7RcQFw.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer/screens/main{m}/player-character@0.5x.png": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/main{m}/player-character@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/player-character@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/main{m}/player-character-dLPX6A@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/main{m}/player-character@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/main/player-character-dLPX6A@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/player-character-dLPX6A@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/main{m}/player-character@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/player-character@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/main{m}/player-character-Ih03ag@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/main{m}/player-character@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/main/player-character-Ih03ag@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/player-character-Ih03ag@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/screens/main{m}/player-character@0.5x.json": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/main{m}/player-character{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/main{m}/player-character@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/player-character@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/main{m}/player-character@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/main{m}/player-character@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/main{m}/player-character-m748@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/main{m}/player-character@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/main/player-character-iSVNdA@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/player-character-m748@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/main{m}/player-character@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/player-character@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/main{m}/player-character@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/main{m}/player-character@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/main{m}/player-character-veJ04g@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/main{m}/player-character@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/main/player-character-PszovQ@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/player-character-veJ04g@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}",
+            "metaData": {
+                "tps": true
+            },
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {},
+            "stats": {
+                "date": 1753522520360,
+                "duration": 889.531237,
+                "success": true
+            }
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/decorations": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/decorations/decoration-light-green.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/decorations",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "pc3znA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/decorations/decoration-light-red.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/decorations",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "qSzMbQ"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/decorations/decoration-screen-0.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/decorations",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "rZD3UQ"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors/floor-grey-0.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "hW2xeQ"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors/floor-grey-1.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "vp6DJg"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors/floor-grey-2.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "2h4z8g"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors/floor-grey-3.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "MZTuvQ"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors/floor-grey-decoration-grate-1.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "HtQevA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors/floor-grey-decoration-grate-2.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "WK2klg"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors/floor-grey-decoration-grate-3.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "Nw4D0g"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors/floor-grey-decoration-hole.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/floors",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "22dkvA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-centre.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "VRRyJg"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-corner-bottom-left.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "GvSp8Q"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-corner-bottom-right.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "SXGmfA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-corner-top-left.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "_TplyQ"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-corner-top-right.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "aCf0gQ"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-horizontal-cap-left.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "T2TScA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-horizontal-cap-right.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "X4p30Q"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-horizontal.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "a4OjYA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-standalone.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "LjZO"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-t-junction-bottom.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "mGX8bQ"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-t-junction-left.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "UD3CaA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-t-junction-right.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "2n9FUw"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-t-junction-top.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "k95cgA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-vertical-cap-bottom.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "16H-UA"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-vertical-cap-top.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "xCgz9g"
+        },
+        "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls/wall-grey-vertical.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}/walls",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "vKJHVQ"
+        },
+        ".assetpack/texture-packer/screens/main{m}/ship-map.png": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/main{m}/ship-map.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/ship-map.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/main{m}/ship-map-ulO5og.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/main{m}/ship-map.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/main/ship-map-ulO5og.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/ship-map-ulO5og.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/main{m}/ship-map.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/ship-map.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/main{m}/ship-map-3-tQ7w.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/main{m}/ship-map.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/main/ship-map-3-tQ7w.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/ship-map-3-tQ7w.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/screens/main{m}/ship-map.json": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/main{m}/ship-map.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/ship-map.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/main{m}/ship-map.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/main{m}/ship-map.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/main{m}/ship-map-IuZexQ.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/main{m}/ship-map.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/main/ship-map-riGUiw.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/ship-map-IuZexQ.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/main{m}/ship-map.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/ship-map.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/main{m}/ship-map.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/main{m}/ship-map.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/main{m}/ship-map-yP654A.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/main{m}/ship-map.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/main/ship-map-RYjhqw.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/ship-map-yP654A.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer/screens/main{m}/ship-map@0.5x.png": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/main{m}/ship-map@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/ship-map@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/main{m}/ship-map-sbeUlQ@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/main{m}/ship-map@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/main/ship-map-sbeUlQ@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/ship-map-sbeUlQ@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/main{m}/ship-map@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/ship-map@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/main{m}/ship-map-tfr5Kw@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/main{m}/ship-map@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/main/ship-map-tfr5Kw@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/ship-map-tfr5Kw@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/screens/main{m}/ship-map@0.5x.json": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/main{m}/ship-map{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/main{m}/ship-map@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/ship-map@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/main{m}/ship-map@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/main{m}/ship-map@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/main{m}/ship-map-JMygRw@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/main{m}/ship-map@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/main/ship-map-KQ8u6g@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/ship-map-JMygRw@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/main{m}/ship-map@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/main{m}/ship-map@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/main{m}/ship-map@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/main{m}/ship-map@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/main{m}/ship-map-4wzFPA@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/main{m}/ship-map@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/main/ship-map-RycK8w@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/main{m}/ship-map-4wzFPA@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/screens",
+            "metaData": {
+                "m": true
+            },
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1753522520360,
+                "duration": 0.3720769999999902,
+                "success": true
+            }
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/background{tps}": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}",
+            "metaData": {
+                "tps": true
+            },
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {},
+            "stats": {
+                "date": 1753522520360,
+                "duration": 874.4513579999999,
+                "success": true
+            }
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/background{tps}/pixelart_starfield.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/background{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "fsEunw"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/background{tps}/pixelart_starfield_corona.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/background{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "1XVeJw"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/background{tps}/pixelart_starfield_diagonal_diffraction_spikes.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/background{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "qqYn"
+        },
+        ".assetpack/texture-packer/screens/title{m}/background.png": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/title{m}/background{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/title{m}/background.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/background.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/title{m}/background-jKn6Wg.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/title{m}/background.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/title/background-jKn6Wg.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/background-jKn6Wg.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/title{m}/background.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/background.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/title{m}/background-TkfL8g.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/title{m}/background.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/title/background-TkfL8g.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/background-TkfL8g.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/screens/title{m}/background.json": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/title{m}/background{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/title{m}/background.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/background.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/title{m}/background.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/title{m}/background.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/title{m}/background-KXg3zA.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/title{m}/background.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/title/background-H_y7.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/background-KXg3zA.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/title{m}/background.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/background.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/title{m}/background.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/title{m}/background.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/title{m}/background-MpdFew.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/title{m}/background.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/title/background-cvcCfQ.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/background-MpdFew.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer/screens/title{m}/background@0.5x.png": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/title{m}/background{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/title{m}/background@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/background@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/title{m}/background-W5x5RQ@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/title{m}/background@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/title/background-W5x5RQ@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/background-W5x5RQ@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/title{m}/background@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/background@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/title{m}/background-ukgKEw@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/title{m}/background@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/title/background-ukgKEw@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/background-ukgKEw@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/screens/title{m}/background@0.5x.json": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/title{m}/background{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/title{m}/background@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/background@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/title{m}/background@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/title{m}/background@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/title{m}/background-SLzoFA@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/title{m}/background@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/title/background-wOPfww@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/background-SLzoFA@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/title{m}/background@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/background@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/title{m}/background@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/title{m}/background@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/title{m}/background-uWbaeg@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/title{m}/background@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/title/background-enKsVQ@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/background-uWbaeg@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}",
+            "metaData": {
+                "tps": true
+            },
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {},
+            "stats": {
+                "date": 1753522520360,
+                "duration": 994.6340819999999,
+                "success": true
+            }
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation": {
+            "isFolder": true,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_1.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "G4_8dQ"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_10.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "4qaZeg"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_11.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "UHt8MQ"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_12.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "zujuag"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_13.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "0_mHaw"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_14.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "3bt0"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_2.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "fHKR0A"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_3.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "YG1Q-g"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_4.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "SmDLrw"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_5.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "zKp2jQ"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_6.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "0EWS"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_7.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "k9vscA"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_8.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "SKxpmA"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation/fire_9.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/fire-animation",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "JUl3yw"
+        },
+        "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}/title-ship.png": {
+            "isFolder": false,
+            "parent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "-ZMSkA"
+        },
+        ".assetpack/texture-packer/screens/title{m}/sprites.png": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/title{m}/sprites.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/sprites.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/title{m}/sprites-6P3e9A.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/title{m}/sprites.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/title/sprites-6P3e9A.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/sprites-6P3e9A.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/title{m}/sprites.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/sprites.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/title{m}/sprites-qinR1Q.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/title{m}/sprites.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/title/sprites-qinR1Q.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/sprites-qinR1Q.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/screens/title{m}/sprites.json": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/title{m}/sprites.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/sprites.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/title{m}/sprites.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/title{m}/sprites.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/title{m}/sprites-Kj-fxg.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/title{m}/sprites.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/title/sprites-Ml2cQA.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/sprites-Kj-fxg.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/title{m}/sprites.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/sprites.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/title{m}/sprites.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/title{m}/sprites.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/title{m}/sprites-G6PA.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/title{m}/sprites.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/title/sprites-Y1w9jA.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/sprites-G6PA.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer/screens/title{m}/sprites@0.5x.png": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/title{m}/sprites@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/sprites@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/title{m}/sprites-x0fjDw@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/title{m}/sprites@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/title/sprites-x0fjDw@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/sprites-x0fjDw@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/screens/title{m}/sprites@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/sprites@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/cache-buster/screens/title{m}/sprites-hn7Vtw@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/screens/title{m}/sprites@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/app/public/assets/screens/title/sprites-hn7Vtw@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/sprites-hn7Vtw@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/screens/title{m}/sprites@0.5x.json": {
+            "isFolder": false,
+            "transformParent": "/app/src/app/game/raw-assets/screens/title{m}/sprites{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/title{m}/sprites@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/sprites@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/title{m}/sprites@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/title{m}/sprites@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/title{m}/sprites--Fpy@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/title{m}/sprites@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/title/sprites-H8PDUA@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/sprites--Fpy@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/screens/title{m}/sprites@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/screens/title{m}/sprites@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/screens/title{m}/sprites@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/screens/title{m}/sprites@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/cache-buster/screens/title{m}/sprites-8riR@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/screens/title{m}/sprites@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/app/public/assets/screens/title/sprites-ebpPvA@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/cache-buster/screens/title{m}/sprites-8riR@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        }
+    }
+}

@@ -1,17 +1,19 @@
 # Setup
 ## Running the App
-- Make duplicate of `example.env` with the filename `.env`
-- In `.env` change:
-    - `POSTGRES_USER` and `POSTGRES_PASSWORD` to a user/password combination of your choice
-    - `API_DATABASE_USER` and `API_DATABASE_PASSWORD` to a user/password combination of your choice (for dev work, you could use the postgres ones)
-- Navigate to `./website` and run `npm install && npm run prebuild`
-- Return to the root directory
+- Run `npm install && npm run prebuild`
 - Run `docker compose up -d`
 
-This automatically runs:
-- The website in dev mode (with hot reload) on port 25880
-- The api on port 25881
+This automatically runs the website in dev mode (with hot reload) on port 25880
 
-## Running the App with a GUI for the database
-- In `.env` change `PGADMIN_DEFAULT_EMAIL` to an email of your choice (doesn't have to be a real email) and `PGADMIN_DEFAULT_PASSWORD` to a password of your choice
-- Run `docker compose -f compose.yml -f compose.pgadmin.yml -f up -d`
+## Asset Organisation
+Asset bundling is done with `@assetpack/core` - this is the recommended package by pixi js
+NOTE: this package does have dependencies on vulnerable packages. Since this isn't a professional project, this is overlooked for now. There is an open issue on github to have this fixed.
+
+- Assets are placed in `src/app/game/raw-assets`
+- Assets which are used across multiple scenes should go in `common{m}`
+    - e.g. UI assets, or sprites used in many places
+- Assets specific to a screen should be placed in a folder named after that screen. E.g. assets for the `title` screen would go in `title{m}`
+- If in doubt, place the asset in the screen specific folder. If it is required for multiple screens later, it can be moved into common
+- Textures should go in a sub-folder within the screen folder named `sprites{tps}`
+    - This tells assetpack to pack the textures
+- Assets can then be used with `Texture.from("{asset-file-name}")` e.g. `Texture.from("ship");`
