@@ -1,3 +1,4 @@
+import GameEvents from "../GameEvents";
 import HealthEvents from "./HealthEvents";
 
 export type HealthEntity = "SHIP" | "PLAYER";
@@ -23,6 +24,10 @@ export abstract class HealthTracker {
     this.onRemoveHealth();
 
     HealthEvents.onHealthChange(this._currentHealth, this.entityId);
+
+    if (this._currentHealth === 0) {
+      GameEvents.onGameOver();
+    }
   }
 
   public onRoundEnd() {

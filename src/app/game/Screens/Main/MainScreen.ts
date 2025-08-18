@@ -1,5 +1,8 @@
 import { Container, Texture, Ticker, TilingSprite } from "pixi.js";
-import { GameScreen } from "../../Utils/ScreenManager/ScreenManager";
+import {
+  GameScreen,
+  screenManager,
+} from "../../Utils/ScreenManager/ScreenManager";
 import PlayerCharacter from "./PlayerCharacter";
 import Ship from "./Ship";
 import { Tile } from "../../Components";
@@ -13,6 +16,8 @@ import { RoundEvents, RoundTracker } from "./Rounds";
 import { MAIN } from "../../constants";
 import { HealthEvents, ShipHealthTracker } from "./HealthTracker";
 import { PlayerHealthTracker } from "./HealthTracker/PlayerHealthTracker";
+import GameOverScreen from "../GameOver";
+import GameEvents from "./GameEvents";
 
 export class MainScreen extends Container implements GameScreen {
   public static SCREEN_ID = "main";
@@ -57,11 +62,6 @@ export class MainScreen extends Container implements GameScreen {
     this.addChild(this._playerCharacter);
     this.addChild(this._ui);
 
-    RoundEvents.addRoundEndListener({
-      componentId: MainScreen.SCREEN_ID,
-      action: () => this.onRoundEnd(),
-    });
-
     this.startRound();
   }
 
@@ -76,6 +76,16 @@ export class MainScreen extends Container implements GameScreen {
 
   public addListeners() {
     this._playerCharacter.addListeners();
+
+    RoundEvents.addRoundEndListener({
+      componentId: MainScreen.SCREEN_ID,
+      action: () => this.onRoundEnd(),
+    });
+
+    GameEvents.addGameOverListener({
+      componentId: MainScreen.SCREEN_ID,
+      action: () => this.onGameOver(),
+    });
   }
 
   private startRound() {
@@ -89,11 +99,7 @@ export class MainScreen extends Container implements GameScreen {
   }
 
   private onRoundEnd() {
-    this._paused = true;
-    this._systemsManager.onRoundEnd();
-    this._scoreTracker.onRoundEnd();
-    this._shipHealthTracker.onRoundEnd();
-    this._systems.forEach((system) => system.onRoundEnd());
+    this.stopGame();
     this._ui.displayRoundEnd(
       this._roundTracker.roundStats[this._roundTracker.roundStats.length - 1],
       () => {
@@ -101,7 +107,20 @@ export class MainScreen extends Container implements GameScreen {
         this.startRound();
       }
     );
+  }
+
+  private stopGame() {
+    this._paused = true;
+    this._systemsManager.onRoundEnd();
+    this._scoreTracker.onRoundEnd();
+    this._shipHealthTracker.onRoundEnd();
+    this._systems.forEach((system) => system.onRoundEnd());
     GameAudio.BGM?.stop();
+  }
+
+  private onGameOver() {
+    this.stopGame();
+    screenManager.changeScreen(GameOverScreen);
   }
 
   public update(ticker: Ticker) {
@@ -127,6 +146,7 @@ export class MainScreen extends Container implements GameScreen {
     ScoreEvents.release();
     RoundEvents.release();
     HealthEvents.release();
+    GameEvents.release();
     this.destroy({ children: true });
   }
 }
