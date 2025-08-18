@@ -7,7 +7,12 @@ import PlayerCharacter from "./PlayerCharacter";
 import Ship from "./Ship";
 import { Tile } from "../../Components";
 import { NavigationService } from "./NavigationService";
-import { System, SystemEvents, SystemsManager } from "./Systems";
+import {
+  PilotingTerminal,
+  System,
+  SystemEvents,
+  SystemsManager,
+} from "./Systems";
 import { GameUI } from "./UI";
 import { AUDIO_FILE_ALIASES, GameAudio } from "../../Utils/audio";
 import { Background } from "./Background";
@@ -33,6 +38,7 @@ export class MainScreen extends Container implements GameScreen {
   private _shipHealthTracker = new ShipHealthTracker();
   private _playerHealthTracker = new PlayerHealthTracker();
   private _systems: System[];
+  private _pilotingTerminals: PilotingTerminal[];
   private _ui: GameUI;
   private _paused = false;
 
@@ -46,9 +52,15 @@ export class MainScreen extends Container implements GameScreen {
 
     this._ship = new Ship();
     this._systems = this._ship.systems.children as System[];
+    this._pilotingTerminals = this._ship.pilotingTerminals
+      .children as PilotingTerminal[];
+
     this._navigationService = new NavigationService({
       tiles: this._ship.walls.children as Tile[],
-      systems: this._systems,
+      interactionZones: [
+        ...this._systems.map((s) => s.interactionZone),
+        ...this._pilotingTerminals.map((p) => p.interactionZone),
+      ],
     });
 
     this._systemsManager = new SystemsManager(this._systems);
@@ -115,6 +127,7 @@ export class MainScreen extends Container implements GameScreen {
     this._scoreTracker.onRoundEnd();
     this._shipHealthTracker.onRoundEnd();
     this._systems.forEach((system) => system.onRoundEnd());
+    this._pilotingTerminals.forEach((terminal) => terminal.onRoundEnd());
     GameAudio.BGM?.stop();
   }
 

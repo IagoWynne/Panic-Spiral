@@ -26,6 +26,14 @@ class SystemEvents {
     this.onSystemEvent(system, "REPAIRED");
   }
 
+  public onSystemActivated(system: string) {
+    this.onSystemEvent(system, "ACTIVATED");
+  }
+
+  public onSystemDeactivated(system: string) {
+    this.onSystemEvent(system, "DEACTIVATED");
+  }
+
   private onSystemEvent(system: string, type: SystemEventType) {
     this._systemEventHandlers
       .filter(
