@@ -1,38 +1,53 @@
-import { Container, Graphics, Text } from "pixi.js";
+import { Container, Graphics, Point, Text } from "pixi.js";
 import { ScoreEvents } from "../Score";
 import { MAIN, COMMON } from "../../../constants";
 
 export class Score extends Container {
   private _componentId = "ui_score";
   private _scoreText: Text;
+  private _multiplierText: Text;
+
+  // TODO: make multiplier UI look pretty
+  // TODO: listen for multiplier changed event and update multiplier with incoming value
 
   constructor() {
     super();
 
     const header = new Text({
       text: "Score",
-      style: { fontSize: MAIN.UI.SCORE_DEFAULTS.HEADER_FONT_SIZE },
-      x: MAIN.UI.SCORE_DEFAULTS.SCORE_PADDING,
-      y: MAIN.UI.SCORE_DEFAULTS.SCORE_PADDING,
+      style: { fontSize: MAIN.UI.SCORE.HEADER_FONT_SIZE },
+      x: MAIN.UI.SCORE.SCORE_PADDING,
+      y: MAIN.UI.SCORE.SCORE_PADDING,
     });
 
     this._scoreText = new Text({
       text: 0,
       anchor: 0.5,
-      style: { fontSize: MAIN.UI.SCORE_DEFAULTS.SCORE_FONT_SIZE },
-      y: header.y + header.height + MAIN.UI.SCORE_DEFAULTS.SCORE_SPACING,
-      x: header.width / 2 + MAIN.UI.SCORE_DEFAULTS.SCORE_PADDING,
+      style: { fontSize: MAIN.UI.SCORE.SCORE_FONT_SIZE },
+      y: header.y + header.height + MAIN.UI.SCORE.SCORE_SPACING,
+      x: header.width / 2 + MAIN.UI.SCORE.SCORE_PADDING,
+    });
+
+    this._multiplierText = new Text({
+      text: "x1",
+      style: {
+        fontSize: MAIN.UI.SCORE.SCORE_FONT_SIZE,
+      },
+      anchor: new Point(0, 0.5),
+      x: header.width + MAIN.UI.SCORE.SCORE_PADDING * 2,
+      y: this._scoreText.y,
     });
 
     this.addChild(header);
     this.addChild(this._scoreText);
+    this.addChild(this._multiplierText);
 
     const background = new Graphics()
       .roundRect(
         0,
         0,
-        this.width + 2 * MAIN.UI.SCORE_DEFAULTS.SCORE_PADDING,
-        this.height + 2 * MAIN.UI.SCORE_DEFAULTS.SCORE_PADDING,
+        this.width + 2 * MAIN.UI.SCORE.SCORE_PADDING,
+        this.height + 2 * MAIN.UI.SCORE.SCORE_PADDING,
         COMMON.UI.TOOLTIP_DEFAULTS.BACKGROUND_CORNER_RADIUS
       )
       .fill(COMMON.UI.TOOLTIP_DEFAULTS.BACKGROUND_FILL)
@@ -65,13 +80,12 @@ export class Score extends Container {
   }
 
   private onScoreIncrementStarted() {
-    this._scoreText.style.fill =
-      MAIN.UI.SCORE_DEFAULTS.SCORE_INCREMENTING_FONT_COLOUR;
+    this._scoreText.style.fill = MAIN.UI.SCORE.SCORE_INCREMENTING_FONT_COLOUR;
   }
 
   private onScoreIncrementStopped() {
     this._scoreText.style.fill =
-      MAIN.UI.SCORE_DEFAULTS.SCORE_INCREMENT_STOPPED_FONT_COLOUR;
+      MAIN.UI.SCORE.SCORE_INCREMENT_STOPPED_FONT_COLOUR;
   }
 
   public cleanup() {

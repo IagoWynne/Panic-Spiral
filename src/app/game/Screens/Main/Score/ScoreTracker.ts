@@ -6,6 +6,7 @@ export class ScoreTracker {
   private _componentId = "score_tracker";
   private _scoreIncreaseTimer?: NodeJS.Timeout;
   private _canAutoIncrementScore = true;
+  private _multiplier = 1;
 
   public currentScore = 0;
 
@@ -23,6 +24,7 @@ export class ScoreTracker {
   public onRoundEnd() {
     this.addScore(MAIN.SCORE.BASE_SCORE_INCREMENT);
     this.addScore(MAIN.SCORE.ROUND_COMPLETION_BONUS);
+    this._multiplier = 1;
     clearInterval(this._scoreIncreaseTimer);
   }
 
@@ -51,6 +53,26 @@ export class ScoreTracker {
       },
       componentId: this._componentId,
     });
+
+    SystemEvents.addSystemListener({
+      system: MAIN.SYSTEMS.SYSTEM_IDS.PILOTING,
+      systemEventType: "ACTIVATED",
+      action: () => {
+        this._multiplier++;
+        ScoreEvents.onScoreMultiplierChanged(this._multiplier);
+      },
+      componentId: this._componentId,
+    });
+
+    SystemEvents.addSystemListener({
+      system: MAIN.SYSTEMS.SYSTEM_IDS.PILOTING,
+      systemEventType: "DEACTIVATED",
+      action: () => {
+        this._multiplier--;
+        ScoreEvents.onScoreMultiplierChanged(this._multiplier);
+      },
+      componentId: this._componentId,
+    });
   }
 
   private onScoreIncreaseTimeout() {
@@ -58,14 +80,20 @@ export class ScoreTracker {
       return;
     }
 
-    this.addScore(MAIN.SCORE.BASE_SCORE_INCREMENT);
+    this.addScore(MAIN.SCORE.BASE_SCORE_INCREMENT * this._multiplier);
   }
 
   public cleanup() {
     clearInterval(this._scoreIncreaseTimer);
+
     SystemEvents.removeSystemListener(
       this._componentId,
       MAIN.SYSTEMS.SYSTEM_IDS.ENGINE
+    );
+
+    SystemEvents.removeSystemListener(
+      this._componentId,
+      MAIN.SYSTEMS.SYSTEM_IDS.PILOTING
     );
   }
 }
