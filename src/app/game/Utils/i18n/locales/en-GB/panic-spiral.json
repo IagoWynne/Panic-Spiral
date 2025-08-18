@@ -17,5 +17,9 @@
   "ROUND_INDICATOR": "Round %s",
   "BREAKDOWNS": "Breakdowns",
   "REPAIRS": "Repairs",
-  "SHIP": "Ship"
+  "SHIP": "Ship",
+  "GAME_OVER": "Game Over",
+  "FINAL_SCORE": "Final Score",
+  "NEW_GAME": "New Game",
+  "QUIT": "Quit"
 }

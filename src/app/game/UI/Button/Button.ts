@@ -56,9 +56,11 @@ export class Button extends Container {
     this.addChild(this._sprite);
     this.addChild(this._hoverGraphic);
     this.addChild(this._text);
+
+    this.addListeners();
   }
 
-  public addListeners() {
+  private addListeners() {
     if (this._keyboardShortcut) {
       Inputs.Keyboard?.addKeyUpHandler({
         componentId: this._id,

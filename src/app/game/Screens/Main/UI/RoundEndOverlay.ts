@@ -22,7 +22,7 @@ export class RoundEndOverlay extends Container {
 
   private addBackground() {
     const bgFade = new Graphics()
-      .rect(0, 0, MAIN.UI.GAME_SIZE.WIDTH, MAIN.UI.GAME_SIZE.HEIGHT)
+      .rect(0, 0, COMMON.UI.GAME_SIZE.WIDTH, COMMON.UI.GAME_SIZE.HEIGHT)
       .fill(COMMON.UI.OVERLAY_BACKGROUND_FADE);
 
     this.addChild(bgFade);

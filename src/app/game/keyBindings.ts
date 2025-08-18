@@ -1,6 +1,7 @@
 export const KEY_BINDINGS = {
   UI: {
-    ACCEPT: "Enter",
+    ACCEPT: " ",
+    CANCEL: "escape"
   },
   PLAYER_CONTROLS: {
     MOVE_UP: "w",

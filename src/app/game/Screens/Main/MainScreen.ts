@@ -120,7 +120,11 @@ export class MainScreen extends Container implements GameScreen {
 
   private onGameOver() {
     this.stopGame();
-    screenManager.changeScreen(GameOverScreen);
+    screenManager.changeScreen(GameOverScreen, {
+      finalScore:
+        this._roundTracker.roundStats[this._roundTracker.roundStats.length - 1]
+          .endScore,
+    });
   }
 
   public update(ticker: Ticker) {
