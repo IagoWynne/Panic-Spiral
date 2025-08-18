@@ -1,3 +1,8 @@
+export const GAME_SIZE = {
+  WIDTH: 1280,
+  HEIGHT: 800,
+};
+
 export const TOOLTIP_DEFAULTS = {
   FONT_SIZE: 14,
   STROKE: "#000000",

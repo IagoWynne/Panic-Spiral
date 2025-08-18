@@ -1,7 +1,7 @@
 import { Application, Assets, Container, Renderer, Ticker } from "pixi.js";
 import { areBundlesLoaded } from "../assets";
 
-export interface GameScreen extends Container {
+export interface GameScreen<T = any> extends Container {
   show?: () => Promise<void>;
   hide?: () => Promise<void>;
   resize?: (width: number, height: number) => void;
@@ -10,10 +10,10 @@ export interface GameScreen extends Container {
   cleanup: () => void;
 }
 
-interface GameScreenConstructor {
+interface GameScreenConstructor<T = any> {
   readonly SCREEN_ID: string;
   readonly assetBundles?: string[];
-  new (): GameScreen;
+  new (data?: T): GameScreen;
 }
 
 class ScreenManager {
@@ -33,22 +33,22 @@ class ScreenManager {
     this._app = app;
   }
 
-  public async changeScreen(Ctor: GameScreenConstructor) {
-    this._showScreen(Ctor);
+  public async changeScreen<T>(Ctor: GameScreenConstructor, data?: T) {
+    this._showScreen(Ctor, data);
   }
 
-  private _getScreen(Ctor: GameScreenConstructor) {
+  private _getScreen<T>(Ctor: GameScreenConstructor, data?: T) {
     let screen = this._screenMap.get(Ctor.SCREEN_ID);
 
     if (!screen) {
-      screen = new Ctor();
+      screen = new Ctor(data);
       this._screenMap.set(Ctor.SCREEN_ID, screen);
     }
 
     return screen;
   }
 
-  private async _showScreen(Ctor: GameScreenConstructor) {
+  private async _showScreen<T>(Ctor: GameScreenConstructor, data?: T) {
     const current = this._currentScreen;
 
     if (current) {
@@ -59,7 +59,7 @@ class ScreenManager {
       await Assets.loadBundle(Ctor.assetBundles);
     }
 
-    this._currentScreen = this._getScreen(Ctor);
+    this._currentScreen = this._getScreen(Ctor, data);
     await this._addScreen(this._currentScreen);
   }
 

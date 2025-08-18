@@ -72,10 +72,6 @@ export class TitleScreen extends Container implements GameScreen {
     this._startGameButton.position.y = height - 100;
   }
 
-  public addListeners() {
-    this._startGameButton.addListeners();
-  }
-
   public cleanup() {
     this._startGameButton.cleanup();
   }
