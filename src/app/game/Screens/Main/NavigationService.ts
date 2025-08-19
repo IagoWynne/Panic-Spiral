@@ -6,16 +6,14 @@ export class NavigationService {
   private _collisionObjects: Zone[] = [];
   private _interactableObjects: InteractionZone[] = [];
 
-  constructor(map: { tiles: Tile[]; systems: System[] }) {
+  constructor(map: { tiles: Tile[]; interactionZones: InteractionZone[] }) {
     map.tiles.forEach((t: Tile) => {
       if (t.collisionZone) {
         this._collisionObjects.push(t.collisionZone);
       }
     });
 
-    map.systems.forEach((s: System) =>
-      this._interactableObjects.push(s.interactionZone)
-    );
+    this._interactableObjects = map.interactionZones;
   }
 
   public collides(bounds: Bounds): boolean {
@@ -34,16 +32,15 @@ export class NavigationService {
   }
 
   public checkInteractionZones(bounds: Bounds) {
-    this._interactableObjects
-      .forEach((obj) => {
-        const isOverlapping = this.isOverlapping(bounds, obj.getBounds());
+    this._interactableObjects.forEach((obj) => {
+      const isOverlapping = this.isOverlapping(bounds, obj.getBounds());
 
-        if (obj.playerInZone && !isOverlapping) {
-          obj.onExit();
-        } else if (!obj.playerInZone && isOverlapping) {
-          obj.onEnter();
-        }
-      });
+      if (obj.playerInZone && !isOverlapping) {
+        obj.onExit();
+      } else if (!obj.playerInZone && isOverlapping) {
+        obj.onEnter();
+      }
+    });
   }
 
   public cleanup() {
