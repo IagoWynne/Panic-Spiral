@@ -3,7 +3,7 @@ import { COMMON, MAIN } from "../../../constants";
 import { Button } from "../../../UI";
 import { i18n, i18nKeys } from "../../../Utils";
 import { KEY_BINDINGS } from "../../../keyBindings";
-import { RoundStats, SystemStats } from "../Rounds";
+import { RoundStats } from "../Rounds";
 import { sprintf } from "sprintf-js";
 
 export class RoundEndOverlay extends Container {
@@ -129,13 +129,28 @@ export class RoundEndOverlay extends Container {
       MAIN.UI.ROUND_END.SCORE_BREAKDOWN_PADDING.BOTTOM
     );
 
+    const repairScore = this.getRepairScore(stats);
+
+    const distanceScore =
+      stats.endScore -
+      MAIN.SCORE.ROUND_COMPLETION_BONUS -
+      stats.startingScore -
+      repairScore;
+
     this.addRow(
       nameColumn,
       valueColumn,
       i18n(i18nKeys.DISTANCE),
-      `+ ${
-        stats.endScore - MAIN.SCORE.ROUND_COMPLETION_BONUS - stats.startingScore
-      }`,
+      `+ ${distanceScore}`,
+      style,
+      MAIN.UI.ROUND_END.SCORE_BREAKDOWN_PADDING.BOTTOM
+    );
+
+    this.addRow(
+      nameColumn,
+      valueColumn,
+      i18n(i18nKeys.REPAIRS),
+      `+ ${repairScore}`,
       style,
       MAIN.UI.ROUND_END.SCORE_BREAKDOWN_PADDING.BOTTOM
     );
@@ -153,6 +168,21 @@ export class RoundEndOverlay extends Container {
       nameColumn.width + MAIN.UI.ROUND_END.SCORE_BREAKDOWN_PADDING.RIGHT;
 
     return scoreContainer;
+  }
+
+  private getRepairScore(stats: RoundStats): number {
+    return (
+      stats.repairs.engine *
+        MAIN.SYSTEMS.SYSTEM_REPAIR_SCORE[MAIN.SYSTEMS.SYSTEM_IDS.ENGINE] +
+      stats.repairs.medbay *
+        MAIN.SYSTEMS.SYSTEM_REPAIR_SCORE[MAIN.SYSTEMS.SYSTEM_IDS.MEDBAY] +
+      stats.repairs.oxygen *
+        MAIN.SYSTEMS.SYSTEM_REPAIR_SCORE[MAIN.SYSTEMS.SYSTEM_IDS.OXYGEN] +
+      stats.repairs.reactor *
+        MAIN.SYSTEMS.SYSTEM_REPAIR_SCORE[MAIN.SYSTEMS.SYSTEM_IDS.REACTOR] +
+      stats.repairs.shields *
+        MAIN.SYSTEMS.SYSTEM_REPAIR_SCORE[MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS]
+    );
   }
 
   private addRow(
