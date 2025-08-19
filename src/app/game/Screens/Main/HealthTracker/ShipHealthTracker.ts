@@ -5,7 +5,12 @@ import { HealthTracker } from "./HealthTracker";
 
 export class ShipHealthTracker extends HealthTracker {
   constructor() {
-    super(MAIN.SHIP.MAX_HEALTH, "SHIP", "ship-health-tracker");
+    super(
+      MAIN.SHIP.MAX_HEALTH,
+      "SHIP",
+      "ship-health-tracker",
+      MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS
+    );
     this.addListeners();
   }
 
@@ -45,5 +50,9 @@ export class ShipHealthTracker extends HealthTracker {
       this._componentId,
       MAIN.SYSTEMS.SYSTEM_IDS.REACTOR
     );
+
+    this.clearDamageTimer();
+
+    super.removeListener();
   }
 }

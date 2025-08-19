@@ -103,6 +103,10 @@ export class System extends Container {
   }
 
   public onRoundEnd() {
+    if (!this.broken) {
+      SystemEvents.onSystemActivated(this.id);
+    }
+    
     this.onRepair(false);
   }
 
