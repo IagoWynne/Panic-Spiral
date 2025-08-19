@@ -1823,61 +1823,6 @@
           "y": 9,
           "sprite": "floor-grey-3"
         }
-      ],
-      "decorations": [
-        {
-          "x": 20,
-          "y": 6,
-          "sprite": "decoration-screen-0",
-          "changes": []
-        },
-        {
-          "x": 20,
-          "y": 10,
-          "sprite": "decoration-screen-0",
-          "changes": []
-        },
-        {
-          "x": 22,
-          "y": 8,
-          "sprite": "decoration-screen-0",
-          "changes": []
-        }
-      ],
-      "piloting": [
-        {
-          "id": "TERMINAL_1",
-          "position": {
-            "x": 20,
-            "y": 6
-          },
-          "interactionZone": {
-            "x": 1.5,
-            "y": 1.5
-          }
-        },
-        {
-          "id": "TERMINAL_2",
-          "position": {
-            "x": 22,
-            "y": 8
-          },
-          "interactionZone": {
-            "x": 1.5,
-            "y": 1.5
-          }
-        },
-        {
-          "id": "TERMINAL_3",
-          "position": {
-            "x": 20,
-            "y": 10
-          },
-          "interactionZone": {
-            "x": 1.5,
-            "y": 1.5
-          }
-        }
       ]
     }
   ]

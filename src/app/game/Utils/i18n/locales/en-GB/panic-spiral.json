@@ -21,6 +21,5 @@
   "GAME_OVER": "Game Over",
   "FINAL_SCORE": "Final Score",
   "NEW_GAME": "New Game",
-  "QUIT": "Quit",
-  "PILOTING_INSTRUCTIONS": "Press %s to activate pilot assistance."
+  "QUIT": "Quit"
 }

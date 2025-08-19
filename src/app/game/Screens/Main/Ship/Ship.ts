@@ -1,14 +1,13 @@
 import { Container, Graphics, Sprite, Texture } from "pixi.js";
 import { ShipExhaust, Tile, TileGrid } from "../../../Components";
 import tileMap from "./map.json";
-import { buildSystem, PilotingTerminal, SystemEvents } from "../Systems";
+import { buildSystem, SystemEvents } from "../Systems";
 import { Decoration, DecorationChangeEvent } from "./Decoration";
 import { MAIN } from "../../../constants";
 
 export class Ship extends Container {
   public walls = new TileGrid(MAIN.SHIP.TILE_SIZE);
   public systems = new Container();
-  public pilotingTerminals = new Container();
 
   private _offsetContainer = new Container();
   private _floor = new TileGrid(MAIN.SHIP.TILE_SIZE);
@@ -86,20 +85,6 @@ export class Ship extends Container {
           this.systems.addChild(system);
         }
       });
-
-      r.piloting?.forEach((p) => {
-        const piloting = new PilotingTerminal(
-          p.id,
-          MAIN.SHIP.TILE_SIZE,
-          p.interactionZone.x,
-          p.interactionZone.y
-        );
-
-        piloting.x = p.position.x * MAIN.SHIP.TILE_SIZE;
-        piloting.y = p.position.y * MAIN.SHIP.TILE_SIZE;
-
-        this.pilotingTerminals.addChild(piloting);
-      });
     });
 
     this._background = new Sprite(Texture.from("title-ship"));
@@ -115,7 +100,6 @@ export class Ship extends Container {
     this._offsetContainer.addChild(this.walls);
     this._offsetContainer.addChild(this._decorations);
     this._offsetContainer.addChild(this.systems);
-    this._offsetContainer.addChild(this.pilotingTerminals);
 
     this.addChild(this._exhaust);
     this.addChild(this._background);
@@ -148,10 +132,6 @@ export class Ship extends Container {
     SystemEvents.removeSystemListener(
       this._componentId,
       MAIN.SYSTEMS.SYSTEM_IDS.ENGINE
-    );
-
-    (this.pilotingTerminals.children as PilotingTerminal[]).forEach((p) =>
-      p.cleanup()
     );
   }
 }
