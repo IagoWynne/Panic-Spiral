@@ -153,3 +153,10 @@ export const PILOTING_TERMINAL = {
   COOLDOWN_BAR_STARTING_WIDTH: 30,
   COOLDOWN_BAR_COLOUR: "#00FFFF",
 };
+
+export const SHIP = {
+  TEXT: {
+    FILL: "#FFFFFFDD",
+    STROKE: "#000000DD",
+  },
+};

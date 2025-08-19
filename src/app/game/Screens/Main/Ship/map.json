@@ -220,7 +220,12 @@
             "y": 3
           }
         }
-      ]
+      ],
+      "text": {
+        "x": 4,
+        "y": 8.5,
+        "rotationDegrees": 270
+      }
     },
     {
       "name": "Reactor",
@@ -616,7 +621,12 @@
             "y": 3
           }
         }
-      ]
+      ],
+      "text": {
+        "x": 9.5,
+        "y": 4.5,
+        "rotationDegrees": 315
+      }
     },
     {
       "name": "Shields",
@@ -903,7 +913,12 @@
             "y": 1.5
           }
         }
-      ]
+      ],
+      "text": {
+        "x": 8,
+        "y": 12,
+        "rotationDegrees": 315
+      }
     },
     {
       "name": "Empty - Mid",
@@ -1449,7 +1464,12 @@
             "y": 1.5
           }
         }
-      ]
+      ],
+      "text": {
+        "x": 17,
+        "y": 5,
+        "rotationDegrees": 315
+      }
     },
     {
       "name": "O2",
@@ -1756,7 +1776,12 @@
             "y": 1.5
           }
         }
-      ]
+      ],
+      "text": {
+        "x": 17,
+        "y": 12,
+        "rotationDegrees": 315
+      }
     },
     {
       "name": "Cockpit",
