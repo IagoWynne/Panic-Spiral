@@ -74,6 +74,21 @@ export class ScoreTracker {
       },
       componentId: this._componentId,
     });
+
+    this.addSystemRepairedScoreListener(MAIN.SYSTEMS.SYSTEM_IDS.ENGINE);
+    this.addSystemRepairedScoreListener(MAIN.SYSTEMS.SYSTEM_IDS.MEDBAY);
+    this.addSystemRepairedScoreListener(MAIN.SYSTEMS.SYSTEM_IDS.OXYGEN);
+    this.addSystemRepairedScoreListener(MAIN.SYSTEMS.SYSTEM_IDS.REACTOR);
+    this.addSystemRepairedScoreListener(MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS);
+  }
+
+  private addSystemRepairedScoreListener(system: string) {
+    SystemEvents.addSystemListener({
+      system,
+      systemEventType: "REPAIRED",
+      componentId: this._componentId,
+      action: () => this.onSystemRepaired(system),
+    });
   }
 
   private onScoreIncreaseTimeout() {
@@ -82,6 +97,10 @@ export class ScoreTracker {
     }
 
     this.addScore(MAIN.SCORE.BASE_SCORE_INCREMENT * this._multiplier);
+  }
+
+  private onSystemRepaired(systemName: string) {
+    this.addScore(MAIN.SYSTEMS.SYSTEM_REPAIR_SCORE[systemName]);
   }
 
   public cleanup() {
