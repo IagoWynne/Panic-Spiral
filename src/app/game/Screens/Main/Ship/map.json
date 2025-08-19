@@ -1339,6 +1339,61 @@
           "y": 7,
           "sprite": "floor-grey-0"
         }
+      ],
+      "decorations": [
+        {
+          "x": 15,
+          "y": 1,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Medbay",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Medbay",
+              "sprite": null
+            }
+          ]
+        },
+        {
+          "x": 16,
+          "y": 1,
+          "sprite": "decoration-screen-0",
+          "changes": []
+        },
+        {
+          "x": 17,
+          "y": 1,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Medbay",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Medbay",
+              "sprite": null
+            }
+          ]
+        }
+      ],
+      "systems": [
+        {
+          "name": "Medbay",
+          "position": {
+            "x": 15,
+            "y": 1
+          },
+          "interactionZone": {
+            "x": 3,
+            "y": 1.5
+          }
+        }
       ]
     },
     {
