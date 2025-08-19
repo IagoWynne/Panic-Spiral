@@ -3,6 +3,7 @@ import { InteractionZone } from "../../../Components";
 import { MAIN } from "../../../constants";
 import { UIEvents } from "../UI";
 import SystemEvents from "./SystemEvents";
+import { AUDIO_FILE_ALIASES, GameAudio } from "@/app/game/Utils/audio";
 
 export class PilotingTerminal extends Container {
   public interactionZone: InteractionZone;
@@ -65,6 +66,10 @@ export class PilotingTerminal extends Container {
       return;
     }
 
+    this.activate();
+  }
+
+  private activate() {
     this._activated = true;
 
     this.closeInteractionTooltip();
@@ -84,6 +89,8 @@ export class PilotingTerminal extends Container {
       () => this.updateCooldownBar(),
       1000
     );
+
+    GameAudio.SFX?.play(AUDIO_FILE_ALIASES.MAIN.PILOTING_ACTIVATED, 0.25);
   }
 
   private deactivate() {
@@ -93,6 +100,7 @@ export class PilotingTerminal extends Container {
     this._cooldownBar.visible = false;
 
     SystemEvents.onSystemDeactivated(MAIN.SYSTEMS.SYSTEM_IDS.PILOTING);
+    GameAudio.SFX?.play(AUDIO_FILE_ALIASES.MAIN.PILOTING_DEACTIVATED, 0.25);
   }
 
   private updateCooldownBar() {

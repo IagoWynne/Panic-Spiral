@@ -12,6 +12,8 @@ const AUDIO_FILE_ALIASES = {
     SYSTEM_REPAIR: "system-repair",
     SHIP_DAMAGE: "ship-damage",
     PLAYER_DAMAGE: "player-damage",
+    PILOTING_ACTIVATED: "piloting-activated",
+    PILOTING_DEACTIVATED: "piloting-deactivated",
   },
 };
 

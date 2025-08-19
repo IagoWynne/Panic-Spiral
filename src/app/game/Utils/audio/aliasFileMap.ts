@@ -25,6 +25,14 @@ const ALIAS_FILE_MAP = {
         alias: AUDIO_FILE_ALIASES.MAIN.PLAYER_DAMAGE,
         file: "player-damage.wav",
       },
+      {
+        alias: AUDIO_FILE_ALIASES.MAIN.PILOTING_ACTIVATED,
+        file: "piloting-activated.wav",
+      },
+      {
+        alias: AUDIO_FILE_ALIASES.MAIN.PILOTING_DEACTIVATED,
+        file: "piloting-deactivated.wav",
+      },
     ],
   },
   BGM: {
