@@ -848,6 +848,61 @@
           "y": 15,
           "sprite": "floor-grey-3"
         }
+      ],
+      "decorations": [
+        {
+          "x": 6,
+          "y": 15,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Shields",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Shields",
+              "sprite": null
+            }
+          ]
+        },
+        {
+          "x": 7,
+          "y": 15,
+          "sprite": "decoration-screen-0",
+          "changes": []
+        },
+        {
+          "x": 8,
+          "y": 15,
+          "sprite": "decoration-light-green",
+          "changes": [
+            {
+              "event": "BREAKDOWN",
+              "system": "Shields",
+              "sprite": "decoration-light-red"
+            },
+            {
+              "event": "REPAIRED",
+              "system": "Shields",
+              "sprite": null
+            }
+          ]
+        }
+      ],
+      "systems": [
+        {
+          "name": "Shields",
+          "position": {
+            "x": 6,
+            "y": 15
+          },
+          "interactionZone": {
+            "x": 3,
+            "y": 1.5
+          }
+        }
       ]
     },
     {
