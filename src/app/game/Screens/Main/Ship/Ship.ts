@@ -1,9 +1,10 @@
-import { Container, Graphics, Sprite, Texture } from "pixi.js";
+import { Container, Graphics, Sprite, Texture, Text } from "pixi.js";
 import { ShipExhaust, Tile, TileGrid } from "../../../Components";
 import tileMap from "./map.json";
 import { buildSystem, PilotingTerminal, SystemEvents } from "../Systems";
 import { Decoration, DecorationChangeEvent } from "./Decoration";
 import { MAIN } from "../../../constants";
+import { i18n } from "../../../Utils";
 
 export class Ship extends Container {
   public walls = new TileGrid(MAIN.SHIP.TILE_SIZE);
@@ -16,6 +17,7 @@ export class Ship extends Container {
   private _background: Sprite;
   private _exhaust: ShipExhaust;
   private _componentId = "main-screen-ship";
+  private _textContainer = new Container();
 
   constructor() {
     super();
@@ -65,6 +67,23 @@ export class Ship extends Container {
 
       this._floor.addChild(floorLighting);
 
+      if (r.text) {
+        const roomText = new Text({
+          text: i18n(MAIN.SYSTEMS.SYSTEM_TRANSLATION_KEYS[r.name]),
+          x: r.text.x * MAIN.SHIP.TILE_SIZE,
+          y: r.text.y * MAIN.SHIP.TILE_SIZE,
+          style: {
+            fill: MAIN.UI.SHIP.TEXT.FILL,
+            stroke: { color: MAIN.UI.SHIP.TEXT.STROKE },
+          },
+          anchor: 0.5,
+        });
+
+        roomText.angle = r.text.rotationDegrees;
+
+        this._textContainer.addChild(roomText);
+      }
+
       r.decorations?.forEach((decoration) => {
         const dec = new Decoration(
           decoration.sprite,
@@ -113,6 +132,7 @@ export class Ship extends Container {
 
     this._offsetContainer.addChild(this._floor);
     this._offsetContainer.addChild(this.walls);
+    this._offsetContainer.addChild(this._textContainer);
     this._offsetContainer.addChild(this._decorations);
     this._offsetContainer.addChild(this.systems);
     this._offsetContainer.addChild(this.pilotingTerminals);
