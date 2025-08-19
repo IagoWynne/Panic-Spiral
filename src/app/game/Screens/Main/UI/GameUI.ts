@@ -22,7 +22,7 @@ export class GameUI extends Container {
     super();
 
     this._systemMonitor.x = MAIN.UI.SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING;
-    this._scoreDisplay.y = MAIN.UI.SCORE.SCORE_PADDING;
+    this._scoreDisplay.y = MAIN.UI.SCORE_DEFAULTS.SCORE_PADDING;
     this._roundInfo.y = MAIN.UI.ROUND_DEFAULTS.ROUND_PADDING * 2;
 
     this._healthBarsContainer = new Container({
@@ -47,7 +47,7 @@ export class GameUI extends Container {
       MAIN.UI.SYSTEM_MONITOR_DEFAULTS.MONITOR_PADDING;
 
     this._scoreDisplay.x =
-      width - this._scoreDisplay.width - MAIN.UI.SCORE.SCORE_PADDING;
+      width - this._scoreDisplay.width - MAIN.UI.SCORE_DEFAULTS.SCORE_PADDING;
 
     this._roundInfo.x = width / 2;
   }

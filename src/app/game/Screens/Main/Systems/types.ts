@@ -1,8 +1,4 @@
-export type SystemEventType =
-  | "BREAKDOWN"
-  | "REPAIRED"
-  | "ACTIVATED"
-  | "DEACTIVATED";
+export type SystemEventType = "BREAKDOWN" | "REPAIRED";
 
 export interface SystemEventHandler {
   componentId: string;
