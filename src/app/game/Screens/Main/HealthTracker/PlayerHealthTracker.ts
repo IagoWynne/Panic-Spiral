@@ -5,7 +5,12 @@ import { HealthTracker } from "./HealthTracker";
 
 export class PlayerHealthTracker extends HealthTracker {
   constructor() {
-    super(MAIN.PLAYER.MAX_HEALTH, "PLAYER", "player-health-tracker");
+    super(
+      MAIN.PLAYER.MAX_HEALTH,
+      "PLAYER",
+      "player-health-tracker",
+      MAIN.SYSTEMS.SYSTEM_IDS.MEDBAY
+    );
     this.addListeners();
   }
 
@@ -47,5 +52,7 @@ export class PlayerHealthTracker extends HealthTracker {
     );
 
     this.clearDamageTimer();
+
+    super.removeListener();
   }
 }

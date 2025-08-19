@@ -113,6 +113,7 @@ export class HealthBar extends Container {
       if (idx >= remainingHealth) {
         block.visible = false;
       } else {
+        block.visible = true;
         block.tint = colour;
       }
     });
