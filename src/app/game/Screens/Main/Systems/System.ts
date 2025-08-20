@@ -94,32 +94,32 @@ export class System extends Container {
     }
   };
 
-  public checkForBreakdown(): boolean {
+  public checkForBreakdown(rateIncrease: number): boolean {
     if (!this._canBreak) {
       return false;
     }
 
-    return this.doCheckForBreakdown();
+    return this.doCheckForBreakdown(rateIncrease);
   }
 
   public onRoundEnd() {
     if (!this.broken) {
       SystemEvents.onSystemActivated(this.id);
     }
-    
+
     this.onRepair(false);
   }
 
-  private doCheckForBreakdown = () => {
+  private doCheckForBreakdown(rateIncrease: number) {
     const breakdownChance = Math.random();
 
-    if (breakdownChance <= this.breakdownRate) {
+    if (breakdownChance <= this.breakdownRate + rateIncrease) {
       this.onBreakdown();
       return true;
     }
 
     return false;
-  };
+  }
 
   private onBreakdown() {
     this.interactionZone.enabled = true;

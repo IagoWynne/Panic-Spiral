@@ -1,12 +1,24 @@
 import { MAIN } from "../../../constants";
+import { RoundEvents } from "../Rounds";
 import { System } from "./System";
 
 export class SystemsManager {
+  private _id = "systems-manager";
   private _startupCooldownTimer?: NodeJS.Timeout;
   private _breakdownsAllowed = false;
   private _breakdownCheckTimer?: NodeJS.Timeout;
+  private _breakdownRateIncrease: number = 0;
 
-  constructor(private _systems: System[]) {}
+  constructor(private _systems: System[]) {
+    RoundEvents.addTimerUpdateListener({
+      componentId: this._id,
+      action: (remainingTime: number) => {
+        if (remainingTime <= MAIN.SYSTEMS.ROUND_END_SAFE_TIME) {
+          this._breakdownsAllowed = false;
+        }
+      },
+    });
+  }
 
   private onStartupCooldownElapsed() {
     this._breakdownsAllowed = true;
@@ -19,6 +31,7 @@ export class SystemsManager {
   }
 
   public onRoundStart() {
+    this._breakdownRateIncrease += MAIN.SYSTEMS.BREAKDOWN_RATE_SCALING;
     this._startupCooldownTimer = setTimeout(
       () => this.onStartupCooldownElapsed(),
       MAIN.SYSTEMS.SYSTEM_BREAKDOWN_CHECK_START
@@ -34,15 +47,12 @@ export class SystemsManager {
       return;
     }
 
-    const breakdownOccurred = this._systems.reduce(
-      (occurred: boolean, system: System) => {
-        if (!occurred && !system.broken) {
-          occurred = system.checkForBreakdown();
-        }
-        return occurred;
-      },
-      false
-    );
+    this._systems.reduce((occurred: boolean, system: System) => {
+      if (!occurred && !system.broken) {
+        occurred = system.checkForBreakdown(this._breakdownRateIncrease);
+      }
+      return occurred;
+    }, false);
   }
 
   private stopTimer(timer?: NodeJS.Timeout) {
@@ -57,5 +67,7 @@ export class SystemsManager {
 
     this.stopTimer(this._breakdownCheckTimer);
     this._breakdownCheckTimer = undefined;
+
+    RoundEvents.removeTimerUpdateListener(this._id);
   }
 }
