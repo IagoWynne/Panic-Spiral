@@ -73,8 +73,6 @@ export class MainScreen extends Container implements GameScreen {
     this.addChild(this._ship);
     this.addChild(this._playerCharacter);
     this.addChild(this._ui);
-
-    this.startRound();
   }
 
   public resize(width: number, height: number) {
@@ -98,6 +96,11 @@ export class MainScreen extends Container implements GameScreen {
       componentId: MainScreen.SCREEN_ID,
       action: () => this.onGameOver(),
     });
+  }
+
+  public show() {
+    this.startRound();
+    return Promise.resolve();
   }
 
   private startRound() {
@@ -164,6 +167,5 @@ export class MainScreen extends Container implements GameScreen {
     RoundEvents.release();
     HealthEvents.release();
     GameEvents.release();
-    this.destroy({ children: true });
   }
 }

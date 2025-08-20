@@ -60,7 +60,8 @@ export class GameUI extends Container {
     this._roundEndOverlay = new RoundEndOverlay(stats, () => {
       if (this._roundEndOverlay) {
         this.removeChild(this._roundEndOverlay);
-        this._roundEndOverlay.destroy();
+        this._roundEndOverlay.cleanup();
+        this._roundEndOverlay.destroy({ children: true });
       }
 
       onNextRoundPressed();
