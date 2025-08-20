@@ -6,6 +6,7 @@ export class ScoreTracker {
   private _componentId = "score_tracker";
   private _scoreIncreaseTimer?: NodeJS.Timeout;
   private _canAutoIncrementScore = true;
+  private _allowRepairScore = true;
   private _multiplier = 1;
 
   public currentScore = 0;
@@ -15,6 +16,8 @@ export class ScoreTracker {
   }
 
   public onRoundStart() {
+    this._allowRepairScore = true;
+
     this._scoreIncreaseTimer = setInterval(
       () => this.onScoreIncreaseTimeout(),
       MAIN.SCORE.SCORE_INCREMENT_INTERVAL
@@ -22,6 +25,7 @@ export class ScoreTracker {
   }
 
   public onRoundEnd() {
+    this._allowRepairScore = false;
     this.addScore(MAIN.SCORE.BASE_SCORE_INCREMENT);
     this.addScore(MAIN.SCORE.ROUND_COMPLETION_BONUS);
     this._multiplier = 1;
@@ -100,7 +104,9 @@ export class ScoreTracker {
   }
 
   private onSystemRepaired(systemName: string) {
-    this.addScore(MAIN.SYSTEMS.SYSTEM_REPAIR_SCORE[systemName]);
+    if (this._allowRepairScore) {
+      this.addScore(MAIN.SYSTEMS.SYSTEM_REPAIR_SCORE[systemName]);
+    }
   }
 
   public cleanup() {

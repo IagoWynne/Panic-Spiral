@@ -134,7 +134,7 @@ export class System extends Container {
     GameAudio.SFX?.play(AUDIO_FILE_ALIASES.MAIN.SYSTEM_BREAK);
   }
 
-  private onRepair(playSound: boolean = true) {
+  private onRepair(duringRound: boolean = true) {
     this._cooldownTimer = setTimeout(() => {
       this._canBreak = true;
       this._cooldownTimer = undefined;
@@ -145,7 +145,7 @@ export class System extends Container {
     this.closeInteractionTooltip();
     SystemEvents.onSystemRepaired(this.id);
 
-    if (playSound) {
+    if (duringRound) {
       GameAudio.SFX?.play(AUDIO_FILE_ALIASES.MAIN.SYSTEM_REPAIR);
     }
   }
