@@ -26,8 +26,6 @@ class ScreenManager {
   private _width!: number;
   private _height!: number;
 
-  private readonly _screenMap = new Map<string, GameScreen>();
-
   public init(app: Application) {
     app.stage.addChild(this.screenView);
     this._app = app;
@@ -38,12 +36,7 @@ class ScreenManager {
   }
 
   private _getScreen<T>(Ctor: GameScreenConstructor, data?: T) {
-    let screen = this._screenMap.get(Ctor.SCREEN_ID);
-
-    if (!screen) {
-      screen = new Ctor(data);
-      this._screenMap.set(Ctor.SCREEN_ID, screen);
-    }
+    const screen = new Ctor(data);
 
     return screen;
   }
@@ -80,7 +73,7 @@ class ScreenManager {
   private async _removeScreen(screen: GameScreen) {
     await screen.hide?.();
 
-    screen.cleanup();
+    const deleteScreen = screen.cleanup();
 
     if (screen.update) {
       this._app.ticker.remove(screen.update, screen);
@@ -89,6 +82,8 @@ class ScreenManager {
     if (screen.parent) {
       screen.parent.removeChild(screen);
     }
+
+    screen.destroy({ children: true });
   }
 
   public resize(width: number, height: number) {
