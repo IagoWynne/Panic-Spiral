@@ -48,4 +48,6 @@ class SystemEvents {
   }
 }
 
-export default new SystemEvents();
+const systemEvents = new SystemEvents();
+
+export default systemEvents;

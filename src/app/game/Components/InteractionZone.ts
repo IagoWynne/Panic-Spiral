@@ -1,4 +1,4 @@
-import { Container, Text } from "pixi.js";
+import { Container } from "pixi.js";
 import { Zone } from "./Zone";
 import { Inputs } from "../Utils/keyboardEventHandler";
 import { KEY_BINDINGS } from "../keyBindings";

@@ -1,4 +1,4 @@
-import { Container, Texture, Ticker, TilingSprite } from "pixi.js";
+import { Container, Ticker } from "pixi.js";
 import {
   GameScreen,
   screenManager,

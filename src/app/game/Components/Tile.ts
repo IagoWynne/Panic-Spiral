@@ -1,6 +1,5 @@
 import { Container, Sprite, Texture } from "pixi.js";
 import { Zone } from "./Zone";
-import { InteractionZone } from "./InteractionZone";
 
 export class Tile extends Container {
   public collisionZone?: Zone;

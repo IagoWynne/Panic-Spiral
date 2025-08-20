@@ -1,0 +1,10 @@
+services:
+  panic-spiral:
+    image: panic-spiral:latest
+    ports:
+      - 3000:3000
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443

@@ -1,6 +1,5 @@
 import { Bounds } from "pixi.js";
 import { InteractionZone, Tile, Zone } from "../../Components";
-import { System } from "./Systems";
 
 export class NavigationService {
   private _collisionObjects: Zone[] = [];

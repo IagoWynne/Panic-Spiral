@@ -3,7 +3,6 @@ import {
   Graphics,
   Text,
   Texture,
-  Ticker,
   TilingSprite,
 } from "pixi.js";
 import {
@@ -161,7 +160,7 @@ export class GameOverScreen extends Container implements GameScreen {
     return buttonsContainer;
   }
 
-  public update(_: Ticker) {
+  public update() {
     this._background.tilePosition.x = this._background.tilePosition.x - 0.1;
   }
 

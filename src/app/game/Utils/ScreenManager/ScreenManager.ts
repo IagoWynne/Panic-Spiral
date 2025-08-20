@@ -1,7 +1,7 @@
-import { Application, Assets, Container, Renderer, Ticker } from "pixi.js";
+import { Application, Assets, Container, Ticker } from "pixi.js";
 import { areBundlesLoaded } from "../assets";
 
-export interface GameScreen<T = any> extends Container {
+export interface GameScreen extends Container {
   show?: () => Promise<void>;
   hide?: () => Promise<void>;
   resize?: (width: number, height: number) => void;
@@ -10,6 +10,7 @@ export interface GameScreen<T = any> extends Container {
   cleanup: () => void;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface GameScreenConstructor<T = any> {
   readonly SCREEN_ID: string;
   readonly assetBundles?: string[];
@@ -73,7 +74,7 @@ class ScreenManager {
   private async _removeScreen(screen: GameScreen) {
     await screen.hide?.();
 
-    const deleteScreen = screen.cleanup();
+    screen.cleanup();
 
     if (screen.update) {
       this._app.ticker.remove(screen.update, screen);

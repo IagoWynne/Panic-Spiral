@@ -103,4 +103,6 @@ class ScoreEvents {
   }
 }
 
-export default new ScoreEvents();
+const scoreEvents = new ScoreEvents();
+
+export default scoreEvents;

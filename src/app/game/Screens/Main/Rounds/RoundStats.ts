@@ -1,5 +1,3 @@
-import { SYSTEMS } from "@/app/game/constants/Main";
-
 export interface RoundStats {
   num: number;
   startingScore: number;

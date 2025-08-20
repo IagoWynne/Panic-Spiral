@@ -1,4 +1,4 @@
-import { Container, Graphics, Point, Text } from "pixi.js";
+import { Container, Graphics, Text } from "pixi.js";
 import { ScoreEvents } from "../Score";
 import { MAIN, COMMON } from "../../../constants";
 

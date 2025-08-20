@@ -29,4 +29,6 @@ class GameEvents {
   }
 }
 
-export default new GameEvents();
+const gameEvents = new GameEvents();
+
+export default gameEvents;

@@ -1,4 +1,4 @@
-import { Container, Sprite, Texture, Ticker } from "pixi.js";
+import { Container, Sprite, Texture } from "pixi.js";
 import { ShipExhaust } from "../../Components";
 
 export class Ship {
