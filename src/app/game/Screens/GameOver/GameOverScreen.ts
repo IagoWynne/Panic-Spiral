@@ -152,7 +152,7 @@ export class GameOverScreen extends Container implements GameScreen {
     buttonsContainer.addChild(this._newGameButton);
     buttonsContainer.addChild(this._quitGameButton);
 
-    buttonsContainer.x = (width - buttonsContainer.width) / 2;
+    buttonsContainer.x = (width) / 2;
     buttonsContainer.y =
       height -
       buttonsContainer.height -
