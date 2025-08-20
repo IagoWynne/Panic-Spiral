@@ -126,8 +126,8 @@ export class MainScreen extends Container implements GameScreen {
 
   private stopGame() {
     this._paused = true;
-    this._systemsManager.onRoundEnd();
     this._scoreTracker.onRoundEnd();
+    this._systemsManager.onRoundEnd();
     this._shipHealthTracker.onRoundEnd();
     this._systems.forEach((system) => system.onRoundEnd());
     this._pilotingTerminals.forEach((terminal) => terminal.onRoundEnd());

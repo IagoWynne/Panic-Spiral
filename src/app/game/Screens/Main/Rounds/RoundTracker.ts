@@ -54,7 +54,9 @@ export class RoundTracker {
   }
 
   private onSystemRepaired(systemName: string) {
-    this.systemStatIncrease(systemName, this._currentRoundStats.repairs);
+    if (this._remainingSeconds > 0) {
+      this.systemStatIncrease(systemName, this._currentRoundStats.repairs);
+    }
   }
 
   private systemStatIncrease(systemName: string, stats: SystemStats) {
