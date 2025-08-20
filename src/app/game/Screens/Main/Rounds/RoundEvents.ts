@@ -57,4 +57,6 @@ class RoundEvents {
   }
 }
 
-export default new RoundEvents();
+const roundEvents = new RoundEvents();
+
+export default roundEvents;

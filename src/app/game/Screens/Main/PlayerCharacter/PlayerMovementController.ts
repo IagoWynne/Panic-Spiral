@@ -1,6 +1,6 @@
 import { KEY_BINDINGS } from "@/app/game/keyBindings";
 import { Inputs } from "@/app/game/Utils/keyboardEventHandler";
-import { Sprite, AnimatedSprite, Ticker, Bounds, Graphics } from "pixi.js";
+import { Sprite, AnimatedSprite, Ticker, Bounds } from "pixi.js";
 import { PlayerCharacter } from "./PlayerCharacter";
 import { IdleStates, initIdleStates } from "./state/Idle";
 import { MovingStates, MovingState, initMovingStates } from "./state/Moving";

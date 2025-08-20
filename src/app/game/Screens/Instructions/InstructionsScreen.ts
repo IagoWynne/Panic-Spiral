@@ -4,7 +4,6 @@ import {
   Point,
   Text,
   Texture,
-  Ticker,
   TilingSprite,
 } from "pixi.js";
 import {
@@ -376,7 +375,7 @@ export class InstructionsScreen extends Container implements GameScreen {
     return row;
   }
 
-  public update(_: Ticker) {
+  public update() {
     this._background.tilePosition.x = this._background.tilePosition.x - 0.1;
   }
 

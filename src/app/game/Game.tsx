@@ -3,7 +3,7 @@ import runGame from "./runGame";
 import { useEffect } from "react";
 
 const Game = () => {
-  let { app } = useApplication();
+  const { app } = useApplication();
 
   useEffect(() => {
     if (!app.ticker) {

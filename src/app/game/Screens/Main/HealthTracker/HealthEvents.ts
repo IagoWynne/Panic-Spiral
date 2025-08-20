@@ -39,4 +39,6 @@ class HealthEvents {
   }
 }
 
-export default new HealthEvents();
+const healthEvents = new HealthEvents();
+
+export default healthEvents;

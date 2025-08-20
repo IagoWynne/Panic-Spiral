@@ -21,4 +21,6 @@ class UIEvents {
   }
 }
 
-export default new UIEvents();
+const uiEvents = new UIEvents();
+
+export default uiEvents;

@@ -56,3 +56,5 @@ next-env.d.ts
 # api debug files
 **/api/obj/*
 **/api/**/project.razor.json
+
+*.pem

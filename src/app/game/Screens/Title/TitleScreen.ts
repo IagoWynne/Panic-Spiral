@@ -1,4 +1,4 @@
-import { Container, Texture, Ticker, TilingSprite, Text } from "pixi.js";
+import { Container, Texture, TilingSprite, Text } from "pixi.js";
 import {
   GameScreen,
   screenManager,
@@ -82,7 +82,7 @@ export class TitleScreen extends Container implements GameScreen {
     return Promise.resolve();
   }
 
-  public update(_: Ticker) {
+  public update() {
     this._background.tilePosition.x = this._background.tilePosition.x - 0.2;
     this._ship.update();
   }
