@@ -15,6 +15,7 @@ export class Button extends Container {
   private _text: Text;
 
   private _outline: StrokeInput = { color: "#fc0e1c", width: 2 };
+  private _listenersAttached: boolean = false;
 
   constructor(
     private _id: string,
@@ -60,7 +61,15 @@ export class Button extends Container {
     this.addListeners();
   }
 
+  public prepare() {
+    if (!this._listenersAttached) {
+      this.addListeners();
+    }
+  }
+
   private addListeners() {
+    this._listenersAttached = true;
+
     if (this._keyboardShortcut) {
       Inputs.Keyboard?.addKeyUpHandler({
         componentId: this._id,
@@ -72,6 +81,7 @@ export class Button extends Container {
 
   public cleanup() {
     Inputs.Keyboard?.removeAllComponentKeyHandlers(this._id);
+    this._listenersAttached = false;
   }
 
   private _onPointerOver() {

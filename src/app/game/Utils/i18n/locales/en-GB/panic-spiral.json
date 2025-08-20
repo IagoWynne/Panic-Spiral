@@ -22,5 +22,19 @@
   "FINAL_SCORE": "Final Score",
   "NEW_GAME": "New Game",
   "QUIT": "Quit",
-  "PILOTING_INSTRUCTIONS": "Press %s to activate pilot assistance."
+  "PILOTING_INSTRUCTIONS": "Press %s to activate pilot assistance.",
+  "GAME_INSTRUCTIONS": "Survive as long as possible.\nWatch out for breakdowns!",
+  "CONTROLS": "Controls",
+  "MOVE_UP": "Move Up",
+  "MOVE_LEFT": "Move Left",
+  "MOVE_DOWN": "Move Down",
+  "MOVE_RIGHT": "Move Right",
+  "INTERACT": "Interact",
+  "SYSTEMS": "Systems",
+  "ENGINE_DESCRIPTION": "Increases score every second.\nCockpit terminals increase the score multiplier!",
+  "MEDBAY_DESCRIPTION": "Restores your health at the end of the round.\nRestores half the health lost that round.",
+  "OXYGEN_DESCRIPTION": "Keeps you alive!\nIf it's broken, you lose health periodically.",
+  "REACTOR_DESCRIPTION": "Keeps the ship running!\nIf it's broken, the ship loses health periodically.",
+  "SHIELDS_DESCRIPTION": "Restores ship health at the end of the round.\nRestores half the health lost that round.",
+  "BACK": "Back"
 }

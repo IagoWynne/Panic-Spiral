@@ -83,7 +83,7 @@ class ScreenManager {
     screen.cleanup();
 
     if (screen.update) {
-      this._app.ticker.remove(screen.update);
+      this._app.ticker.remove(screen.update, screen);
     }
 
     if (screen.parent) {

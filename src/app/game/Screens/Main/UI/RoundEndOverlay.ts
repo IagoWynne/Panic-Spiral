@@ -7,6 +7,8 @@ import { RoundStats } from "../Rounds";
 import { sprintf } from "sprintf-js";
 
 export class RoundEndOverlay extends Container {
+  private _nextRoundButton!: Button;
+
   constructor(stats: RoundStats, onNextRoundPressed: () => void) {
     super();
 
@@ -86,13 +88,13 @@ export class RoundEndOverlay extends Container {
         5 * MAIN.UI.ROUND_END.SCORE_BREAKDOWN_PADDING.BOTTOM,
     });
 
-    const nextRoundButton = this.buildNextRoundButton(onNextRoundPressed);
+    this._nextRoundButton = this.buildNextRoundButton(onNextRoundPressed);
 
     contentContainer.addChild(headerText);
     contentContainer.addChild(scoreHeader);
     contentContainer.addChild(scoreSection);
     contentContainer.addChild(scoreTotalText);
-    contentContainer.addChild(nextRoundButton);
+    contentContainer.addChild(this._nextRoundButton);
 
     return contentContainer;
   }
@@ -228,5 +230,9 @@ export class RoundEndOverlay extends Container {
       nextRoundButton.height;
 
     return nextRoundButton;
+  }
+
+  public cleanup() {
+    this._nextRoundButton.cleanup();
   }
 }
