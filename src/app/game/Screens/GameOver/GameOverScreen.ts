@@ -16,7 +16,6 @@ import { Button } from "../../UI";
 import { KEY_BINDINGS } from "../../keyBindings";
 import MainScreen from "../Main";
 import TitleScreen from "../Title";
-import { Inputs } from "../../Utils/keyboardEventHandler";
 
 interface Data {
   finalScore: number;
@@ -27,6 +26,8 @@ export class GameOverScreen extends Container implements GameScreen {
   public static assetBundles = [];
 
   private _background: TilingSprite;
+  private _newGameButton!: Button;
+  private _quitGameButton!: Button;
 
   constructor(data: Data) {
     super();
@@ -62,6 +63,12 @@ export class GameOverScreen extends Container implements GameScreen {
     this.addChild(this._background);
     this.addChild(gameOverBox);
     this.addChild(gameOverContainer);
+  }
+
+  public show() {
+    this._newGameButton.prepare();
+    this._quitGameButton.prepare();
+    return Promise.resolve();
   }
 
   private buildUiComponents(
@@ -123,27 +130,27 @@ export class GameOverScreen extends Container implements GameScreen {
   private buildButtonsContainer(width: number, height: number): Container {
     const buttonsContainer = new Container();
 
-    const newGameButton = new Button(
+    this._newGameButton = new Button(
       "new-game",
       i18n(i18nKeys.NEW_GAME),
       KEY_BINDINGS.UI.ACCEPT,
       () => screenManager.changeScreen(MainScreen)
     );
 
-    const quitGameButton = new Button(
+    this._quitGameButton = new Button(
       "quit-game",
       i18n(i18nKeys.QUIT),
       KEY_BINDINGS.UI.CANCEL,
       () => screenManager.changeScreen(TitleScreen)
     );
 
-    quitGameButton.y =
-      newGameButton.y +
-      newGameButton.height +
+    this._quitGameButton.y =
+      this._newGameButton.y +
+      this._newGameButton.height +
       GAME_OVER.UI.NEW_GAME_BUTTON.MARGIN.BOTTOM;
 
-    buttonsContainer.addChild(newGameButton);
-    buttonsContainer.addChild(quitGameButton);
+    buttonsContainer.addChild(this._newGameButton);
+    buttonsContainer.addChild(this._quitGameButton);
 
     buttonsContainer.x = (width - buttonsContainer.width) / 2;
     buttonsContainer.y =
@@ -159,7 +166,7 @@ export class GameOverScreen extends Container implements GameScreen {
   }
 
   public cleanup() {
-    this.destroy();
-    Inputs?.Keyboard?.release();
+    this._newGameButton.cleanup();
+    this._quitGameButton.cleanup();
   }
 }
