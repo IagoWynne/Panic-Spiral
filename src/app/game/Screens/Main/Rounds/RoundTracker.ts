@@ -30,7 +30,7 @@ export class RoundTracker {
     this.addSystemListeners(MAIN.SYSTEMS.SYSTEM_IDS.MEDBAY);
     this.addSystemListeners(MAIN.SYSTEMS.SYSTEM_IDS.OXYGEN);
     this.addSystemListeners(MAIN.SYSTEMS.SYSTEM_IDS.REACTOR);
-    this.addSystemListeners(MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS);
+    this.addSystemListeners(MAIN.SYSTEMS.SYSTEM_IDS.ENGINEERING);
   }
 
   private addSystemListeners(systemName: string) {
@@ -77,8 +77,8 @@ export class RoundTracker {
         stats.reactor++;
         break;
       }
-      case MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS: {
-        stats.shields++;
+      case MAIN.SYSTEMS.SYSTEM_IDS.ENGINEERING: {
+        stats.engineering++;
         break;
       }
     }
@@ -108,14 +108,14 @@ export class RoundTracker {
         engine: 0,
         medbay: 0,
         oxygen: 0,
-        shields: 0,
+        engineering: 0,
         reactor: 0,
       },
       repairs: {
         engine: 0,
         medbay: 0,
         oxygen: 0,
-        shields: 0,
+        engineering: 0,
         reactor: 0,
       },
     };
@@ -150,7 +150,7 @@ export class RoundTracker {
     );
     SystemEvents.removeSystemListener(
       this._id,
-      MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS
+      MAIN.SYSTEMS.SYSTEM_IDS.ENGINEERING
     );
   }
 }

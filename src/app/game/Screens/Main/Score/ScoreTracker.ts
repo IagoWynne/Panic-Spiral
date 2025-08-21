@@ -83,7 +83,7 @@ export class ScoreTracker {
     this.addSystemRepairedScoreListener(MAIN.SYSTEMS.SYSTEM_IDS.MEDBAY);
     this.addSystemRepairedScoreListener(MAIN.SYSTEMS.SYSTEM_IDS.OXYGEN);
     this.addSystemRepairedScoreListener(MAIN.SYSTEMS.SYSTEM_IDS.REACTOR);
-    this.addSystemRepairedScoreListener(MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS);
+    this.addSystemRepairedScoreListener(MAIN.SYSTEMS.SYSTEM_IDS.ENGINEERING);
   }
 
   private addSystemRepairedScoreListener(system: string) {

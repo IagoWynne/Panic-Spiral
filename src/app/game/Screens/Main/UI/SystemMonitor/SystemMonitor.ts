@@ -31,7 +31,7 @@ export class SystemMonitor extends Container {
       MAIN.SYSTEMS.SYSTEM_IDS.REACTOR,
       oxygenMonitor
     );
-    this.addStatusMonitor(MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS, reactorMonitor);
+    this.addStatusMonitor(MAIN.SYSTEMS.SYSTEM_IDS.ENGINEERING, reactorMonitor);
 
     const background = new Graphics()
       .roundRect(

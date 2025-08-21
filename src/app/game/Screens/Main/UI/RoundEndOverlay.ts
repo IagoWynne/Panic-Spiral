@@ -182,8 +182,8 @@ export class RoundEndOverlay extends Container {
         MAIN.SYSTEMS.SYSTEM_REPAIR_SCORE[MAIN.SYSTEMS.SYSTEM_IDS.OXYGEN] +
       stats.repairs.reactor *
         MAIN.SYSTEMS.SYSTEM_REPAIR_SCORE[MAIN.SYSTEMS.SYSTEM_IDS.REACTOR] +
-      stats.repairs.shields *
-        MAIN.SYSTEMS.SYSTEM_REPAIR_SCORE[MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS]
+      stats.repairs.engineering *
+        MAIN.SYSTEMS.SYSTEM_REPAIR_SCORE[MAIN.SYSTEMS.SYSTEM_IDS.ENGINEERING]
     );
   }
 

@@ -9,7 +9,7 @@ export class ShipHealthTracker extends HealthTracker {
       MAIN.SHIP.MAX_HEALTH,
       "SHIP",
       "ship-health-tracker",
-      MAIN.SYSTEMS.SYSTEM_IDS.SHIELDS
+      MAIN.SYSTEMS.SYSTEM_IDS.ENGINEERING
     );
     this.addListeners();
   }

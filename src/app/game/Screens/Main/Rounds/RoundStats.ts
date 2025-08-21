@@ -11,5 +11,5 @@ export interface SystemStats {
   medbay: number;
   oxygen: number;
   reactor: number;
-  shields: number;
+  engineering: number;
 }
