@@ -75,6 +75,7 @@ export class Ship extends Container {
           style: {
             fill: MAIN.UI.SHIP.TEXT.FILL,
             stroke: { color: MAIN.UI.SHIP.TEXT.STROKE },
+            fontSize: 18,
           },
           anchor: 0.5,
         });

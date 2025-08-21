@@ -334,8 +334,8 @@ export class InstructionsScreen extends Container implements GameScreen {
     rowsContainer.addChild(medbayRow);
 
     const shieldRow = this.buildSystemRow(
-      i18n(i18nKeys.SHIELDS),
-      i18n(i18nKeys.SHIELDS_DESCRIPTION),
+      i18n(i18nKeys.ENGINEERING),
+      i18n(i18nKeys.ENGINEERING_DESCRIPTION),
       rowWidth
     );
 
@@ -357,15 +357,19 @@ export class InstructionsScreen extends Container implements GameScreen {
     const row = new Container();
 
     const nameText = new Text({ text: name });
+
+    const x = Math.max(
+      INSTRUCTIONS_SCREEN.UI.SYSTEMS_BOX.DESCRIPTION_PADDING.LEFT,
+      nameText.width + INSTRUCTIONS_SCREEN.UI.SYSTEMS_BOX.DESCRIPTION_PADDING.MIN
+    );
+
     const descriptionText = new Text({
       text: description,
-      x: INSTRUCTIONS_SCREEN.UI.SYSTEMS_BOX.DESCRIPTION_PADDING.LEFT,
+      x,
       style: {
         fontSize: INSTRUCTIONS_SCREEN.UI.SYSTEMS_BOX.DESCRIPTION_FONT_SIZE,
         wordWrap: true,
-        wordWrapWidth:
-          maxWidth -
-          INSTRUCTIONS_SCREEN.UI.SYSTEMS_BOX.DESCRIPTION_PADDING.LEFT,
+        wordWrapWidth: maxWidth - x,
       },
     });
 

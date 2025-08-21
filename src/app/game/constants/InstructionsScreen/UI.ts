@@ -59,6 +59,7 @@ export const SYSTEMS_BOX = {
   DESCRIPTION_FONT_SIZE: 18,
   DESCRIPTION_PADDING: {
     LEFT: 220,
+    MIN: 20,
   },
   PADDING: {
     LEFT: 100,

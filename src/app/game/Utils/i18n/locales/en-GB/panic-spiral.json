@@ -6,7 +6,7 @@
   "MEDBAY": "Medbay",
   "OXYGEN": "Oxygen",
   "REACTOR": "Reactor",
-  "SHIELDS": "Shields",
+  "ENGINEERING": "Engineering",
   "ROUND_COMPLETE": "Round %s complete",
   "NEXT_ROUND": "Next Round",
   "SCORE_HEADER": "Score",
@@ -35,6 +35,6 @@
   "MEDBAY_DESCRIPTION": "Restores your health at the end of the round.\nRestores half the health lost that round.",
   "OXYGEN_DESCRIPTION": "Keeps you alive!\nIf it's broken, you lose health periodically.",
   "REACTOR_DESCRIPTION": "Keeps the ship running!\nIf it's broken, the ship loses health periodically.",
-  "SHIELDS_DESCRIPTION": "Restores ship health at the end of the round.\nRestores half the health lost that round.",
+  "ENGINEERING_DESCRIPTION": "Restores ship health at the end of the round.\nRestores half the health lost that round.",
   "BACK": "Back"
 }

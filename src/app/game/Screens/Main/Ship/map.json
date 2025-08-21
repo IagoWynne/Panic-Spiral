@@ -625,11 +625,11 @@
       "text": {
         "x": 9.5,
         "y": 4.5,
-        "rotationDegrees": 315
+        "rotationDegrees": 300
       }
     },
     {
-      "name": "Shields",
+      "name": "Engineering",
       "walls": [
         {
           "x": 5,
@@ -867,12 +867,12 @@
           "changes": [
             {
               "event": "BREAKDOWN",
-              "system": "Shields",
+              "system": "Engineering",
               "sprite": "decoration-light-red"
             },
             {
               "event": "REPAIRED",
-              "system": "Shields",
+              "system": "Engineering",
               "sprite": null
             }
           ]
@@ -890,12 +890,12 @@
           "changes": [
             {
               "event": "BREAKDOWN",
-              "system": "Shields",
+              "system": "Engineering",
               "sprite": "decoration-light-red"
             },
             {
               "event": "REPAIRED",
-              "system": "Shields",
+              "system": "Engineering",
               "sprite": null
             }
           ]
@@ -903,7 +903,7 @@
       ],
       "systems": [
         {
-          "name": "Shields",
+          "name": "Engineering",
           "position": {
             "x": 6,
             "y": 15
@@ -917,7 +917,7 @@
       "text": {
         "x": 8,
         "y": 12,
-        "rotationDegrees": 315
+        "rotationDegrees": 300
       }
     },
     {
@@ -1468,7 +1468,7 @@
       "text": {
         "x": 17,
         "y": 5,
-        "rotationDegrees": 315
+        "rotationDegrees": 300
       }
     },
     {
@@ -1780,7 +1780,7 @@
       "text": {
         "x": 17,
         "y": 12,
-        "rotationDegrees": 315
+        "rotationDegrees": 300
       }
     },
     {
