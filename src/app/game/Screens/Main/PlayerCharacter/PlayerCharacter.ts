@@ -33,7 +33,7 @@ export class PlayerCharacter extends Container {
 
     // transparent as we don't actually want to see the collision box in game
     this.collisionBox.strokeStyle = { color: "#ff000000" };
-    this.collisionBox.ellipse(0, 8, 4, 4);
+    this.collisionBox.ellipse(0, 8, 2, 2);
     this.collisionBox.stroke();
 
     this.addChild(this.collisionBox);
