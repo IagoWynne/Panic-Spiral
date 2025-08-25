@@ -15,6 +15,7 @@ import { i18n, i18nKeys } from "../../Utils";
 import { KEY_BINDINGS } from "../../keyBindings";
 import { Button } from "../../UI";
 import TitleScreen from "../Title";
+import MainScreen from "../Main";
 
 export class InstructionsScreen extends Container implements GameScreen {
   public static SCREEN_ID = "instructions";
@@ -103,10 +104,10 @@ export class InstructionsScreen extends Container implements GameScreen {
     uiContainer.addChild(midContainer);
 
     this._backButton = new Button(
-      "back-button",
-      i18n(i18nKeys.BACK),
-      KEY_BINDINGS.UI.CANCEL,
-      () => screenManager.changeScreen(TitleScreen)
+      "start-button",
+      i18n(i18nKeys.START),
+      KEY_BINDINGS.UI.ACCEPT,
+      () => screenManager.changeScreen(MainScreen)
     );
 
     this._backButton.x = width / 2;
