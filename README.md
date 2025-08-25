@@ -3,7 +3,7 @@
 - Run `npm install && npm run prebuild`
 - Run `docker compose up -d`
 
-This automatically runs the website in dev mode (with hot reload) on port 25880
+This automatically runs the website in dev mode (with hot reload) on port 3000
 
 ## Asset Organisation
 Asset bundling is done with `@assetpack/core` - this is the recommended package by pixi js
