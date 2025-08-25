@@ -14,7 +14,6 @@ import { COMMON, INSTRUCTIONS_SCREEN } from "../../constants";
 import { i18n, i18nKeys } from "../../Utils";
 import { KEY_BINDINGS } from "../../keyBindings";
 import { Button } from "../../UI";
-import TitleScreen from "../Title";
 import MainScreen from "../Main";
 
 export class InstructionsScreen extends Container implements GameScreen {
